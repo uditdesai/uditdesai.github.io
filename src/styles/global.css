@@ -1,0 +1,165 @@
+html {
+    background-color: #f2f2f2;
+}
+
+.header {
+    width: 85%;
+    margin: 0;
+    margin: auto;
+    margin-top: 175px;
+}
+
+.header-text {
+    color: #333333;
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 235px;
+    letter-spacing: 15px;
+    margin: 0;
+}
+
+.about {
+    width: 85%;
+    margin: 0;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.about-text {
+    color: #333333;
+    font-family: "PT Serif";
+    font-weight: 400;
+    font-size: 34px;
+    width: 750px;
+    line-height: 1.5;
+}
+
+.about-span {
+    text-decoration: underline;
+    font-weight: 700;
+    color: #333333;
+    transition: all 1s ease;
+}
+
+.about-span:hover {
+    text-decoration: none;
+}
+
+.experience-hxouse {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    margin-top: 175px;
+}
+
+.experience-tangerine {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 275px;
+}
+
+.experience-cipher {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    margin-top: 225px;
+}
+
+.project-right {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    margin-top: 150px;
+}
+
+.project-left {
+    width: 85%;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 150px;
+}
+
+.contact {
+    width: 85%;
+    margin: 0;
+    margin: auto;
+    margin-top: 150px;
+}
+
+.contact-email-text {
+    color: #333333;
+    font-family: "Montserrat";
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.contact-email-link {
+    text-decoration: none;
+    color: #333333;
+    font-family: "Montserrat";
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0;
+    transition: all 1s ease;
+}
+
+.contact-email-link:hover {
+    text-decoration: underline;
+}
+
+.contact-social {
+    margin-top: 100px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.contact-social-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-social-text {
+    color: #333333;
+    font-family: "Montserrat";
+    font-size: 60px;
+    font-weight: 700;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.contact-social-link {
+    text-decoration: none;
+    color: #333333;
+    font-family: "Montserrat";
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0;
+    margin-top: 10px;
+    transition: all 1s ease;
+}
+
+.contact-social-link:hover {
+    text-decoration: underline;
+}
+
+.contact-internship {
+    margin-top: 150px;
+    margin-bottom: 200px;
+    width: 90%;
+}
+
+.contact-internship-text {
+    color: #333333;
+    font-family: "Montserrat";
+    font-size: 80px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.bottom {
+    margin-top: 100px;
+}

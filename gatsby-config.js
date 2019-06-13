@@ -5,5 +5,21 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  plugins: [
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Montserrat`,
+            variants: [`400`, `500`, `700`],
+          },
+          {
+            family: `PT Serif`,
+            variants: [`400`, `700`]
+          },
+        ],
+      },
+    }
+  ]
 }
