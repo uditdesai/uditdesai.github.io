@@ -5,6 +5,18 @@
     overflow: hidden;
 }
 
+@media screen and (max-width: 800px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
+}
+
 .name {
     color: #333333;
     font-family: "Montserrat";
@@ -13,10 +25,40 @@
     margin: 0;
 }
 
+@media screen and (max-width: 800px) {
+    .name {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .name {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .name {
+        font-size: 40px;
+    }
+}
+
 .tagContainer {
     width: 100%;
     margin-top: 25px;
     overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+    .tagContainer {
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tagContainer {
+        margin-top: 15px;
+    }
 }
 
 .marquee {
@@ -53,6 +95,46 @@
     margin-right: 32px;
 }
 
+@media screen and (max-width: 800px) {
+    .tag {
+        font-size: 1rem;
+        padding-left: .8em;
+        padding-right: .8em;
+        height: 2em;
+        margin-right: 28px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .tag {
+        font-size: 0.8rem;
+        padding-left: .7em;
+        padding-right: .7em;
+        height: 1.8em;
+        margin-right: 11px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .tag {
+        font-size: 0.8rem;
+        padding-left: .7em;
+        padding-right: .7em;
+        height: 1.8em;
+        margin-right: 5px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .tag {
+        font-size: 0.7rem;
+        padding-left: .7em;
+        padding-right: .7em;
+        height: 1.8em;
+        margin-right: 2px !important;
+    }
+}
+
 .summary {
     color: #333333;
     font-family: "PT Serif";
@@ -61,4 +143,20 @@
     margin: 0;
     margin-top: 75px;
     width: 80%;
+}
+
+@media screen and (max-width: 800px) {
+    .summary {
+        font-size: 22px;
+        margin-top: 50px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .summary {
+        font-size: 18px;
+        margin-top: 40px;
+        width: 100%;
+    }
 }

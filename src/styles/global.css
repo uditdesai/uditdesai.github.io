@@ -9,6 +9,12 @@ html {
     margin-top: 175px;
 }
 
+@media screen and (max-width: 800px) {
+    .header {
+        margin-top: 100px;
+    }
+}
+
 .header-text {
     color: #333333;
     font-family: "Montserrat";
@@ -16,6 +22,35 @@ html {
     font-size: 235px;
     letter-spacing: 15px;
     margin: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+    .header-text {
+        font-size: 130px;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header-text {
+        font-size: 100px;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header-text {
+        font-size: 45px;
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .header-text {
+        font-size: 40px;
+        letter-spacing: 0;
+    }
 }
 
 .about {
@@ -25,13 +60,46 @@ html {
     margin-top: 100px;
 }
 
+@media screen and (max-width: 800px) {
+    .about {
+        margin-top: 75px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about {
+        margin-top: 50px;
+    }
+}
+
 .about-text {
     color: #333333;
     font-family: "PT Serif";
     font-weight: 400;
     font-size: 34px;
-    width: 750px;
+    width: 775px;
     line-height: 1.5;
+}
+
+@media screen and (max-width: 1200px) {
+    .about-text {
+        width: 80%;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about-text {
+        width: 80%;
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-text {
+        width: 100%;
+        font-size: 20px;
+    }
 }
 
 .about-span {
@@ -52,12 +120,36 @@ html {
     margin-top: 175px;
 }
 
+@media screen and (max-width: 500px) {
+    .experience-hxouse {
+        margin-top: 75px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .experience-hxouse {
+        margin-top: 100px;
+    }
+}
+
 .experience-tangerine {
     width: 85%;
     margin: auto;
     display: flex;
     justify-content: flex-end;
     margin-top: 275px;
+}
+
+@media screen and (max-width: 500px) {
+    .experience-tangerine {
+        margin-top: 175px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .experience-tangerine {
+        margin-top: 225px;
+    }
 }
 
 .experience-cipher {
@@ -67,11 +159,31 @@ html {
     margin-top: 225px;
 }
 
+@media screen and (max-width: 500px) {
+    .experience-cipher {
+        margin-top: 250px;
+        margin-bottom: 200px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .experience-cipher {
+        margin-top: 300px;
+        margin-bottom: 250px;
+    }
+}
+
 .project-right {
     width: 85%;
     margin: auto;
     display: flex;
     margin-top: 150px;
+}
+
+@media screen and (max-width: 500px) {
+    .project-right {
+        margin-top: 75px;
+    }
 }
 
 .project-left {
@@ -80,6 +192,12 @@ html {
     display: flex;
     justify-content: flex-end;
     margin-top: 150px;
+}
+
+@media screen and (max-width: 500px) {
+    .project-left {
+        margin-top: 75px;
+    }
 }
 
 .contact {
