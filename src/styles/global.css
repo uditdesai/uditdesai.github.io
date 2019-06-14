@@ -68,7 +68,7 @@ html {
 
 @media screen and (max-width: 500px) {
     .about {
-        margin-top: 50px;
+        margin-top: 75px;
     }
 }
 
@@ -103,14 +103,16 @@ html {
 }
 
 .about-span {
-    text-decoration: underline;
+    text-decoration: none;
     font-weight: 700;
     color: #333333;
-    transition: all 1s ease;
+    transition: all 0.25s ease;
+    border-bottom: 4px solid #333333;
+    padding-bottom: 1px;
 }
 
 .about-span:hover {
-    text-decoration: none;
+    border-color: transparent;
 }
 
 .experience-hxouse {
@@ -182,7 +184,7 @@ html {
 
 @media screen and (max-width: 500px) {
     .project-right {
-        margin-top: 75px;
+        margin-top: 50px;
     }
 }
 
@@ -196,7 +198,7 @@ html {
 
 @media screen and (max-width: 500px) {
     .project-left {
-        margin-top: 75px;
+        margin-top: 50px;
     }
 }
 
@@ -207,12 +209,42 @@ html {
     margin-top: 150px;
 }
 
+@media screen and (max-width: 800px) {
+    .contact {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact {
+        margin-top: 75px;
+    }
+}
+
 .contact-email-text {
     color: #333333;
     font-family: "Montserrat";
     font-size: 60px;
     font-weight: 700;
     margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .contact-email-text {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-email-text {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-email-text {
+        font-size: 24px;
+    }
 }
 
 .contact-email-link {
@@ -225,14 +257,45 @@ html {
     transition: all 1s ease;
 }
 
+@media screen and (max-width: 1200px) {
+    .contact-email-link {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-email-link {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-email-link {
+        font-size: 24px;
+    }
+}
+
 .contact-email-link:hover {
     text-decoration: underline;
 }
 
 .contact-social {
-    margin-top: 100px;
+    margin-top: 150px;
     display: flex;
     justify-content: flex-end;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-social {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-social {
+        justify-content: flex-start;
+        margin-top: 50px;
+    }
 }
 
 .contact-social-inner {
@@ -249,6 +312,42 @@ html {
     margin-bottom: 30px;
 }
 
+@media screen and (max-width: 1200px) {
+    .contact-social-text {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-social-text {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-social-text {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+}
+
+.contact-link-container {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    .contact-link-container {
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-internship {
+        margin-top: 50px;
+    }
+}
+
 .contact-social-link {
     text-decoration: none;
     color: #333333;
@@ -256,18 +355,50 @@ html {
     font-size: 50px;
     font-weight: 700;
     margin: 0;
-    margin-top: 10px;
-    transition: all 1s ease;
+    transition: all 0.25s ease;
+    border-color: transparent;
+    padding-bottom: 1px;
+}
+
+@media screen and (max-width: 1200px) {
+    .contact-social-link {
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-social-link {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-social-link {
+        font-size: 24px;
+    }
 }
 
 .contact-social-link:hover {
-    text-decoration: underline;
+    border-bottom: 4px solid #333333;
 }
 
 .contact-internship {
     margin-top: 150px;
     margin-bottom: 200px;
     width: 90%;
+}
+
+@media screen and (max-width: 800px) {
+    .contact-internship {
+        margin-top: 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-internship {
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
 }
 
 .contact-internship-text {
@@ -278,6 +409,30 @@ html {
     margin: 0;
 }
 
+@media screen and (max-width: 1200px) {
+    .contact-internship-text {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-internship-text {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact-internship-text {
+        font-size: 32px;
+    }
+}
+
 .bottom {
     margin-top: 100px;
+}
+
+@media screen and (max-width: 500px) {
+    .bottom {
+        margin-top: 50px;
+    }
 }

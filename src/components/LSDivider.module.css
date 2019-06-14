@@ -9,13 +9,13 @@
 
 @media screen and (max-width: 1200px) {
     .container {
-        margin-top: 180px;
+        margin-top: 175px;
     }
 }
 
 @media screen and (max-width: 800px) {
     .container {
-        margin-top: 140px;
+        margin-top: 150px;
     }
 }
 
