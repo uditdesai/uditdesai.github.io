@@ -53,13 +53,6 @@ html {
     }
 }
 
-.l {
-}
-
-.l:hover {
-    animation: colorChange 1s ease;
-}
-
 @keyframes colorChange {
     0% {
         color: #333;

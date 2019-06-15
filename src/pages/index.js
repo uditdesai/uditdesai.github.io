@@ -30,7 +30,7 @@ const App = (props) => {
                     </h1>
                 </ScrollAnimation>
             </div>
-            <RSDivider text="SOME DETAIL" />
+            <RSDivider text="SOME DETAIL" hoverText="ABOUT ME!" />
             <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125}>
                 <div className="about">
                     <p className="about-text">I’m currently an undergraduate student studying computer engineering with certificates in AI and communication at the University of Toronto.</p>
@@ -39,7 +39,7 @@ const App = (props) => {
                     <p className="about-text"> Check out my experience and work below or on my <a href="https://drive.google.com/file/d/1t5UnaVPL3HoxOMG1N_A36pX1UAQx5Ihu/view?usp=sharing" className="about-span">resume</a> for more detail.</p>
                 </div>
             </ScrollAnimation>
-            <LSDivider text="EXPERIENCE" />
+            <LSDivider text="EXPERIENCE" hoverText="GREAT" />
             <ScrollAnimation animateIn="fadeInLeft" animateOut="fadeOutLeft" animateOnce={true} offset={50} duration={1.25}>
                 <div className="experience-hxouse">
                     <Experience
@@ -76,13 +76,14 @@ const App = (props) => {
                     />
                 </div>
             </ScrollAnimation>
-            <RSDivider text="PROJECTS" />
+            <RSDivider text="PROJECTS" hoverText="ON THE SIDE" />
             <div className="project-right">
                 <ScrollAnimation animateIn="fadeIn" animateOnce={false} offset={25} duration={2}>
                     <Project
                         name="CLOUT JAR"
                         summary="A web application which allows easy betting on your Basketball teams with your favorite friends. Built using Node, Firebase, and NBA APIs."
                         skills={["HTML", "CSS", "JS", "Node", "Firebase"]}
+                        github="https://github.com/uditdesai/clout-jar"
                         margin={17}
                     />
                 </ScrollAnimation>
@@ -93,6 +94,7 @@ const App = (props) => {
                         name="YELP CAMP"
                         summary="Yelp style web application for campsites built as a final project for a full-stack web-developer course. Built using Node, Express and MongoDB."
                         skills={["HTML", "CSS", "JS", "Node", "MongoDB"]}
+                        github="https://github.com/uditdesai/YelpCamp"
                         margin={14}
                     />
                 </ScrollAnimation>
@@ -103,6 +105,7 @@ const App = (props) => {
                         name="MAP GIS"
                         summary="Mapping application or GIS built as a course-long engineering project that consisted of UX/UI designed interface, a Dijkstra/A* algoritm and a TSM problem."
                         skills={["C++", "STDlib", "Open GL", "OSM API"]}
+                        github="https://github.com/uditdesai/map-app"
                         margin={25}
                     />
                 </ScrollAnimation>
@@ -113,11 +116,12 @@ const App = (props) => {
                         name="RETRO BOOMBOX"
                         summary="Web application allowing users to find the top songs of a specific genre from any time in history. Built using Node along with Spotify and Billboard APIs."
                         skills={["HTML", "CSS", "JS", "Node", "Spotify API"]}
+                        github="https://github.com/uditdesai/jukebox"
                         margin={12}
                     />
                 </ScrollAnimation>
             </div>
-            <LSDivider text="CONTACT" />
+            <LSDivider text="CONTACT" hoverText="MY" />
             <div className="contact">
                 <div className="contact-email">
                     <h3 className="contact-email-text">Email me at</h3>

@@ -5,7 +5,7 @@ const RSDivider = (props) => {
     return (
         <div className={RSStyles.container}>
             <div className={RSStyles.section}>
-                <h3 className={RSStyles.text}>{props.text}</h3>
+                <h3 className={RSStyles.text}>{props.text} <span className={RSStyles.hoverText}>{props.hoverText}</span></h3>
             </div>
         </div>
     )

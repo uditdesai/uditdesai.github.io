@@ -5,7 +5,7 @@ const LSDivider = (props) => {
     return (
         <div className={LSStyles.container}>
             <div className={LSStyles.section}>
-                <h3 className={LSStyles.text}>{props.text}</h3>
+                <h3 className={LSStyles.text}><span className={LSStyles.hoverText}>{props.hoverText}</span> {props.text}</h3>
             </div>
         </div>
     )
