@@ -2,7 +2,7 @@
     width: 85%;
     margin: 0;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 150px;
     display: flex;
     justify-content: flex-start;
 }
@@ -27,9 +27,9 @@
 
 
 .section {
-    width: 700px;
+    width: 500px;
     display: flex;
-    border-top: 15px solid #333333;
+    border-top: 12px solid #333333;
     justify-content: flex-end;
 }
 
@@ -58,7 +58,7 @@
     color: #333333;
     font-family: "Montserrat";
     font-weight: 700;
-    font-size: 45px;
+    font-size: 30px;
     margin: 0;
     margin-top: 30px;
 }

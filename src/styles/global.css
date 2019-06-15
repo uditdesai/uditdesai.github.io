@@ -6,7 +6,7 @@ html {
     width: 85%;
     margin: 0;
     margin: auto;
-    margin-top: 175px;
+    margin-top: 125px;
 }
 
 @media screen and (max-width: 800px) {
@@ -19,7 +19,7 @@ html {
     color: #333333;
     font-family: "Montserrat";
     font-weight: 700;
-    font-size: 235px;
+    font-size: 165px;
     letter-spacing: 15px;
     margin: 0;
     width: 100%;
@@ -53,6 +53,22 @@ html {
     }
 }
 
+.l {
+}
+
+.l:hover {
+    animation: colorChange 1s ease;
+}
+
+@keyframes colorChange {
+    0% {
+        color: #333;
+    }
+    100% {
+        color: white;
+    }
+}
+
 .about {
     width: 85%;
     margin: 0;
@@ -76,15 +92,15 @@ html {
     color: #333333;
     font-family: "PT Serif";
     font-weight: 400;
-    font-size: 34px;
-    width: 775px;
+    font-size: 26px;
+    width: 700px;
     line-height: 1.5;
 }
 
 @media screen and (max-width: 1200px) {
     .about-text {
         width: 80%;
-        font-size: 30px;
+        font-size: 28px;
     }
 }
 
@@ -107,12 +123,11 @@ html {
     font-weight: 700;
     color: #333333;
     transition: all 0.25s ease;
-    border-bottom: 4px solid #333333;
-    padding-bottom: 1px;
+    border-color: transparent;
 }
 
 .about-span:hover {
-    border-color: transparent;
+    border-bottom: 3px solid #333333;
 }
 
 .experience-hxouse {
@@ -179,7 +194,7 @@ html {
     width: 85%;
     margin: auto;
     display: flex;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 @media screen and (max-width: 500px) {
@@ -193,7 +208,7 @@ html {
     margin: auto;
     display: flex;
     justify-content: flex-end;
-    margin-top: 150px;
+    margin-top: 100px;
 }
 
 @media screen and (max-width: 500px) {
@@ -224,7 +239,7 @@ html {
 .contact-email-text {
     color: #333333;
     font-family: "Montserrat";
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     margin: 0;
 }
@@ -251,10 +266,12 @@ html {
     text-decoration: none;
     color: #333333;
     font-family: "Montserrat";
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     margin: 0;
-    transition: all 1s ease;
+    transition: all 0.25s ease;
+    border-color: transparent;
+    padding-bottom: 1px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -276,7 +293,7 @@ html {
 }
 
 .contact-email-link:hover {
-    text-decoration: underline;
+    border-bottom: 4px solid #333333;
 }
 
 .contact-social {
@@ -306,7 +323,7 @@ html {
 .contact-social-text {
     color: #333333;
     font-family: "Montserrat";
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 700;
     margin: 0;
     margin-bottom: 30px;
@@ -352,7 +369,7 @@ html {
     text-decoration: none;
     color: #333333;
     font-family: "Montserrat";
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
     margin: 0;
     transition: all 0.25s ease;
@@ -362,19 +379,19 @@ html {
 
 @media screen and (max-width: 1200px) {
     .contact-social-link {
-        font-size: 50px;
+        font-size: 40px;
     }
 }
 
 @media screen and (max-width: 800px) {
     .contact-social-link {
-        font-size: 40px;
+        font-size: 30px;
     }
 }
 
 @media screen and (max-width: 500px) {
     .contact-social-link {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 
@@ -404,7 +421,7 @@ html {
 .contact-internship-text {
     color: #333333;
     font-family: "Montserrat";
-    font-size: 80px;
+    font-size: 65px;
     font-weight: 700;
     margin: 0;
 }
