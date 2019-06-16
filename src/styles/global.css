@@ -210,6 +210,37 @@ html {
     }
 }
 
+.skillsGrid {
+    margin: 0;
+    margin: auto;
+    margin-top: 100px;
+    width: 85%;
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-gap: 50px 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    .skillsGrid {
+        grid-template-columns: 250px 250px;
+        grid-gap: 75px 200px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .skillsGrid {
+        grid-template-columns: 250px 250px;
+        grid-gap: 50px 100px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .skillsGrid {
+        grid-template-columns: 250px;
+        grid-gap: 50px 50px;
+    }
+}
+
 .contact {
     width: 85%;
     margin: 0;

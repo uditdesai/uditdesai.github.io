@@ -4,6 +4,7 @@ import RSDivider from "../components/RSDivider";
 import LSDivider from "../components/LSDivider";
 import Experience from "../components/Experience";
 import Project from "../components/Project";
+import Skill from "../components/Skill";
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -121,7 +122,34 @@ const App = (props) => {
                     />
                 </ScrollAnimation>
             </div>
-            <LSDivider text="CONTACT" hoverText="MY" />
+            <LSDivider text="SKILLS" hoverText="MY" />
+            <div className="skillsGrid">
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125} duration={1}>
+                    <Skill
+                        section="LANGUAGES"
+                        skills={["HTML", "CSS", "JAVASCRIPT", "C++/C", "PYTHON"]}
+                    />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125} duration={1.5}>
+                    <Skill
+                        section="TECHNOLOGIES"
+                        skills={["NODE.JS", "EXPRESS", "REACT", "GATSBY.JS", "NEXT.JS", "MONGODB", "FIREBASE", "GIT", "HEROKU"]}
+                    />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125} duration={2}>
+                    <Skill
+                        section="TOOLS"
+                        skills={["JIRA", "ASANA", "OPENTEXT", "POSTMAN", "VSCODE"]}
+                    />
+                </ScrollAnimation>
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125} duration={2.5}>
+                    <Skill
+                        section="DESIGN"
+                        skills={["FIGMA", "SKETCH", "PHOTOSHOP", "WIREFRAMES"]}
+                    />
+                </ScrollAnimation>
+            </div>
+            <RSDivider text="CONTACT" hoverText="ME" />
             <div className="contact">
                 <div className="contact-email">
                     <h3 className="contact-email-text">Email me at</h3>
