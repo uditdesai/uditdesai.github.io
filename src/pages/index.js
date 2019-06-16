@@ -139,7 +139,7 @@ const App = (props) => {
                 <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125} duration={2}>
                     <Skill
                         section="TOOLS"
-                        skills={["JIRA", "ASANA", "OPENTEXT", "POSTMAN", "VSCODE"]}
+                        skills={["JIRA", "ASANA", "OPENTEXT", "VSCODE"]}
                     />
                 </ScrollAnimation>
                 <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125} duration={2.5}>
