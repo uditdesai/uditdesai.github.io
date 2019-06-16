@@ -165,7 +165,7 @@ const App = (props) => {
                             <div className="contact-link-container"><a href="https://www.instagram.com/uydesai/?hl=en" className="contact-social-link">Instagram,</a></div>
                         </ScrollAnimation>
                         <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125}>
-                            <div className="contact-link-container"><a href="www.linkedin.com/in/uditdesai" className="contact-social-link">Linkedin,</a></div>
+                            <div className="contact-link-container"><a href="https://www.linkedin.com/in/uditdesai" className="contact-social-link">Linkedin,</a></div>
                         </ScrollAnimation>
                         <ScrollAnimation animateIn="fadeInUp" animateOnce={true} offset={125}>
                             <div className="contact-link-container"><a href="https://github.com/uditdesai" className="contact-social-link">Github,</a></div>
