@@ -7,10 +7,14 @@ import Project from "../components/Project";
 import Skill from "../components/Skill";
 import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
+import { Helmet } from "react-helmet";
 
 const App = (props) => {
     return (
         <div>
+            <Helmet>
+                <titl>Udit Desai</titl>
+            </Helmet>
             <ScrollAnimation animateIn="fadeInDown" animateOnce={true} offset={25} duration={3}>
                 <Navbar />
             </ScrollAnimation>
