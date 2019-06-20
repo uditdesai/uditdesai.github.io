@@ -13,7 +13,7 @@ const App = (props) => {
     return (
         <div>
             <Helmet>
-                <titl>Udit Desai</titl>
+                <title>Udit Desai</title>
             </Helmet>
             <ScrollAnimation animateIn="fadeInDown" animateOnce={true} offset={25} duration={3}>
                 <Navbar />
