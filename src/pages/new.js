@@ -351,10 +351,11 @@ const BottomSection = styled.div`
 `
 
 const App = () => {
-  const width = useWindowWidth()
   let scrollTotal = 0
   let scrollPosY = 0
+
   useEffect(() => {
+    const width = useWindowWidth()
     const tl = new TimelineMax({ paused: true })
 
     TweenMax.set("#fullstack", { x: -200 })
