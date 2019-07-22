@@ -16,12 +16,13 @@ module.exports = {
           },
           {
             family: `PT Serif`,
-            variants: [`400`, `700`]
+            variants: [`400`, `700`],
           },
         ],
       },
     },
-    `gatsby-plugin-react-helmet`
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
   ],
   pathPrefix: "/gatsby-site",
 }
