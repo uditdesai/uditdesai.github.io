@@ -9,9 +9,11 @@ const useWindowWidth = () => {
 
   useEffect(() => {
     window.addEventListener("resize", handleWindowResize)
+    window.addEventListener("scroll", handleWindowResize)
 
     return () => {
       window.removeEventListener("resize", handleWindowResize)
+      window.removeEventListener("scroll", handleWindowResize)
     }
   }, [])
 
