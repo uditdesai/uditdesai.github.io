@@ -539,7 +539,17 @@ const App = () => {
         <Project
           name="CLOUT JAR"
           summary="A web application which allows easy betting on your Basketball teams with your favorite friends. Built using Node, Firebase, and NBA APIs."
-          skills={["HTML", "CSS", "JS", "Node", "Firebase"]}
+          skills={[
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Node.js",
+            "Express.js",
+            "Pug",
+            "Firebase",
+            "Sketch",
+            "NBA API",
+          ]}
           github="https://github.com/uditdesai/clout-jar"
           margin={17}
         />
@@ -548,7 +558,16 @@ const App = () => {
         <Project
           name="YELP CAMP"
           summary="Yelp style web application for campsites built as a final project for a full-stack web-developer course. Built using Node, Express and MongoDB."
-          skills={["HTML", "CSS", "JS", "Node", "MongoDB"]}
+          skills={[
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Password",
+            "Bootstrap",
+          ]}
           github="https://github.com/uditdesai/YelpCamp"
           margin={14}
         />
@@ -557,7 +576,7 @@ const App = () => {
         <Project
           name="MAP GIS"
           summary="Mapping application or GIS built as a course-long engineering project that consisted of UX/UI designed interface, a Dijkstra/A* algoritm and a TSM problem."
-          skills={["C++", "STDlib", "Open GL", "OSM API"]}
+          skills={["C++", "STDlib", "Open GL", "OSM API", "Dijkstra", "A*"]}
           github="https://github.com/uditdesai/map-app"
           margin={25}
         />
@@ -566,7 +585,14 @@ const App = () => {
         <Project
           name="RETRO BOOMBOX"
           summary="Web application allowing users to find the top songs of a specific genre from any time in history. Built using Node along with Spotify and Billboard APIs."
-          skills={["HTML", "CSS", "JS", "Node", "Spotify API"]}
+          skills={[
+            "HTML",
+            "CSS",
+            "Javascript",
+            "Node.js",
+            "Spotify API",
+            "BillBoard API",
+          ]}
           github="https://github.com/uditdesai/jukebox"
           margin={12}
         />
