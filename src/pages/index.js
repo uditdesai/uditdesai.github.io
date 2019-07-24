@@ -8,6 +8,7 @@ import LSDivider from "../components/LSDivider"
 import Experience from "../components/Experience"
 import Project from "../components/Project"
 import Skill from "../components/Skill"
+import Cursor from "../components/Cursor"
 import useWindowWidth from "../hooks/useWindowWidth"
 import "animate.css/animate.min.css"
 import ScrollAnimation from "react-animate-on-scroll"
@@ -442,6 +443,7 @@ const App = () => {
 
   return (
     <Container>
+      <Cursor></Cursor>
       <Helmet>
         <title>Udit Desai</title>
       </Helmet>
