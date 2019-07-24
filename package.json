@@ -27,6 +27,7 @@
     "react-animate-on-scroll": "^2.1.5",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-tilt": "^0.1.4",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

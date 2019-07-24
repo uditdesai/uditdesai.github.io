@@ -395,10 +395,10 @@ const App = () => {
       tl.to("#project2", 6, { x: 0, autoAlpha: 1 }, "13")
       tl.to("#project3", 6, { x: 0, autoAlpha: 1 }, "15")
       tl.to("#project4", 6, { x: 0, autoAlpha: 1 }, "17")
-      tl.to("#skill1", 3, { y: 0, autoAlpha: 1 }, "21")
-      tl.to("#skill2", 3, { y: 0, autoAlpha: 1 }, "22")
-      tl.to("#skill3", 3, { y: 0, autoAlpha: 1 }, "23")
-      tl.to("#skill4", 3, { y: 0, autoAlpha: 1 }, "24")
+      tl.to("#skill1", 3, { y: 0, autoAlpha: 1 }, "20")
+      tl.to("#skill2", 3, { y: 0, autoAlpha: 1 }, "21")
+      tl.to("#skill3", 3, { y: 0, autoAlpha: 1 }, "22")
+      tl.to("#skill4", 3, { y: 0, autoAlpha: 1 }, "23")
       tl.to("#twitterLink", 2, { y: 0, autoAlpha: 1 }, "26")
       tl.to("#igLink", 2, { y: 0, autoAlpha: 1 }, "27")
       tl.to("#linkedinLink", 2, { y: 0, autoAlpha: 1 }, "28")
@@ -418,10 +418,10 @@ const App = () => {
       tl.to("#project2", 4, { x: 0, autoAlpha: 1 }, "12")
       tl.to("#project3", 4, { x: 0, autoAlpha: 1 }, "14")
       tl.to("#project4", 4, { x: 0, autoAlpha: 1 }, "16")
-      tl.to("#skill1", 3, { y: 0, autoAlpha: 1 }, "21")
-      tl.to("#skill2", 3, { y: 0, autoAlpha: 1 }, "22")
-      tl.to("#skill3", 3, { y: 0, autoAlpha: 1 }, "23")
-      tl.to("#skill4", 3, { y: 0, autoAlpha: 1 }, "24")
+      tl.to("#skill1", 3, { y: 0, autoAlpha: 1 }, "20")
+      tl.to("#skill2", 3, { y: 0, autoAlpha: 1 }, "21")
+      tl.to("#skill3", 3, { y: 0, autoAlpha: 1 }, "22")
+      tl.to("#skill4", 3, { y: 0, autoAlpha: 1 }, "23")
       tl.to("#twitterLink", 2, { y: 0, autoAlpha: 1 }, "26")
       tl.to("#igLink", 2, { y: 0, autoAlpha: 1 }, "27")
       tl.to("#linkedinLink", 2, { y: 0, autoAlpha: 1 }, "28")
@@ -449,7 +449,7 @@ const App = () => {
         animateIn="fadeInDown"
         animateOnce={true}
         offset={25}
-        duration={3}
+        duration={2}
       >
         <NavbarSection id="navbar">
           <Navbar />

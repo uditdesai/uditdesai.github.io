@@ -12,7 +12,8 @@ const Scene = styled.div`
   height: 50px;
   position: relative;
   perspective: 300px;
-  margin: auto;
+  margin: 0;
+  margin-left: 50px;
 `
 
 const Carousel = styled.div`
@@ -36,7 +37,6 @@ const CarouselCell = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
 `
 
 const CellText = styled.p`
