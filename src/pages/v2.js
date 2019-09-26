@@ -132,6 +132,85 @@ const RightContainer = styled.div`
   right: 0;
   top: 0;
   border-left: 6px solid #000;
+  display: grid;
+  grid-template-rows: 70% 30%;
+  grid-row-gap: 20px;
+`
+const SectionContainer = styled.div`
+  width: 70%;
+  justify-self: center;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`
+const SectionNumberContainer = styled.div`
+  width: 60px;
+  height: 60px;
+  border: 5px solid #000;
+  border-radius: 50%;
+  margin: 40px 0 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const SectionNumber = styled.p`
+  font-family: "heebo";
+  font-size: 30px;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+  padding: 0;
+`
+const SectionTitle = styled.h1`
+  font-family: "heebo";
+  font-size: 64px;
+  font-weight: 700;
+  color: black;
+  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
+  letter-spacing: 2px;
+  margin: 0;
+  padding: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+`
+const CreditContainer = styled.div`
+  width: 70%;
+  justify-self: center;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+`
+const CreditTitle = styled.h1`
+  width: 100%;
+  font-family: "heebo";
+  font-size: 18px;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+  padding-top: 7px;
+  border-top: 5px solid #000;
+`
+const CreditLogo = styled.h1`
+  width: 100%;
+  font-family: "heebo";
+  font-size: 70px;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+`
+const CreditText = styled.p`
+  font-family: "heebo";
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+  padding: 0;
 `
 
 const v2 = () => {
@@ -161,7 +240,19 @@ const v2 = () => {
           <CurrentlyImage src={shoeDog} />
         </CurrentlyContainer>
       </LeftContainer>
-      <RightContainer></RightContainer>
+      <RightContainer>
+        <SectionContainer>
+          <SectionNumberContainer>
+            <SectionNumber>1</SectionNumber>
+          </SectionNumberContainer>
+          <SectionTitle>UDIT DESAI</SectionTitle>
+        </SectionContainer>
+        <CreditContainer>
+          <CreditTitle>Crafted by</CreditTitle>
+          <CreditLogo>UD</CreditLogo>
+          <CreditText>Toronto, Canada - 2019</CreditText>
+        </CreditContainer>
+      </RightContainer>
       <ContentContainer></ContentContainer>
     </Container>
   )
