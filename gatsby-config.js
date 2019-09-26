@@ -7,18 +7,10 @@
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Montserrat`,
-            variants: [`400`, `500`, `700`],
-          },
-          {
-            family: `PT Serif`,
-            variants: [`400`, `700`],
-          },
-        ],
+        fonts: [`heebo\:400,500,700`],
+        display: "swap",
       },
     },
     `gatsby-plugin-react-helmet`,
