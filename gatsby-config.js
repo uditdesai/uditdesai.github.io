@@ -5,16 +5,6 @@
  */
 
 module.exports = {
-  plugins: [
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`heebo\:400,500,700`],
-        display: "swap",
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
-  ],
+  plugins: [`gatsby-plugin-react-helmet`, `gatsby-plugin-styled-components`],
   pathPrefix: "/gatsby-site",
 }
