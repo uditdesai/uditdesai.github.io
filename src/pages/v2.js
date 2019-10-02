@@ -32,10 +32,10 @@ const Greeting = styled.h1`
   font-family: "Hind";
   font-size: 140px;
   color: black;
-  margin: 0;
+  margin: 0 0 0 -8px;
 `
 const Introduction = styled.h2`
-  font-family: "Merriweather";
+  font-family: "Roboto-Bold";
   font-family: 700;
   font-size: 50px;
   margin: 0;
@@ -70,10 +70,7 @@ const v2 = () => {
   return (
     <Container>
       <Helmet>
-        <link
-          href="https://fonts.googleapis.com/css?family=Heebo:400,700|Hind:400,700|Merriweather:400,700|Roboto:400,700&display=swap"
-          rel="stylesheet"
-        />
+        <title>Udit Desai</title>
       </Helmet>
       <LeftBar />
       <RightBar />

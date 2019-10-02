@@ -16,7 +16,7 @@ const LeftContainer = styled.div`
   top: 0;
   border-right: 6px solid #000;
   display: grid;
-  grid-template-rows: 20% 22% 58%;
+  grid-template-rows: 20% 26% 54%;
   grid-row-gap: 20px;
 `
 const NavigationContainer = styled.div`
@@ -30,7 +30,7 @@ const NavigationContainer = styled.div`
 `
 const NavigationTitle = styled.h1`
   width: 100%;
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 18px;
   font-weight: 700;
   color: black;
@@ -53,7 +53,7 @@ const NavigationTitle = styled.h1`
   }
 `
 const NavigationLink = styled.p`
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 14px;
   font-weight: 700;
   color: black;
@@ -85,7 +85,7 @@ const SocialContainer = styled.div`
 `
 const SocialTitle = styled.h1`
   width: 100%;
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 18px;
   font-weight: 700;
   color: black;
@@ -106,7 +106,7 @@ const SocialTitle = styled.h1`
   }
 `
 const SocialLink = styled.p`
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 14px;
   font-weight: 700;
   color: black;
@@ -138,7 +138,7 @@ const CurrentlyContainer = styled.div`
 `
 const CurrentlyTitle = styled.h1`
   width: 100%;
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 18px;
   font-weight: 700;
   color: black;
@@ -158,12 +158,12 @@ const CurrentlyTitle = styled.h1`
     font-size: 22px;
   }
 `
-const CurrentlyText = styled.p`
-  font-family: "heebo";
+const CurrentlySubText = styled.p`
+  font-family: "Heebo-Regular";
   font-size: 14px;
   font-weight: 700;
   color: black;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0;
   @media (max-height: 650px) {
     font-size: 12px;
@@ -175,25 +175,24 @@ const CurrentlyText = styled.p`
     font-size: 18px;
   }
 `
-const CurrentlyImage = styled.img`
-  width: 80%;
-  margin: 10px 0 10px 0;
-  @media (max-height: 700px) {
-    width: 70%;
-  }
+const CurrentlyText = styled.p`
+  font-family: "Heebo-Bold";
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+  margin: 0 0 0 0;
+  padding: 0;
   @media (max-height: 650px) {
-    width: 60%;
-  }
-  @media (max-height: 600px) {
-    width: 50%;
+    font-size: 12px;
   }
   @media (min-height: 800px) and (min-width: 1300px) {
-    width: 90%;
+    font-size: 16px;
   }
   @media (min-height: 1000px) and (min-width: 1800px) {
-    width: 90%;
+    font-size: 18px;
   }
 `
+
 const LeftBar = () => {
   return (
     <LeftContainer>
@@ -208,12 +207,22 @@ const LeftBar = () => {
         <SocialLink>Twitter</SocialLink>
         <SocialLink>Github</SocialLink>
         <SocialLink>Linkedin</SocialLink>
+        <SocialLink>Resume</SocialLink>
       </SocialContainer>
       <CurrentlyContainer>
         <CurrentlyTitle>CURRENTLY</CurrentlyTitle>
-        <CurrentlyText>Reading:</CurrentlyText>
+        <CurrentlySubText>In:</CurrentlySubText>
+        <CurrentlyText>Toronto</CurrentlyText>
+        <CurrentlySubText>At:</CurrentlySubText>
+        <CurrentlyText>HXOUSE</CurrentlyText>
+        <CurrentlySubText>Reading:</CurrentlySubText>
         <CurrentlyText>Shoe Dog</CurrentlyText>
-        <CurrentlyImage src={shoeDog} />
+        <CurrentlySubText>Watching:</CurrentlySubText>
+        <CurrentlyText>The Good Place</CurrentlyText>
+        <CurrentlySubText>Looking:</CurrentlySubText>
+        <CurrentlyText>
+          A 4-8 month internship starting summer 2020
+        </CurrentlyText>
       </CurrentlyContainer>
     </LeftContainer>
   )

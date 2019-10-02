@@ -54,7 +54,7 @@ const SectionNumberContainer = styled.div`
   }
 `
 const SectionNumber = styled.p`
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 30px;
   font-weight: 700;
   color: black;
@@ -74,7 +74,7 @@ const SectionNumber = styled.p`
   }
 `
 const SectionTitle = styled.h1`
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 64px;
   font-weight: 700;
   color: black;
@@ -113,7 +113,7 @@ const CreditContainer = styled.div`
 `
 const CreditTitle = styled.h1`
   width: 100%;
-  font-family: "heebo";
+  font-family: "Heebo-Bold";
   font-size: 18px;
   font-weight: 700;
   color: black;
@@ -135,7 +135,7 @@ const CreditTitle = styled.h1`
 `
 const CreditLogo = styled.h1`
   width: 100%;
-  font-family: "heebo";
+  font-family: "Hind";
   font-size: 70px;
   font-weight: 700;
   color: black;
@@ -153,23 +153,6 @@ const CreditLogo = styled.h1`
     font-size: 100px;
   }
 `
-const CreditText = styled.p`
-  font-family: "heebo";
-  font-size: 14px;
-  font-weight: 700;
-  color: black;
-  margin: 0;
-  padding: 0;
-  @media (max-height: 720px) {
-    font-size: 12px;
-  }
-  @media (min-height: 800px) and (min-width: 1300px) {
-    font-size: 16px;
-  }
-  @media (min-height: 1000px) and (min-width: 1800px) {
-    font-size: 18px;
-  }
-`
 
 const RightBar = () => {
   return (
@@ -181,9 +164,8 @@ const RightBar = () => {
         <SectionTitle>UDIT DESAI</SectionTitle>
       </SectionContainer>
       <CreditContainer>
-        <CreditTitle>Crafted by</CreditTitle>
+        <CreditTitle>Crafted in Toronto, Canada 2019</CreditTitle>
         <CreditLogo>UD</CreditLogo>
-        <CreditText>Toronto, Canada - 2019</CreditText>
       </CreditContainer>
     </RightContainer>
   )
