@@ -6,6 +6,7 @@ import useWindowSize from "../hooks/useWindowSize"
 
 import LeftBar from "../components/LeftBar"
 import RightBar from "../components/RightBar"
+import BottomBar from "../components/BottomBar"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
@@ -78,7 +79,7 @@ const v2 = () => {
       </Helmet>
       {width > 800 && height > 520 ? (
         width < 1000 && height > 1000 ? (
-          <></>
+          <BottomBar />
         ) : (
           <>
             <LeftBar />
@@ -86,7 +87,7 @@ const v2 = () => {
           </>
         )
       ) : (
-        <></>
+        <BottomBar />
       )}
       <ContentContainer>
         <StartContainer>

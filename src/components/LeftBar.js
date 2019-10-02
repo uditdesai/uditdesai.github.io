@@ -10,7 +10,7 @@ const LeftContainer = styled.div`
   margin: 0;
   padding: 0;
   width: 15%;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   left: 0;
   top: 0;
