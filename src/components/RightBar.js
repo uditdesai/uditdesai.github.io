@@ -125,6 +125,7 @@ const CreditTitle = styled.h1`
   }
   @media (max-height: 600px) {
     font-size: 14px;
+    border-top: 4px solid #000;
   }
   @media (min-height: 800px) and (min-width: 1300px) {
     font-size: 20px;

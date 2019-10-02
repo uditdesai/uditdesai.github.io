@@ -42,6 +42,7 @@ const NavigationTitle = styled.h1`
   }
   @media (max-height: 650px) {
     font-size: 14px;
+    border-bottom: 4px solid #000;
   }
   @media (min-height: 800px) and (min-width: 1300px) {
     font-size: 20px;
@@ -97,6 +98,7 @@ const SocialTitle = styled.h1`
   }
   @media (max-height: 650px) {
     font-size: 14px;
+    border-bottom: 4px solid #000;
   }
   @media (min-height: 800px) and (min-width: 1300px) {
     font-size: 20px;
@@ -150,6 +152,7 @@ const CurrentlyTitle = styled.h1`
   }
   @media (max-height: 650px) {
     font-size: 14px;
+    border-bottom: 4px solid #000;
   }
   @media (min-height: 800px) and (min-width: 1300px) {
     font-size: 20px;
@@ -163,10 +166,11 @@ const CurrentlySubText = styled.p`
   font-size: 14px;
   font-weight: 700;
   color: black;
-  margin: 10px 0 0 0;
+  margin: 15px 0 0 0;
   padding: 0;
   @media (max-height: 650px) {
     font-size: 12px;
+    margin: 10px 0 0 0;
   }
   @media (min-height: 800px) and (min-width: 1300px) {
     font-size: 16px;
@@ -219,10 +223,6 @@ const LeftBar = () => {
         <CurrentlyText>Shoe Dog</CurrentlyText>
         <CurrentlySubText>Watching:</CurrentlySubText>
         <CurrentlyText>The Good Place</CurrentlyText>
-        <CurrentlySubText>Looking:</CurrentlySubText>
-        <CurrentlyText>
-          A 4-8 month internship starting summer 2020
-        </CurrentlyText>
       </CurrentlyContainer>
     </LeftContainer>
   )

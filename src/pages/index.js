@@ -9,7 +9,7 @@ import Experience from "../components/Experience"
 import Project from "../components/Project"
 import Skill from "../components/Skill"
 import Cursor from "../components/Cursor"
-import useWindowWidth from "../hooks/useWindowWidth"
+import useWindowSize from "../hooks/useWindowSize"
 import "animate.css/animate.min.css"
 import ScrollAnimation from "react-animate-on-scroll"
 
@@ -355,7 +355,7 @@ const App = () => {
   let scrollTotal = 0
   let scrollPosY = 0
 
-  const width = useWindowWidth()
+  const { width } = useWindowSize()
   useEffect(() => {
     const tl = new TimelineMax({ paused: true })
 

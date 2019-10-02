@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { TweenMax, TimelineMax } from "gsap/all"
 import { Helmet } from "react-helmet"
+import useWindowSize from "../hooks/useWindowSize"
 
 import LeftBar from "../components/LeftBar"
 import RightBar from "../components/RightBar"
@@ -63,6 +64,9 @@ const ColorUnderline = styled.div`
 `
 
 const v2 = () => {
+  // width and height of screen
+  const { width, height } = useWindowSize()
+
   // parameters to run animations based on scroll
   let scrollTotal = 0
   let scrollPosY = 0
@@ -72,8 +76,14 @@ const v2 = () => {
       <Helmet>
         <title>Udit Desai</title>
       </Helmet>
-      <LeftBar />
-      <RightBar />
+      {width > 800 && height < 1000 && height > 520 ? (
+        <>
+          <LeftBar />
+          <RightBar />
+        </>
+      ) : (
+        <></>
+      )}
       <ContentContainer>
         <StartContainer>
           <Greeting>HEY,</Greeting>
