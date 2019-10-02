@@ -76,11 +76,15 @@ const v2 = () => {
       <Helmet>
         <title>Udit Desai</title>
       </Helmet>
-      {width > 800 && height < 1000 && height > 520 ? (
-        <>
-          <LeftBar />
-          <RightBar />
-        </>
+      {width > 800 && height > 520 ? (
+        width < 1000 && height > 1000 ? (
+          <></>
+        ) : (
+          <>
+            <LeftBar />
+            <RightBar />
+          </>
+        )
       ) : (
         <></>
       )}
