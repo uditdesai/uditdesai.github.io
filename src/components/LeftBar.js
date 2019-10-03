@@ -37,6 +37,9 @@ const NavigationTitle = styled.h1`
   margin: 40px 0 10px 0;
   padding-bottom: 3px;
   border-bottom: 5px solid #000;
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
   @media (max-height: 700px) {
     font-size: 16px;
   }
@@ -93,6 +96,9 @@ const SocialTitle = styled.h1`
   margin: 0 0 10px 0;
   padding-bottom: 3px;
   border-bottom: 5px solid #000;
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
   @media (max-height: 700px) {
     font-size: 16px;
   }
@@ -147,6 +153,9 @@ const CurrentlyTitle = styled.h1`
   margin: 0 0 10px 0;
   padding-bottom: 3px;
   border-bottom: 5px solid #000;
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
   @media (max-height: 700px) {
     font-size: 16px;
   }

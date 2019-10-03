@@ -120,6 +120,9 @@ const CreditTitle = styled.h1`
   margin: 0;
   padding-top: 7px;
   border-top: 5px solid #000;
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
   @media (max-height: 720px) {
     font-size: 16px;
   }
