@@ -7,6 +7,7 @@ import useWindowSize from "../hooks/useWindowSize"
 import LeftBar from "../components/LeftBar"
 import RightBar from "../components/RightBar"
 import BottomBar from "../components/BottomBar"
+import SkillTag from "../components/SkillTag"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
@@ -116,17 +117,21 @@ const PortfolioInnerTitle = styled.h3`
   color: black;
   margin: 0 0 0 10px;
 `
-const SkillsTitle = styled.h5`
-  font-family: "Heebo-Bold";
-  font-size: 24px;
-  color: black;
-  margin: 30px 0 0 0;
+const SkillsSectionContainer = styled.div`
+  width: 100%;
+  margin: 0 0 30px 0;
 `
 const SkillsContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: flex-start;
   align-items: center;
+`
+const SkillsTitle = styled.h5`
+  font-family: "Heebo-Bold";
+  font-size: 24px;
+  color: black;
+  margin: 30px 0 0 0;
 `
 
 const v2 = () => {
@@ -177,12 +182,39 @@ const v2 = () => {
             <PortfolioInnerTitleLine></PortfolioInnerTitleLine>
             <PortfolioInnerTitle>SKILLS</PortfolioInnerTitle>
           </PortfolioInnerTitleContainer>
-          <SkillsTitle>Languages</SkillsTitle>
-          <SkillsContainer></SkillsContainer>
-          <SkillsTitle>Technologies</SkillsTitle>
-          <SkillsContainer></SkillsContainer>
-          <SkillsTitle>Design</SkillsTitle>
-          <SkillsContainer></SkillsContainer>
+          <SkillsSectionContainer>
+            <SkillsTitle>Languages</SkillsTitle>
+            <SkillsContainer>
+              <SkillTag name="HTML" />
+              <SkillTag name="CSS" />
+              <SkillTag name="Javascript" />
+              <SkillTag name="Python" />
+              <SkillTag name="C++/C" />
+            </SkillsContainer>
+            <SkillsTitle>Technologies</SkillsTitle>
+            <SkillsContainer>
+              <SkillTag name="React" />
+              <SkillTag name="GatsbyJS" />
+              <SkillTag name="Node" />
+              <SkillTag name="MongoDB" />
+              <SkillTag name="Firebase" />
+              <SkillTag name="Git" />
+            </SkillsContainer>
+            <SkillsContainer>
+              <SkillTag name="GSAP" />
+              <SkillTag name="ThreeJS" />
+              <SkillTag name="OpenCV" />
+              <SkillTag name="Heroku" />
+              <SkillTag name="JIRA" />
+              <SkillTag name="VScode" />
+            </SkillsContainer>
+            <SkillsTitle>Design</SkillsTitle>
+            <SkillsContainer>
+              <SkillTag name="Figma" />
+              <SkillTag name="Sketch" />
+              <SkillTag name="Wireframes" />
+            </SkillsContainer>
+          </SkillsSectionContainer>
         </PortfolioContainer>
       </ContentContainer>
     </Container>
