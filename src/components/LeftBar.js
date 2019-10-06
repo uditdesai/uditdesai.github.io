@@ -2,9 +2,6 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { TweenMax, TimelineMax } from "gsap/all"
 
-import shoeDog from "../assets/shoe-dog.jpg"
-import goodPlace from "../assets/good-place.jpg"
-
 //LEFT BAR CONTAINER
 const LeftContainer = styled.div`
   margin: 0;
