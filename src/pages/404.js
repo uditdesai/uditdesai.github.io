@@ -3,6 +3,10 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../assets/logo.jpg"
 import { TweenMax, TimelineMax } from "gsap/all"
+import favicon16 from "../assets/favicon16.png"
+import favicon32 from "../assets/favicon32.png"
+import favicon64 from "../assets/favicon64.png"
+import { Helmet } from "react-helmet"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
@@ -26,11 +30,39 @@ const App = () => {
   }, [])
 
   return (
-    <Container id="container">
-      <Link to="/">
-        <CreditLogo src={Logo}></CreditLogo>
-      </Link>
-    </Container>
+    <>
+      <Helmet
+        meta={[
+          { name: "description", content: "Udit Desai - Developer" },
+          { name: "keywords", content: "developer" },
+        ]}
+        link={[
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "16x16",
+            href: `${favicon16}`,
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "32x32",
+            href: `${favicon32}`,
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "64x64",
+            href: `${favicon64}`,
+          },
+        ]}
+      ></Helmet>
+      <Container id="container">
+        <Link to="/">
+          <CreditLogo src={Logo}></CreditLogo>
+        </Link>
+      </Container>
+    </>
   )
 }
 

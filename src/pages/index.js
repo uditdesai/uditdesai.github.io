@@ -5,6 +5,9 @@ import { Helmet } from "react-helmet"
 import useWindowSize from "../hooks/useWindowSize"
 import Portfolio from "../components/Portfolio"
 import Logo from "../assets/logo.jpg"
+import favicon16 from "../assets/favicon16.png"
+import favicon32 from "../assets/favicon32.png"
+import favicon64 from "../assets/favicon64.png"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
@@ -109,93 +112,124 @@ const App = () => {
   }, [])
 
   return (
-    <Container id="container">
-      <ContentContainer>
-        <Introduction>
-          Hey. I’m a full-stack developer passionate about creating digital
-          experiences on the web and using new technologies to build projects
-          that make life easier and more fun.
-        </Introduction>
-        <Introduction>
-          I’m currently an undergraduate student at The University of Toronto
-          studying computer engineering. I also work at HXOUSE to build new
-          programming and curriculum a long with working on technical projects.
-        </Introduction>
-        <Portfolio></Portfolio>
-        <Conclusion>
-          <LinkContainer>
-            <SLink
-              href="https://drive.google.com/file/d/1t5UnaVPL3HoxOMG1N_A36pX1UAQx5Ihu/view"
-              target="_blank"
-              id="link1"
-              onMouseEnter={() => {
-                hoverLink(1)
-              }}
-              onMouseLeave={() => {
-                hoverLinkBack(1)
-              }}
-            >
-              RESUME
-            </SLink>
-            <SLink
-              href="https://github.com/uditdesai"
-              target="_blank"
-              id="link2"
-              onMouseEnter={() => {
-                hoverLink(2)
-              }}
-              onMouseLeave={() => {
-                hoverLinkBack(2)
-              }}
-            >
-              GITHUB
-            </SLink>
-            <SLink
-              href="https://www.instagram.com/uydesai/?hl=en"
-              target="_blank"
-              id="link3"
-              onMouseEnter={() => {
-                hoverLink(3)
-              }}
-              onMouseLeave={() => {
-                hoverLinkBack(3)
-              }}
-            >
-              INSTAGRAM
-            </SLink>
-            <SLink
-              href="https://www.linkedin.com/in/uditdesai/"
-              target="_blank"
-              id="link4"
-              onMouseEnter={() => {
-                hoverLink(4)
-              }}
-              onMouseLeave={() => {
-                hoverLinkBack(4)
-              }}
-            >
-              LINKEDIN
-            </SLink>
-            <SLink
-              href="mailto:udit.desai3@gmail.com?subject=Hey Udit!"
-              id="link5"
-              onMouseEnter={() => {
-                hoverLink(5)
-              }}
-              onMouseLeave={() => {
-                hoverLinkBack(5)
-              }}
-            >
-              EMAIL
-            </SLink>
-          </LinkContainer>
-          <CreditContainer>
-            <CreditTag>UDIT DESAI - TORONTO 2019</CreditTag>
-            <CreditLogo src={Logo}></CreditLogo>
-          </CreditContainer>
-        </Conclusion>
-      </ContentContainer>
-    </Container>
+    <>
+      <Helmet
+        meta={[
+          { name: "description", content: "Udit Desai - Developer" },
+          { name: "keywords", content: "developer" },
+        ]}
+        link={[
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "16x16",
+            href: `${favicon16}`,
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "32x32",
+            href: `${favicon32}`,
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "64x64",
+            href: `${favicon64}`,
+          },
+        ]}
+      >
+        <title>Udit Desai</title>
+      </Helmet>
+      <Container id="container">
+        <ContentContainer>
+          <Introduction>
+            Hey. I’m a full-stack developer passionate about creating digital
+            experiences on the web and using new technologies to build projects
+            that make life easier and more fun.
+          </Introduction>
+          <Introduction>
+            I’m currently an undergraduate student at The University of Toronto
+            studying computer engineering. I also work at HXOUSE to build new
+            programming and curriculum a long with working on technical
+            projects.
+          </Introduction>
+          <Portfolio></Portfolio>
+          <Conclusion>
+            <LinkContainer>
+              <SLink
+                href="https://drive.google.com/file/d/1t5UnaVPL3HoxOMG1N_A36pX1UAQx5Ihu/view"
+                target="_blank"
+                id="link1"
+                onMouseEnter={() => {
+                  hoverLink(1)
+                }}
+                onMouseLeave={() => {
+                  hoverLinkBack(1)
+                }}
+              >
+                RESUME
+              </SLink>
+              <SLink
+                href="https://github.com/uditdesai"
+                target="_blank"
+                id="link2"
+                onMouseEnter={() => {
+                  hoverLink(2)
+                }}
+                onMouseLeave={() => {
+                  hoverLinkBack(2)
+                }}
+              >
+                GITHUB
+              </SLink>
+              <SLink
+                href="https://www.instagram.com/uydesai/?hl=en"
+                target="_blank"
+                id="link3"
+                onMouseEnter={() => {
+                  hoverLink(3)
+                }}
+                onMouseLeave={() => {
+                  hoverLinkBack(3)
+                }}
+              >
+                INSTAGRAM
+              </SLink>
+              <SLink
+                href="https://www.linkedin.com/in/uditdesai/"
+                target="_blank"
+                id="link4"
+                onMouseEnter={() => {
+                  hoverLink(4)
+                }}
+                onMouseLeave={() => {
+                  hoverLinkBack(4)
+                }}
+              >
+                LINKEDIN
+              </SLink>
+              <SLink
+                href="mailto:udit.desai3@gmail.com?subject=Hey Udit!"
+                id="link5"
+                onMouseEnter={() => {
+                  hoverLink(5)
+                }}
+                onMouseLeave={() => {
+                  hoverLinkBack(5)
+                }}
+              >
+                EMAIL
+              </SLink>
+            </LinkContainer>
+            <CreditContainer>
+              <CreditTag>UDIT DESAI - TORONTO 2019</CreditTag>
+              <CreditLogo src={Logo}></CreditLogo>
+            </CreditContainer>
+          </Conclusion>
+        </ContentContainer>
+      </Container>
+    </>
   )
 }
 
