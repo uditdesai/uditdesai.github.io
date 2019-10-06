@@ -22,6 +22,12 @@ const ContentContainer = styled.div`
   height: 100%;
   margin: 0 auto 0 auto;
   padding: 0;
+  @media (max-width: 800px) {
+    width: 85%;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `
 //HOME SCREEN
 const StartContainer = styled.div`
@@ -31,18 +37,25 @@ const StartContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  @media (max-width: 500px) {
+    margin: 30px auto 0 auto;
+    width: 85%;
+  }
 `
 const Greeting = styled.h1`
   font-family: "Hind";
   font-size: 140px;
   color: black;
   margin: 0 0 0 -6px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   -webkit-text-fill-color: black; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 5px;
   -webkit-text-stroke-color: black;
   @media (max-width: 1000px) {
     font-size: 120px;
+  }
+  @media (max-width: 500px) {
+    font-size: 80px;
   }
 `
 const Introduction = styled.h2`
@@ -54,6 +67,9 @@ const Introduction = styled.h2`
   @media (max-width: 1000px) {
     font-size: 40px;
   }
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
 `
 const ColorPicker = styled.div`
   width: 100%;
@@ -62,18 +78,50 @@ const ColorPicker = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 1200px) {
+    height: 100px;
+  }
+  @media (max-width: 1000px) {
+    height: 80px;
+  }
+  @media (max-width: 800px) {
+    height: 60px;
+  }
+  @media (max-width: 500px) {
+    margin: 40px 0 0 0;
+    height: 120px;
+    width: 180px;
+    display: grid;
+    grid-template-columns: 60px 60px 60px;
+    grid-template-rows: 60px 60px;
+  }
 `
 const ColorBox = styled.div`
   width: 120px;
   height: 120px;
   background: ${props => `${props.color}`};
   margin: 0;
+  @media (max-width: 1200px) {
+    height: 100px;
+    width: 100px;
+  }
+  @media (max-width: 1000px) {
+    height: 80px;
+    width: 80px;
+  }
+  @media (max-width: 800px) {
+    height: 60px;
+    width: 60px;
+  }
 `
 const ColorUnderline = styled.div`
   width: 120px;
   height: 5px;
   background: #000;
   margin: 20px 0 0 0;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `
 //PORTFOLIO SCREEN
 const PortfolioContainer = styled.div`
@@ -83,11 +131,15 @@ const PortfolioContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  @media (max-width: 500px) {
+    margin: 100px auto 0 auto;
+    width: 85%;
+  }
 `
 const PortfolioTitle = styled.h1`
   font-family: "Hind";
   font-size: 120px;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   color: black;
   margin: 0 0 0 -6px;
   -webkit-text-fill-color: black; /* Will override color (regardless of order) */
@@ -98,6 +150,13 @@ const PortfolioTitle = styled.h1`
   }
   @media (max-width: 1000px) {
     font-size: 80px;
+  }
+  @media (max-width: 800px) {
+    font-size: 64px;
+  }
+  @media (max-width: 500px) {
+    font-size: 45px;
+    margin: 0 0 0 0;
   }
 `
 const PortfolioInnerTitleContainer = styled.div`
@@ -110,28 +169,62 @@ const PortfolioInnerTitleLine = styled.div`
   height: 28px;
   background: black;
   margin-bottom: 4px;
+  @media (max-width: 800px) {
+    height: 22px;
+  }
+  @media (max-width: 500px) {
+    height: 15px;
+    margin-bottom: 3px;
+  }
 `
 const PortfolioInnerTitle = styled.h3`
   font-family: "Heebo-Bold";
   font-size: 40px;
   color: black;
   margin: 0 0 0 10px;
+  @media (max-width: 800px) {
+    font-size: 28px;
+  }
+  @media (max-width: 500px) {
+    font-size: 20px;
+    margin: 0 0 0 5px;
+  }
 `
 const SkillsSectionContainer = styled.div`
   width: 100%;
   margin: 0 0 30px 0;
 `
 const SkillsContainer = styled.div`
-  display: flex;
+  display: grid;
   width: 100%;
-  justify-content: flex-start;
-  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `
 const SkillsTitle = styled.h5`
   font-family: "Heebo-Bold";
-  font-size: 24px;
+  font-size: 20px;
   color: black;
-  margin: 30px 0 0 0;
+  margin: 20px 0 0 0;
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 `
 
 const v2 = () => {
@@ -199,8 +292,6 @@ const v2 = () => {
               <SkillTag name="MongoDB" />
               <SkillTag name="Firebase" />
               <SkillTag name="Git" />
-            </SkillsContainer>
-            <SkillsContainer>
               <SkillTag name="GSAP" />
               <SkillTag name="ThreeJS" />
               <SkillTag name="OpenCV" />
