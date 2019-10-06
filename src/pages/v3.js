@@ -14,9 +14,11 @@ const Container = styled.div`
 `
 const ContentContainer = styled.div`
   width: 600px;
-  margin: 100px auto 0 auto;
+  padding: 100px 0 0 0;
+  margin: 0 auto 0 auto;
   @media (max-width: 600px) {
-    margin: 50px auto 0 auto;
+    padding: 50px 0 0 0;
+    margin: 0 auto 0 auto;
     width: 300px;
   }
 `
@@ -73,6 +75,34 @@ const v3 = () => {
   // width and height of screen
   const { width, height } = useWindowSize()
 
+  const hoverLink = linkNum => {
+    if (linkNum === 1) {
+      TweenMax.to("#link1", 0.5, { color: "#828282" })
+    } else if (linkNum === 2) {
+      TweenMax.to("#link2", 0.5, { color: "#828282" })
+    } else if (linkNum === 3) {
+      TweenMax.to("#link3", 0.5, { color: "#828282" })
+    } else if (linkNum === 4) {
+      TweenMax.to("#link4", 0.5, { color: "#828282" })
+    } else if (linkNum === 5) {
+      TweenMax.to("#link5", 0.5, { color: "#828282" })
+    }
+  }
+
+  const hoverLinkBack = linkNum => {
+    if (linkNum === 1) {
+      TweenMax.to("#link1", 0.5, { color: "black" })
+    } else if (linkNum === 2) {
+      TweenMax.to("#link2", 0.5, { color: "black" })
+    } else if (linkNum === 3) {
+      TweenMax.to("#link3", 0.5, { color: "black" })
+    } else if (linkNum === 4) {
+      TweenMax.to("#link4", 0.5, { color: "black" })
+    } else if (linkNum === 5) {
+      TweenMax.to("#link5", 0.5, { color: "black" })
+    }
+  }
+
   return (
     <Container>
       <ContentContainer>
@@ -92,25 +122,65 @@ const v3 = () => {
             <SLink
               href="https://drive.google.com/file/d/1t5UnaVPL3HoxOMG1N_A36pX1UAQx5Ihu/view"
               target="_blank"
+              id="link1"
+              onMouseEnter={() => {
+                hoverLink(1)
+              }}
+              onMouseLeave={() => {
+                hoverLinkBack(1)
+              }}
             >
               RESUME
             </SLink>
-            <SLink href="https://github.com/uditdesai" target="_blank">
+            <SLink
+              href="https://github.com/uditdesai"
+              target="_blank"
+              id="link2"
+              onMouseEnter={() => {
+                hoverLink(2)
+              }}
+              onMouseLeave={() => {
+                hoverLinkBack(2)
+              }}
+            >
               GITHUB
             </SLink>
             <SLink
               href="https://www.instagram.com/uydesai/?hl=en"
               target="_blank"
+              id="link3"
+              onMouseEnter={() => {
+                hoverLink(3)
+              }}
+              onMouseLeave={() => {
+                hoverLinkBack(3)
+              }}
             >
               INSTAGRAM
             </SLink>
             <SLink
               href="https://www.linkedin.com/in/uditdesai/"
               target="_blank"
+              id="link4"
+              onMouseEnter={() => {
+                hoverLink(4)
+              }}
+              onMouseLeave={() => {
+                hoverLinkBack(4)
+              }}
             >
               LINKEDIN
             </SLink>
-            <SLink href="mailto:udit.desai3@gmail.com?subject=Hey Udit!">
+            <SLink
+              href="mailto:udit.desai3@gmail.com?subject=Hey Udit!"
+              id="link5"
+              onMouseEnter={() => {
+                hoverLink(5)
+              }}
+              onMouseLeave={() => {
+                hoverLinkBack(5)
+              }}
+            >
               EMAIL
             </SLink>
           </LinkContainer>
