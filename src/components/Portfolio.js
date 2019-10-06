@@ -90,63 +90,129 @@ const Portfolio = () => {
   // width and height of screen
   const { width, height } = useWindowSize()
 
+  const invert = secNum => {
+    if (secNum === 1) {
+      TweenMax.to("#firstSection", 0.5, { backgroundColor: "black" })
+      TweenMax.to(".text1", 0.5, { color: "white" })
+    } else if (secNum === 2) {
+      TweenMax.to("#secondSection", 0.5, { backgroundColor: "black" })
+      TweenMax.to(".text2", 0.5, { color: "white" })
+    } else if (secNum === 3) {
+      TweenMax.to("#thirdSection", 0.5, { backgroundColor: "black" })
+      TweenMax.to(".text3", 0.5, { color: "white" })
+    }
+  }
+
+  const invertBack = secNum => {
+    if (secNum === 1) {
+      TweenMax.to("#firstSection", 0.5, { backgroundColor: "white" })
+      TweenMax.to(".text1", 0.5, { color: "black" })
+    } else if (secNum === 2) {
+      TweenMax.to("#secondSection", 0.5, { backgroundColor: "white" })
+      TweenMax.to(".text2", 0.5, { color: "black" })
+    } else if (secNum === 3) {
+      TweenMax.to("#thirdSection", 0.5, { backgroundColor: "white" })
+      TweenMax.to(".text3", 0.5, { color: "black" })
+    }
+  }
+
   return (
     <>
       {width > 800 ? (
-        <Tilt options={{ max: 15 }}>
+        <Tilt options={{ max: 20 }}>
           <Container>
-            <ContentContainer right>
-              <SectionTitle>DIGITAL WORK</SectionTitle>
-              <DigitalHeading href="https://www.hxouse.com" target="_blank">
+            <ContentContainer
+              right
+              id="firstSection"
+              onMouseEnter={() => {
+                invert(1)
+              }}
+              onMouseLeave={() => {
+                invertBack(1)
+              }}
+            >
+              <SectionTitle className="text1">DIGITAL WORK</SectionTitle>
+              <DigitalHeading
+                className="text1"
+                href="https://www.hxouse.com"
+                target="_blank"
+              >
                 HXOUSE.com
               </DigitalHeading>
-              <DigitalSubheading>
+              <DigitalSubheading className="text1">
                 New immersive, content-filled website
               </DigitalSubheading>
-              {/* <DigitalHeading href="">deltawave</DigitalHeading>
-        <DigitalSubheading>
+              {/* <DigitalHeading className="text1" href="">deltawave</DigitalHeading>
+        <DigitalSubheading className="text1">
           Digital album listening experience
         </DigitalSubheading> */}
             </ContentContainer>
-            <ContentContainer right>
-              <SectionTitle>EXPERIENCE</SectionTitle>
-              <ExperienceHeading href="https://www.hxouse.com" target="_blank">
+            <ContentContainer
+              right
+              id="secondSection"
+              onMouseEnter={() => {
+                invert(2)
+              }}
+              onMouseLeave={() => {
+                invertBack(2)
+              }}
+            >
+              <SectionTitle className="text2">EXPERIENCE</SectionTitle>
+              <ExperienceHeading
+                className="text2"
+                href="https://www.hxouse.com"
+                target="_blank"
+              >
                 HXOUSE - <p>Developer + Program Director</p>
               </ExperienceHeading>
               <ExperienceHeading
+                className="text2"
                 href="https://www.tangerine.ca/en"
                 target="_blank"
               >
                 Tangerine - <p>Frontend Developer Intern</p>
               </ExperienceHeading>
               <ExperienceHeading
+                className="text2"
                 href="http://projectcipher.io/"
                 target="_blank"
               >
                 Cipher - <p>Co-founder</p>
               </ExperienceHeading>
             </ContentContainer>
-            <ContentContainer>
-              <SectionTitle>PROJECTS</SectionTitle>
+            <ContentContainer
+              id="thirdSection"
+              onMouseEnter={() => {
+                invert(3)
+              }}
+              onMouseLeave={() => {
+                invertBack(3)
+              }}
+            >
+              <SectionTitle className="text3">PROJECTS</SectionTitle>
               <ExperienceHeading
+                className="text3"
                 href="https://devpost.com/software/paper-piano-8yzaw9"
                 target="_blank"
               >
                 Paper Piano
               </ExperienceHeading>
               <ExperienceHeading
+                className="text3"
                 href="https://github.com/uditdesai/clout-jar"
                 target="_blank"
               >
                 Cloutjar
               </ExperienceHeading>
               <ExperienceHeading
+                className="text3"
                 href="https://github.com/uditdesai/map-app"
                 target="_blank"
               >
                 Mapping application
               </ExperienceHeading>
               <ExperienceHeading
+                className="text3"
                 href="https://github.com/uditdesai/jukebox"
                 target="_blank"
               >
