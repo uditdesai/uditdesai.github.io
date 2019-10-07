@@ -8,6 +8,7 @@ import Logo from "../assets/logo.jpg"
 import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
+import Tilt from "react-tilt"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
@@ -224,7 +225,9 @@ const App = () => {
             </LinkContainer>
             <CreditContainer>
               <CreditTag>UDIT DESAI - TORONTO 2019</CreditTag>
-              <CreditLogo src={Logo}></CreditLogo>
+              <Tilt options={{ max: 45 }}>
+                <CreditLogo src={Logo}></CreditLogo>
+              </Tilt>
             </CreditContainer>
           </Conclusion>
         </ContentContainer>

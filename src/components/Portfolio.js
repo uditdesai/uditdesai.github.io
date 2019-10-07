@@ -5,7 +5,7 @@ import useWindowSize from "../hooks/useWindowSize"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
-  margin: 30px 0 20px 0;
+  margin: 20px 0 20px 0;
   padding: 0;
   width: 100%;
   height: 200px;
