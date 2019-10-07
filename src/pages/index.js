@@ -152,8 +152,7 @@ const App = () => {
           <Introduction>
             I’m currently an undergraduate student at The University of Toronto
             studying computer engineering. I also work at HXOUSE to build new
-            programming and curriculum a long with working on technical
-            projects.
+            programming and curriculum along with working on technical projects.
           </Introduction>
           <Portfolio></Portfolio>
           <Conclusion>
