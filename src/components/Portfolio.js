@@ -161,7 +161,7 @@ const Portfolio = () => {
   return (
     <>
       {width > 800 ? (
-        <Tilt options={{ max: 20 }}>
+        <Tilt options={{ max: 20 }} style={{ height: 200, width: 600 }}>
           <Container>
             <ContentContainer
               right
