@@ -108,6 +108,7 @@ const App = () => {
   }
 
   useEffect(() => {
+    console.log("is this working?")
     TweenMax.to("#container", 2, { opacity: 1 })
   }, [])
 

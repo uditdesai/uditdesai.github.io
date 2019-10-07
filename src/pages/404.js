@@ -14,11 +14,11 @@ const Container = styled.div`
   padding: 0;
   width: 100%;
   height: 100%;
-  opacity: 0;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 `
 const CreditLogo = styled.img`
   width: 100px;
