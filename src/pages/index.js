@@ -108,7 +108,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    TweenMax.to("#container", 2, { autoAlpha: 1 })
+    TweenMax.to("#container", 2, { opacity: 1 })
   }, [])
 
   return (
