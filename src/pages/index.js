@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
-import { TweenMax, TimelineMax } from "gsap/all"
+import { TweenMax, TimelineMax } from "gsap"
 import { Helmet } from "react-helmet"
 import useWindowSize from "../hooks/useWindowSize"
 import Portfolio from "../components/Portfolio"
@@ -108,8 +108,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    console.log("is this working?")
-    TweenMax.to("#container", 2, { opacity: 1 })
+    TweenMax.to("#container", 2, { autoAlpha: 1 })
   }, [])
 
   return (

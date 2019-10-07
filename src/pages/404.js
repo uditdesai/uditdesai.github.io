@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../assets/logo.jpg"
-import { TweenMax, TimelineMax } from "gsap/all"
+import { TweenMax, TimelineMax } from "gsap"
 import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
@@ -26,7 +26,7 @@ const CreditLogo = styled.img`
 
 const App = () => {
   useEffect(() => {
-    TweenMax.to("#container404", 2, { opacity: 1 })
+    TweenMax.to("#container404", 2, { autoAlpha: 1 })
   }, [])
 
   return (
