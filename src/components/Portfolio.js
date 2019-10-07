@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
-import { TweenMax, TimelineMax } from "gsap/all"
+import { TweenMax, TimelineMax } from "gsap"
 import useWindowSize from "../hooks/useWindowSize"
 import Tilt from "react-tilt"
 
