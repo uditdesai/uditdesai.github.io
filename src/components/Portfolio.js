@@ -2,15 +2,10 @@ import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { TweenMax, TimelineMax } from "gsap"
 import useWindowSize from "../hooks/useWindowSize"
-import Tilt from "react-tilt"
-
-const TiltContainer = styled(Tilt)`
-  width: 100%;
-  margin: 20px 0 20px 0;
-`
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
+  margin: 20px 0 20px 0;
   padding: 0;
   width: 100%;
   height: 200px;
@@ -164,323 +159,162 @@ const Portfolio = () => {
 
   return (
     <>
-      {width > 800 ? (
-        <TiltContainer options={{ max: 10, perspective: 1000, scale: 1 }}>
-          <Container>
-            <ContentContainer
-              right
-              id="firstSection"
-              onMouseEnter={() => {
-                invert(1)
-              }}
-              onMouseLeave={() => {
-                invertBack(1)
-              }}
-            >
-              <SectionTitle className="text1">DIGITAL WORK</SectionTitle>
-              <DigitalHeading
-                className="text1"
-                href="https://www.hxouse.com"
-                target="_blank"
-                id="workLink1"
-                onMouseEnter={() => {
-                  hoverWorkLink(1)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(1)
-                }}
-              >
-                HXOUSE.com
-              </DigitalHeading>
-              <DigitalSubheading className="text1" id="workDesc1">
-                New immersive, content-filled website
-              </DigitalSubheading>
-              {/* <DigitalHeading className="text1" href="">deltawave</DigitalHeading>
+      <Container>
+        <ContentContainer
+          right
+          id="firstSection"
+          onMouseEnter={() => {
+            invert(1)
+          }}
+          onMouseLeave={() => {
+            invertBack(1)
+          }}
+        >
+          <SectionTitle className="text1">DIGITAL WORK</SectionTitle>
+          <DigitalHeading
+            className="text1"
+            href="https://www.hxouse.com"
+            target="_blank"
+            id="workLink1"
+            onMouseEnter={() => {
+              hoverWorkLink(1)
+            }}
+            onMouseLeave={() => {
+              hoverWorkLinkBack(1)
+            }}
+          >
+            HXOUSE.com
+          </DigitalHeading>
+          <DigitalSubheading className="text1" id="workDesc1">
+            New immersive, content-filled website
+          </DigitalSubheading>
+          {/* <DigitalHeading className="text1" href="">deltawave</DigitalHeading>
         <DigitalSubheading className="text1">
           Digital album listening experience
         </DigitalSubheading> */}
-            </ContentContainer>
-            <ContentContainer
-              right
-              id="secondSection"
-              onMouseEnter={() => {
-                invert(2)
-              }}
-              onMouseLeave={() => {
-                invertBack(2)
-              }}
-            >
-              <SectionTitle className="text2">EXPERIENCE</SectionTitle>
-              <ExperienceHeading
-                className="text2"
-                href="https://www.hxouse.com"
-                target="_blank"
-                id="workLink2"
-                onMouseEnter={() => {
-                  hoverWorkLink(2)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(2)
-                }}
-              >
-                HXOUSE - <p>Developer + Program Director</p>
-              </ExperienceHeading>
-              <ExperienceHeading
-                className="text2"
-                href="https://www.tangerine.ca/en"
-                target="_blank"
-                id="workLink3"
-                onMouseEnter={() => {
-                  hoverWorkLink(3)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(3)
-                }}
-              >
-                Tangerine - <p>Frontend Developer Intern</p>
-              </ExperienceHeading>
-              <ExperienceHeading
-                className="text2"
-                href="http://projectcipher.io/"
-                target="_blank"
-                id="workLink4"
-                onMouseEnter={() => {
-                  hoverWorkLink(4)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(4)
-                }}
-              >
-                Cipher - <p>Co-founder</p>
-              </ExperienceHeading>
-            </ContentContainer>
-            <ContentContainer
-              id="thirdSection"
-              onMouseEnter={() => {
-                invert(3)
-              }}
-              onMouseLeave={() => {
-                invertBack(3)
-              }}
-            >
-              <SectionTitle className="text3">PROJECTS</SectionTitle>
-              <ExperienceHeading
-                className="text3"
-                href="https://devpost.com/software/paper-piano-8yzaw9"
-                target="_blank"
-                id="workLink5"
-                onMouseEnter={() => {
-                  hoverWorkLink(5)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(5)
-                }}
-              >
-                Paper Piano
-              </ExperienceHeading>
-              <ExperienceHeading
-                className="text3"
-                href="https://github.com/uditdesai/clout-jar"
-                target="_blank"
-                id="workLink6"
-                onMouseEnter={() => {
-                  hoverWorkLink(6)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(6)
-                }}
-              >
-                Cloutjar
-              </ExperienceHeading>
-              <ExperienceHeading
-                className="text3"
-                href="https://github.com/uditdesai/map-app"
-                target="_blank"
-                id="workLink7"
-                onMouseEnter={() => {
-                  hoverWorkLink(7)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(7)
-                }}
-              >
-                Mapping application
-              </ExperienceHeading>
-              <ExperienceHeading
-                className="text3"
-                href="https://github.com/uditdesai/jukebox"
-                target="_blank"
-                id="workLink8"
-                onMouseEnter={() => {
-                  hoverWorkLink(8)
-                }}
-                onMouseLeave={() => {
-                  hoverWorkLinkBack(8)
-                }}
-              >
-                Retro Boombox
-              </ExperienceHeading>
-            </ContentContainer>
-          </Container>
-        </TiltContainer>
-      ) : (
-        <Container>
-          <ContentContainer
-            right
-            id="firstSection"
+        </ContentContainer>
+        <ContentContainer
+          right
+          id="secondSection"
+          onMouseEnter={() => {
+            invert(2)
+          }}
+          onMouseLeave={() => {
+            invertBack(2)
+          }}
+        >
+          <SectionTitle className="text2">EXPERIENCE</SectionTitle>
+          <ExperienceHeading
+            className="text2"
+            href="https://www.hxouse.com"
+            target="_blank"
+            id="workLink2"
             onMouseEnter={() => {
-              invert(1)
+              hoverWorkLink(2)
             }}
             onMouseLeave={() => {
-              invertBack(1)
+              hoverWorkLinkBack(2)
             }}
           >
-            <SectionTitle className="text1">DIGITAL WORK</SectionTitle>
-            <DigitalHeading
-              className="text1"
-              href="https://www.hxouse.com"
-              target="_blank"
-              id="workLink1"
-              onMouseEnter={() => {
-                hoverWorkLink(1)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(1)
-              }}
-            >
-              HXOUSE.com
-            </DigitalHeading>
-            <DigitalSubheading className="text1" id="workDesc1">
-              New immersive, content-filled website
-            </DigitalSubheading>
-            {/* <DigitalHeading className="text1" href="">deltawave</DigitalHeading>
-        <DigitalSubheading className="text1">
-          Digital album listening experience
-        </DigitalSubheading> */}
-          </ContentContainer>
-          <ContentContainer
-            right
-            id="secondSection"
+            HXOUSE - <p>Developer + Program Director</p>
+          </ExperienceHeading>
+          <ExperienceHeading
+            className="text2"
+            href="https://www.tangerine.ca/en"
+            target="_blank"
+            id="workLink3"
             onMouseEnter={() => {
-              invert(2)
+              hoverWorkLink(3)
             }}
             onMouseLeave={() => {
-              invertBack(2)
+              hoverWorkLinkBack(3)
             }}
           >
-            <SectionTitle className="text2">EXPERIENCE</SectionTitle>
-            <ExperienceHeading
-              className="text2"
-              href="https://www.hxouse.com"
-              target="_blank"
-              id="workLink2"
-              onMouseEnter={() => {
-                hoverWorkLink(2)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(2)
-              }}
-            >
-              HXOUSE - <p>Developer + Program Director</p>
-            </ExperienceHeading>
-            <ExperienceHeading
-              className="text2"
-              href="https://www.tangerine.ca/en"
-              target="_blank"
-              id="workLink3"
-              onMouseEnter={() => {
-                hoverWorkLink(3)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(3)
-              }}
-            >
-              Tangerine - <p>Frontend Developer Intern</p>
-            </ExperienceHeading>
-            <ExperienceHeading
-              className="text2"
-              href="http://projectcipher.io/"
-              target="_blank"
-              id="workLink4"
-              onMouseEnter={() => {
-                hoverWorkLink(4)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(4)
-              }}
-            >
-              Cipher - <p>Co-founder</p>
-            </ExperienceHeading>
-          </ContentContainer>
-          <ContentContainer
-            id="thirdSection"
+            Tangerine - <p>Frontend Developer Intern</p>
+          </ExperienceHeading>
+          <ExperienceHeading
+            className="text2"
+            href="http://projectcipher.io/"
+            target="_blank"
+            id="workLink4"
             onMouseEnter={() => {
-              invert(3)
+              hoverWorkLink(4)
             }}
             onMouseLeave={() => {
-              invertBack(3)
+              hoverWorkLinkBack(4)
             }}
           >
-            <SectionTitle className="text3">PROJECTS</SectionTitle>
-            <ExperienceHeading
-              className="text3"
-              href="https://devpost.com/software/paper-piano-8yzaw9"
-              target="_blank"
-              id="workLink5"
-              onMouseEnter={() => {
-                hoverWorkLink(5)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(5)
-              }}
-            >
-              Paper Piano
-            </ExperienceHeading>
-            <ExperienceHeading
-              className="text3"
-              href="https://github.com/uditdesai/clout-jar"
-              target="_blank"
-              id="workLink6"
-              onMouseEnter={() => {
-                hoverWorkLink(6)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(6)
-              }}
-            >
-              Cloutjar
-            </ExperienceHeading>
-            <ExperienceHeading
-              className="text3"
-              href="https://github.com/uditdesai/map-app"
-              target="_blank"
-              id="workLink7"
-              onMouseEnter={() => {
-                hoverWorkLink(7)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(7)
-              }}
-            >
-              Mapping application
-            </ExperienceHeading>
-            <ExperienceHeading
-              className="text3"
-              href="https://github.com/uditdesai/jukebox"
-              target="_blank"
-              id="workLink8"
-              onMouseEnter={() => {
-                hoverWorkLink(8)
-              }}
-              onMouseLeave={() => {
-                hoverWorkLinkBack(8)
-              }}
-            >
-              Retro Boombox
-            </ExperienceHeading>
-          </ContentContainer>
-        </Container>
-      )}
+            Cipher - <p>Co-founder</p>
+          </ExperienceHeading>
+        </ContentContainer>
+        <ContentContainer
+          id="thirdSection"
+          onMouseEnter={() => {
+            invert(3)
+          }}
+          onMouseLeave={() => {
+            invertBack(3)
+          }}
+        >
+          <SectionTitle className="text3">PROJECTS</SectionTitle>
+          <ExperienceHeading
+            className="text3"
+            href="https://devpost.com/software/paper-piano-8yzaw9"
+            target="_blank"
+            id="workLink5"
+            onMouseEnter={() => {
+              hoverWorkLink(5)
+            }}
+            onMouseLeave={() => {
+              hoverWorkLinkBack(5)
+            }}
+          >
+            Paper Piano
+          </ExperienceHeading>
+          <ExperienceHeading
+            className="text3"
+            href="https://github.com/uditdesai/clout-jar"
+            target="_blank"
+            id="workLink6"
+            onMouseEnter={() => {
+              hoverWorkLink(6)
+            }}
+            onMouseLeave={() => {
+              hoverWorkLinkBack(6)
+            }}
+          >
+            Cloutjar
+          </ExperienceHeading>
+          <ExperienceHeading
+            className="text3"
+            href="https://github.com/uditdesai/map-app"
+            target="_blank"
+            id="workLink7"
+            onMouseEnter={() => {
+              hoverWorkLink(7)
+            }}
+            onMouseLeave={() => {
+              hoverWorkLinkBack(7)
+            }}
+          >
+            Mapping application
+          </ExperienceHeading>
+          <ExperienceHeading
+            className="text3"
+            href="https://github.com/uditdesai/jukebox"
+            target="_blank"
+            id="workLink8"
+            onMouseEnter={() => {
+              hoverWorkLink(8)
+            }}
+            onMouseLeave={() => {
+              hoverWorkLinkBack(8)
+            }}
+          >
+            Retro Boombox
+          </ExperienceHeading>
+        </ContentContainer>
+      </Container>
     </>
   )
 }
