@@ -34,6 +34,11 @@ const Introduction = styled.h1`
   line-height: 1.3;
   color: black;
 `
+
+const PortfolioTilt = styled.div`
+  transform: perspective(2000px);
+`
+
 const Conclusion = styled.div`
   width: 100%;
   display: flex;
@@ -79,6 +84,28 @@ const CreditLogo = styled.img`
 const App = () => {
   // width and height of screen
   const { width, height } = useWindowSize()
+
+  const updateMouse = e => {
+    let x = e.screenX
+    let y = e.screenY
+
+    if (x >= width / 2) {
+      x = x / 2
+    } else if (x < width / 2) {
+      x = (-1 * x + width / 2) * -1
+    }
+
+    if (y >= height / 2) {
+      y = y / 2
+    } else if (y < height / 2) {
+      y = (-1 * y + height / 2) * -1
+    }
+
+    TweenMax.to("#tiltPortfolio", 1, {
+      rotationY: x * 0.02,
+      rotationX: y * -0.04,
+    })
+  }
 
   const hoverLink = linkNum => {
     if (linkNum === 1) {
@@ -142,7 +169,16 @@ const App = () => {
       >
         <title>Udit Desai</title>
       </Helmet>
-      <Container id="container">
+      <Container
+        id="container"
+        onMouseMove={
+          width > 800
+            ? e => {
+                updateMouse(e)
+              }
+            : undefined
+        }
+      >
         <ContentContainer>
           <Introduction>
             Hey. I’m a full-stack developer passionate about creating digital
@@ -154,7 +190,9 @@ const App = () => {
             studying computer engineering. I also work at HXOUSE to build new
             programming and curriculum along with working on technical projects.
           </Introduction>
-          <Portfolio></Portfolio>
+          <PortfolioTilt id="tiltPortfolio">
+            <Portfolio></Portfolio>
+          </PortfolioTilt>
           <Conclusion>
             <LinkContainer>
               <SLink
