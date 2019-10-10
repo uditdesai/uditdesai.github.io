@@ -133,6 +133,9 @@ const Portfolio = () => {
       TweenMax.to("#workLink7", 0.5, { color: "#828282" })
     } else if (linkNum === 8) {
       TweenMax.to("#workLink8", 0.5, { color: "#828282" })
+    } else if (linkNum === 9) {
+      TweenMax.to("#workLink9", 0.5, { color: "#828282" })
+      TweenMax.to("#workDesc9", 0.5, { color: "#828282" })
     }
   }
 
@@ -154,6 +157,9 @@ const Portfolio = () => {
       TweenMax.to("#workLink7", 0.5, { color: "white" })
     } else if (linkNum === 8) {
       TweenMax.to("#workLink8", 0.5, { color: "white" })
+    } else if (linkNum === 9) {
+      TweenMax.to("#workLink9", 0.5, { color: "white" })
+      TweenMax.to("#workDesc9", 0.5, { color: "white" })
     }
   }
 
@@ -183,15 +189,28 @@ const Portfolio = () => {
               hoverWorkLinkBack(1)
             }}
           >
-            HXOUSE.com
+            HXOUSE
           </DigitalHeading>
           <DigitalSubheading className="text1" id="workDesc1">
             New immersive, content-filled website
           </DigitalSubheading>
-          {/* <DigitalHeading className="text1" href="">deltawave</DigitalHeading>
-        <DigitalSubheading className="text1">
-          Digital album listening experience
-        </DigitalSubheading> */}
+          <DigitalHeading
+            className="text1"
+            href="https://www.alyx.hxouse.com"
+            target="_blank"
+            id="workLink9"
+            onMouseEnter={() => {
+              hoverWorkLink(9)
+            }}
+            onMouseLeave={() => {
+              hoverWorkLinkBack(9)
+            }}
+          >
+            ALYX Growing Family
+          </DigitalHeading>
+          <DigitalSubheading className="text1" id="workDesc9">
+            Event site for HXOUSE x ALYX conference
+          </DigitalSubheading>
         </ContentContainer>
         <ContentContainer
           right

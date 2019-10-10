@@ -86,24 +86,12 @@ const App = () => {
   const { width, height } = useWindowSize()
 
   const updateMouse = e => {
-    let x = e.screenX
-    let y = e.screenY
-
-    if (x >= width / 2) {
-      x = x / 2
-    } else if (x < width / 2) {
-      x = (-1 * x + width / 2) * -1
-    }
-
-    if (y >= height / 2) {
-      y = y / 2
-    } else if (y < height / 2) {
-      y = (-1 * y + height / 2) * -1
-    }
+    let x = (e.clientX / width) * 2 - 1
+    let y = (e.clientY / height) * 2 - 1
 
     TweenMax.to("#tiltPortfolio", 1, {
-      rotationY: x * 0.02,
-      rotationX: y * -0.04,
+      rotationY: x * 20,
+      rotationX: y * -20,
     })
   }
 
