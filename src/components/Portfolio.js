@@ -306,7 +306,7 @@ const Portfolio = () => {
           </ExperienceHeading>
           <ExperienceHeading
             className="text3"
-            href="https://github.com/uditdesai/map-app"
+            href="https://devpost.com/software/cue-doisjy"
             target="_blank"
             id="workLink7"
             onMouseEnter={() => {
@@ -316,7 +316,7 @@ const Portfolio = () => {
               hoverWorkLinkBack(7)
             }}
           >
-            Mapping application
+            Cue
           </ExperienceHeading>
           <ExperienceHeading
             className="text3"
