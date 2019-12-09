@@ -9,7 +9,7 @@ import favicon64 from "../assets/favicon64.png"
 import { Helmet } from "react-helmet"
 
 //PARENT CONTAINER FOR WHOLE SITE
-const Container = styled.div`
+const DiffContainer = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
@@ -26,7 +26,7 @@ const CreditLogo = styled.img`
 
 const App = () => {
   useEffect(() => {
-    TweenMax.to("#container404", 2, { autoAlpha: 1 })
+    TweenMax.to("#container404", 2, { opacity: 1 })
   }, [])
 
   return (
@@ -57,11 +57,11 @@ const App = () => {
           },
         ]}
       ></Helmet>
-      <Container id="container404">
+      <DiffContainer id="container404">
         <Link to="/">
           <CreditLogo src={Logo}></CreditLogo>
         </Link>
-      </Container>
+      </DiffContainer>
     </>
   )
 }

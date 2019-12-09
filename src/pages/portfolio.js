@@ -124,19 +124,21 @@ const ComingSoon = styled.h1`
   width: 300px;
   text-align: center;
   margin: 250px auto 0px auto;
+  opacity: 0;
 
   @media (max-width: 600px) {
     margin-top: 150px;
   }
 `
 
-const App = () => {
+const portfolio = () => {
   // width and height of screen
   const { width, height } = useWindowSize()
 
   useEffect(() => {
     TweenMax.to("#leftBar", 2, { opacity: 1 })
     TweenMax.to("#rightBar", 2, { opacity: 1 })
+    TweenMax.to("#comingSoon", 2, { opacity: 1 })
   }, [])
 
   return (
@@ -183,9 +185,9 @@ const App = () => {
           <CreditLogo src={Logo} />
         </Tilt>
       </RightBar>
-      <ComingSoon>PORTFOLIO COMING SOON</ComingSoon>
+      <ComingSoon id="comingSoon">PORTFOLIO COMING SOON</ComingSoon>
     </>
   )
 }
 
-export default App
+export default portfolio

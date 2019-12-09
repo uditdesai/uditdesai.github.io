@@ -122,6 +122,9 @@ const Circle = styled.div`
   position: absolute;
   z-index: 10;
   transform: translateX(100px) translateY(50px);
+  @media (max-width: 800px) {
+    display: none;
+  }
 `
 
 const App = () => {
@@ -240,7 +243,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    TweenMax.to("#container", 2, { opacity: 1 })
+    TweenMax.to("#mainContainer", 2, { opacity: 1 })
   }, [])
 
   return (
@@ -273,31 +276,27 @@ const App = () => {
       >
         <title>Udit Desai</title>
       </Helmet>
-      {width > 800 && (
-        <>
-          <Circle id="circle1"></Circle>
-          <Circle id="circle2"></Circle>
-          <Circle id="circle3"></Circle>
-          <Circle id="circle4"></Circle>
-          <Circle id="circle5"></Circle>
-          <Circle id="circle6"></Circle>
-          <Circle id="circle7"></Circle>
-          <Circle id="circle8"></Circle>
-          <Circle id="circle9"></Circle>
-          <Circle id="circle10"></Circle>
-          <Circle id="circle11"></Circle>
-          <Circle id="circle12"></Circle>
-          <Circle id="circle13"></Circle>
-          <Circle id="circle14"></Circle>
-          <Circle id="circle15"></Circle>
-          <Circle id="circle16"></Circle>
-          <Circle id="circle17"></Circle>
-          <Circle id="circle18"></Circle>
-          <Circle id="circle19"></Circle>
-        </>
-      )}
+      <Circle id="circle1"></Circle>
+      <Circle id="circle2"></Circle>
+      <Circle id="circle3"></Circle>
+      <Circle id="circle4"></Circle>
+      <Circle id="circle5"></Circle>
+      <Circle id="circle6"></Circle>
+      <Circle id="circle7"></Circle>
+      <Circle id="circle8"></Circle>
+      <Circle id="circle9"></Circle>
+      <Circle id="circle10"></Circle>
+      <Circle id="circle11"></Circle>
+      <Circle id="circle12"></Circle>
+      <Circle id="circle13"></Circle>
+      <Circle id="circle14"></Circle>
+      <Circle id="circle15"></Circle>
+      <Circle id="circle16"></Circle>
+      <Circle id="circle17"></Circle>
+      <Circle id="circle18"></Circle>
+      <Circle id="circle19"></Circle>
       <Container
-        id="container"
+        id="mainContainer"
         onMouseMove={
           width > 800
             ? e => {
