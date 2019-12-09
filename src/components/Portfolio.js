@@ -1,338 +1,285 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
-import { TweenMax, TimelineMax } from "gsap"
+import { TweenMax, TimelineMax, Power0 } from "gsap"
 import useWindowSize from "../hooks/useWindowSize"
+import { withAssetPrefix } from "gatsby"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
-  margin: 20px 0 20px 0;
+  margin: 50px 0 55px 0;
   padding: 0;
-  width: 100%;
-  height: 200px;
-  display: grid;
-  grid-template-columns: 200px 200px 200px;
-  background: white;
-  @media (max-width: 600px) {
-    height: 600px;
-    grid-template-columns: 300px;
-    grid-template-rows: 200px 200px 200px;
-  }
-`
-const ContentContainer = styled.div`
-  border: 3px solid black;
-  border-right: ${props => (props.right ? "none" : "3px solid black")};
+  width: 600px;
+  height: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 200px;
-  @media (max-width: 600px) {
-    border: 3px solid black;
-    border-bottom: ${props => (props.right ? "none" : "3px solid black")};
-  }
-`
-const SectionTitle = styled.h1`
-  font-family: "Heebo-Bold";
-  font-size: 16px;
-  text-decoration: underline;
-  margin: 15px 0 15px 15px;
-  line-height: 1.2;
-  width: 170px;
-  color: black;
-  @media (max-width: 600px) {
-    width: 270px;
-  }
-`
-const DigitalHeading = styled.a`
-  font-family: "Roboto-Bold";
-  font-size: 14px;
-  margin: 0 0 5px 15px;
-  line-height: 1.2;
-  width: 170px;
-  color: black;
+  justify-content: center;
+  align-items: center;
+  background: white;
   text-decoration: none;
-  @media (max-width: 600px) {
-    width: 270px;
-  }
-`
-const DigitalSubheading = styled.p`
-  font-family: "Roboto-Regular";
-  font-size: 14px;
-  margin: 0 0 20px 15px;
-  line-height: 1.2;
-  width: 170px;
-  color: black;
-  @media (max-width: 600px) {
-    width: 270px;
-  }
-`
-const ExperienceHeading = styled.a`
-  font-family: "Roboto-Bold";
-  font-family: 700;
-  font-size: 14px;
-  margin: 0 0 20px 15px;
-  line-height: 1.2;
-  width: 170px;
-  color: black;
-  text-decoration: none;
-  @media (max-width: 600px) {
-    width: 270px;
-  }
 
-  p {
-    font-family: "Roboto-Regular";
-    display: inline;
+  @media screen and (max-width: 600px) {
+    width: 300px;
+    height: 75px;
+    margin: 30px 0 35px 0;
+  }
+`
+
+const Prism = styled.div`
+  width: 600px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-50px);
+
+  @media screen and (max-width: 600px) {
+    width: 300px;
+    height: 55px;
+  }
+`
+
+const PrismFaceFront = styled.div`
+  position: absolute;
+  width: 594px;
+  height: 100px;
+  transform: rotateY(0deg) translateZ(53px);
+  border: 3px solid black;
+  /* background: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    width: 294px;
+    height: 55px;
+    transform: rotateY(0deg) translateZ(30.5px);
+  }
+`
+
+const PrismFaceBack = styled.div`
+  position: absolute;
+  width: 594px;
+  height: 100px;
+  transform: rotateY(180deg) translateZ(53px) rotateZ(180deg);
+  border: 3px solid black;
+  /* background: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    width: 294px;
+    height: 55px;
+    transform: rotateY(180deg) translateZ(30.5px) rotateZ(180deg);
+  }
+`
+
+const PrismFaceTop = styled.div`
+  position: absolute;
+  width: 594px;
+  height: 100px;
+  transform: rotateX(90deg) translateZ(53px);
+  border: 3px solid black;
+  /* background: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    width: 294px;
+    height: 55px;
+    transform: rotateX(90deg) translateZ(30.5px);
+  }
+`
+
+const PrismFaceBottom = styled.div`
+  position: absolute;
+  width: 594px;
+  height: 100px;
+  transform: rotateX(-90deg) translateZ(53px);
+  border: 3px solid black;
+  /* background: black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    width: 294px;
+    height: 55px;
+    transform: rotateX(-90deg) translateZ(30.5px);
+  }
+`
+
+const PrismFaceRight = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform: rotateY(90deg) translateZ(547px);
+  border: 3px solid black;
+  /* background: white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 600px) {
+    transform: rotateY(90deg) translateZ(269px);
+    width: 55px;
+    height: 55px;
+  }
+`
+
+const PrismFaceLeft = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform: rotateY(-90deg) translateZ(53px);
+  border: 3px solid black;
+  /* background: white; */
+  @media screen and (max-width: 600px) {
+    transform: rotateY(-90deg) translateZ(30.5px);
+    width: 55px;
+    height: 55px;
+  }
+`
+
+const SectionTitle = styled.h1`
+  text-decoration: none;
+  font-family: "Heebo-Bold";
+  font-size: 54px;
+  line-height: 1.2;
+  letter-spacing: 20px;
+  color: ${props => `${props.color}`};
+
+  @media screen and (max-width: 600px) {
+    font-size: 24px;
+    letter-spacing: 10px;
   }
 `
 
 const Portfolio = () => {
   // width and height of screen
   const { width, height } = useWindowSize()
+  const [currRot, setCurrRot] = useState(10)
 
-  const invert = secNum => {
-    if (secNum === 1) {
-      TweenMax.to("#firstSection", 0.5, { backgroundColor: "black" })
-      TweenMax.to(".text1", 0.5, { color: "white" })
-    } else if (secNum === 2) {
-      TweenMax.to("#secondSection", 0.5, { backgroundColor: "black" })
-      TweenMax.to(".text2", 0.5, { color: "white" })
-    } else if (secNum === 3) {
-      TweenMax.to("#thirdSection", 0.5, { backgroundColor: "black" })
-      TweenMax.to(".text3", 0.5, { color: "white" })
-    }
+  useEffect(() => {
+    const tl = new TimelineMax({ repeat: -1 })
+    tl.to("#prism", 10, {
+      rotationX: "-= 360",
+      ease: Power0.easeNone,
+    })
+    tl.to(
+      "#portfolioText",
+      2,
+      {
+        color: "white",
+      },
+      "1"
+    )
+    tl.to(
+      "#portfolioText",
+      2,
+      {
+        color: "black",
+      },
+      "8"
+    )
+    tl.to(
+      "#backPortfolio",
+      2,
+      {
+        color: "white",
+      },
+      "6"
+    )
+    tl.to(
+      "#backPortfolio",
+      2,
+      {
+        color: "black",
+      },
+      "3"
+    )
+    tl.to(
+      "#digitalText",
+      2,
+      {
+        color: "black",
+      },
+      "0"
+    )
+    tl.to(
+      "#digitalText",
+      2,
+      {
+        color: "white",
+      },
+      "3"
+    )
+    tl.to(
+      "#fullstackText",
+      2,
+      {
+        color: "white",
+      },
+      "8"
+    )
+    tl.to(
+      "#fullstackText",
+      2,
+      {
+        color: "black",
+      },
+      "5"
+    )
+  }, [])
+
+  const hoverPortfolio = () => {
+    TweenMax.to("#faceFront", 0.5, { css: { border: "3px solid #828282" } })
+    TweenMax.to("#faceBack", 0.5, { css: { border: "3px solid #828282" } })
+    TweenMax.to("#faceTop", 0.5, { css: { border: "3px solid #828282" } })
+    TweenMax.to("#faceBottom", 0.5, { css: { border: "3px solid #828282" } })
+    TweenMax.to("#faceRight", 0.5, { css: { border: "3px solid #828282" } })
+    TweenMax.to("#faceLeft", 0.5, { css: { border: "3px solid #828282" } })
   }
 
-  const invertBack = secNum => {
-    if (secNum === 1) {
-      TweenMax.to("#firstSection", 0.5, { backgroundColor: "white" })
-      TweenMax.to(".text1", 0.5, { color: "black" })
-    } else if (secNum === 2) {
-      TweenMax.to("#secondSection", 0.5, { backgroundColor: "white" })
-      TweenMax.to(".text2", 0.5, { color: "black" })
-    } else if (secNum === 3) {
-      TweenMax.to("#thirdSection", 0.5, { backgroundColor: "white" })
-      TweenMax.to(".text3", 0.5, { color: "black" })
-    }
-  }
-
-  const hoverWorkLink = linkNum => {
-    if (linkNum === 1) {
-      TweenMax.to("#workLink1", 0.5, { color: "#828282" })
-      TweenMax.to("#workDesc1", 0.5, { color: "#828282" })
-    } else if (linkNum === 2) {
-      TweenMax.to("#workLink2", 0.5, { color: "#828282" })
-    } else if (linkNum === 3) {
-      TweenMax.to("#workLink3", 0.5, { color: "#828282" })
-    } else if (linkNum === 4) {
-      TweenMax.to("#workLink4", 0.5, { color: "#828282" })
-    } else if (linkNum === 5) {
-      TweenMax.to("#workLink5", 0.5, { color: "#828282" })
-    } else if (linkNum === 6) {
-      TweenMax.to("#workLink6", 0.5, { color: "#828282" })
-    } else if (linkNum === 7) {
-      TweenMax.to("#workLink7", 0.5, { color: "#828282" })
-    } else if (linkNum === 8) {
-      TweenMax.to("#workLink8", 0.5, { color: "#828282" })
-    } else if (linkNum === 9) {
-      TweenMax.to("#workLink9", 0.5, { color: "#828282" })
-      TweenMax.to("#workDesc9", 0.5, { color: "#828282" })
-    }
-  }
-
-  const hoverWorkLinkBack = linkNum => {
-    if (linkNum === 1) {
-      TweenMax.to("#workLink1", 0.5, { color: "white" })
-      TweenMax.to("#workDesc1", 0.5, { color: "white" })
-    } else if (linkNum === 2) {
-      TweenMax.to("#workLink2", 0.5, { color: "white" })
-    } else if (linkNum === 3) {
-      TweenMax.to("#workLink3", 0.5, { color: "white" })
-    } else if (linkNum === 4) {
-      TweenMax.to("#workLink4", 0.5, { color: "white" })
-    } else if (linkNum === 5) {
-      TweenMax.to("#workLink5", 0.5, { color: "white" })
-    } else if (linkNum === 6) {
-      TweenMax.to("#workLink6", 0.5, { color: "white" })
-    } else if (linkNum === 7) {
-      TweenMax.to("#workLink7", 0.5, { color: "white" })
-    } else if (linkNum === 8) {
-      TweenMax.to("#workLink8", 0.5, { color: "white" })
-    } else if (linkNum === 9) {
-      TweenMax.to("#workLink9", 0.5, { color: "white" })
-      TweenMax.to("#workDesc9", 0.5, { color: "white" })
-    }
+  const HoverPortfolioOut = () => {
+    TweenMax.to("#faceFront", 0.5, { css: { border: "3px solid black" } })
+    TweenMax.to("#faceBack", 0.5, { css: { border: "3px solid black" } })
+    TweenMax.to("#faceTop", 0.5, { css: { border: "3px solid black" } })
+    TweenMax.to("#faceBottom", 0.5, { css: { border: "3px solid black" } })
+    TweenMax.to("#faceRight", 0.5, { css: { border: "3px solid black" } })
+    TweenMax.to("#faceLeft", 0.5, { css: { border: "3px solid black" } })
   }
 
   return (
     <>
-      <Container>
-        <ContentContainer
-          right
-          id="firstSection"
-          onMouseEnter={() => {
-            invert(1)
-          }}
-          onMouseLeave={() => {
-            invertBack(1)
-          }}
-        >
-          <SectionTitle className="text1">DIGITAL WORK</SectionTitle>
-          <DigitalHeading
-            className="text1"
-            href="https://www.hxouse.com"
-            target="_blank"
-            id="workLink1"
-            onMouseEnter={() => {
-              hoverWorkLink(1)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(1)
-            }}
-          >
-            HXOUSE
-          </DigitalHeading>
-          <DigitalSubheading className="text1" id="workDesc1">
-            New immersive, content-filled website
-          </DigitalSubheading>
-          <DigitalHeading
-            className="text1"
-            href="https://www.alyx.hxouse.com"
-            target="_blank"
-            id="workLink9"
-            onMouseEnter={() => {
-              hoverWorkLink(9)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(9)
-            }}
-          >
-            ALYX Growing Family
-          </DigitalHeading>
-          <DigitalSubheading className="text1" id="workDesc9">
-            Event site for HXOUSE x ALYX conference
-          </DigitalSubheading>
-        </ContentContainer>
-        <ContentContainer
-          right
-          id="secondSection"
-          onMouseEnter={() => {
-            invert(2)
-          }}
-          onMouseLeave={() => {
-            invertBack(2)
-          }}
-        >
-          <SectionTitle className="text2">EXPERIENCE</SectionTitle>
-          <ExperienceHeading
-            className="text2"
-            href="https://www.hxouse.com"
-            target="_blank"
-            id="workLink2"
-            onMouseEnter={() => {
-              hoverWorkLink(2)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(2)
-            }}
-          >
-            HXOUSE - <p>Developer + Program Director</p>
-          </ExperienceHeading>
-          <ExperienceHeading
-            className="text2"
-            href="https://www.tangerine.ca/en"
-            target="_blank"
-            id="workLink3"
-            onMouseEnter={() => {
-              hoverWorkLink(3)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(3)
-            }}
-          >
-            Tangerine - <p>Frontend Developer Intern</p>
-          </ExperienceHeading>
-          <ExperienceHeading
-            className="text2"
-            href="http://projectcipher.io/"
-            target="_blank"
-            id="workLink4"
-            onMouseEnter={() => {
-              hoverWorkLink(4)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(4)
-            }}
-          >
-            Cipher - <p>Co-founder</p>
-          </ExperienceHeading>
-        </ContentContainer>
-        <ContentContainer
-          id="thirdSection"
-          onMouseEnter={() => {
-            invert(3)
-          }}
-          onMouseLeave={() => {
-            invertBack(3)
-          }}
-        >
-          <SectionTitle className="text3">PROJECTS</SectionTitle>
-          <ExperienceHeading
-            className="text3"
-            href="https://devpost.com/software/paper-piano-8yzaw9"
-            target="_blank"
-            id="workLink5"
-            onMouseEnter={() => {
-              hoverWorkLink(5)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(5)
-            }}
-          >
-            Paper Piano
-          </ExperienceHeading>
-          <ExperienceHeading
-            className="text3"
-            href="https://github.com/uditdesai/clout-jar"
-            target="_blank"
-            id="workLink6"
-            onMouseEnter={() => {
-              hoverWorkLink(6)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(6)
-            }}
-          >
-            Cloutjar
-          </ExperienceHeading>
-          <ExperienceHeading
-            className="text3"
-            href="https://devpost.com/software/cue-doisjy"
-            target="_blank"
-            id="workLink7"
-            onMouseEnter={() => {
-              hoverWorkLink(7)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(7)
-            }}
-          >
-            Cue
-          </ExperienceHeading>
-          <ExperienceHeading
-            className="text3"
-            href="https://github.com/uditdesai/jukebox"
-            target="_blank"
-            id="workLink8"
-            onMouseEnter={() => {
-              hoverWorkLink(8)
-            }}
-            onMouseLeave={() => {
-              hoverWorkLinkBack(8)
-            }}
-          >
-            Retro Boombox
-          </ExperienceHeading>
-        </ContentContainer>
+      <Container
+        id="prismContainer"
+        onMouseEnter={hoverPortfolio}
+        onMouseLeave={HoverPortfolioOut}
+      >
+        <Prism id="prism">
+          <PrismFaceFront id="faceFront">
+            <SectionTitle id="portfolioText" color="black">
+              PORTFOLIO
+            </SectionTitle>
+          </PrismFaceFront>
+          <PrismFaceBack id="faceBack">
+            <SectionTitle id="backPortfolio" color="white">
+              PORTFOLIO
+            </SectionTitle>
+          </PrismFaceBack>
+          <PrismFaceRight id="faceRight"></PrismFaceRight>
+          <PrismFaceLeft id="faceLeft"></PrismFaceLeft>
+          <PrismFaceTop id="faceTop">
+            <SectionTitle id="digitalText" color="white">
+              DIGITAL
+            </SectionTitle>
+          </PrismFaceTop>
+          <PrismFaceBottom id="faceBottom">
+            <SectionTitle id="fullstackText" color="white">
+              FULLSTACK
+            </SectionTitle>
+          </PrismFaceBottom>
+        </Prism>
       </Container>
     </>
   )

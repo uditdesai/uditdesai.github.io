@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import { TweenMax, TimelineMax } from "gsap"
 import { Helmet } from "react-helmet"
 import useWindowSize from "../hooks/useWindowSize"
@@ -15,6 +16,7 @@ const Container = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
+  height: 100vh;
   opacity: 0;
 `
 const ContentContainer = styled.div`
@@ -33,10 +35,32 @@ const Introduction = styled.h1`
   margin: 0 0 25px 0;
   line-height: 1.3;
   color: black;
+
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+`
+
+const ExpLink = styled.a`
+  text-decoration: none;
+  font-family: "Heebo-Bold";
+  font-size: 18px;
+  margin: 0 0 25px 0;
+  line-height: 1.3;
+  color: black;
+
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+`
+
+const NewLink = styled(Link)`
+  text-decoration: none;
 `
 
 const PortfolioTilt = styled.div`
-  transform: perspective(2000px);
+  perspective: 500px;
+  text-decoration: none;
 `
 
 const Conclusion = styled.div`
@@ -60,6 +84,9 @@ const SLink = styled.a`
   line-height: 1.3;
   text-decoration: none;
   color: black;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `
 const CreditContainer = styled.div`
   width: 300px;
@@ -76,9 +103,25 @@ const CreditTag = styled.p`
   font-size: 16px;
   margin: 0 0 20px 0;
   line-height: 1.3;
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+  }
 `
 const CreditLogo = styled.img`
   width: 100px;
+  @media screen and (max-width: 600px) {
+    width: 75px;
+  }
+`
+
+const Circle = styled.div`
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  z-index: 10;
+  transform: translateX(100px) translateY(50px);
 `
 
 const App = () => {
@@ -86,12 +129,85 @@ const App = () => {
   const { width, height } = useWindowSize()
 
   const updateMouse = e => {
-    let x = (e.clientX / width) * 2 - 1
-    let y = (e.clientY / height) * 2 - 1
+    // let x = (e.clientX / width) * 2 - 1
+    // let y = (e.clientY / height) * 2 - 1
 
-    TweenMax.to("#tiltPortfolio", 1, {
-      rotationY: x * 20,
-      rotationX: y * -20,
+    TweenMax.to("#circle1", 1, {
+      x: e.clientX + 20,
+      y: e.clientY + 20,
+    })
+    TweenMax.to("#circle2", 1.15, {
+      x: e.clientX + 23,
+      y: e.clientY + 30,
+    })
+    TweenMax.to("#circle3", 1.3, {
+      x: e.clientX + 27,
+      y: e.clientY + 40,
+    })
+    TweenMax.to("#circle4", 1.45, {
+      x: e.clientX + 34,
+      y: e.clientY + 48,
+    })
+    TweenMax.to("#circle5", 1.6, {
+      x: e.clientX + 44,
+      y: e.clientY + 47,
+    })
+    TweenMax.to("#circle6", 1.75, {
+      x: e.clientX + 51,
+      y: e.clientY + 40,
+    })
+    TweenMax.to("#circle7", 1.9, {
+      x: e.clientX + 50,
+      y: e.clientY + 30,
+    })
+    TweenMax.to("#circle8", 2.05, {
+      x: e.clientX + 47,
+      y: e.clientY + 21,
+    })
+    TweenMax.to("#circle9", 2.2, {
+      x: e.clientX + 44,
+      y: e.clientY + 12,
+    })
+
+    TweenMax.to("#circle10", 1, {
+      x: e.clientX + 50,
+      y: e.clientY + 65,
+    })
+    TweenMax.to("#circle11", 1.15, {
+      x: e.clientX + 58,
+      y: e.clientY + 72,
+    })
+    TweenMax.to("#circle12", 1.3, {
+      x: e.clientX + 60,
+      y: e.clientY + 82,
+    })
+    TweenMax.to("#circle13", 1.45, {
+      x: e.clientX + 55,
+      y: e.clientY + 90,
+    })
+    TweenMax.to("#circle14", 1.6, {
+      x: e.clientX + 49,
+      y: e.clientY + 96,
+    })
+    TweenMax.to("#circle15", 1.75, {
+      x: e.clientX + 40,
+      y: e.clientY + 89,
+    })
+    TweenMax.to("#circle16", 1.9, {
+      x: e.clientX + 32,
+      y: e.clientY + 82,
+    })
+    TweenMax.to("#circle17", 2.05, {
+      x: e.clientX + 24,
+      y: e.clientY + 74,
+    })
+    TweenMax.to("#circle18", 2.2, {
+      x: e.clientX + 31,
+      y: e.clientY + 65,
+    })
+    TweenMax.to("#circle19", 2.35, {
+      x: e.clientX + 40,
+      y: e.clientY + 62,
     })
   }
 
@@ -157,6 +273,29 @@ const App = () => {
       >
         <title>Udit Desai</title>
       </Helmet>
+      {width > 800 && (
+        <>
+          <Circle id="circle1"></Circle>
+          <Circle id="circle2"></Circle>
+          <Circle id="circle3"></Circle>
+          <Circle id="circle4"></Circle>
+          <Circle id="circle5"></Circle>
+          <Circle id="circle6"></Circle>
+          <Circle id="circle7"></Circle>
+          <Circle id="circle8"></Circle>
+          <Circle id="circle9"></Circle>
+          <Circle id="circle10"></Circle>
+          <Circle id="circle11"></Circle>
+          <Circle id="circle12"></Circle>
+          <Circle id="circle13"></Circle>
+          <Circle id="circle14"></Circle>
+          <Circle id="circle15"></Circle>
+          <Circle id="circle16"></Circle>
+          <Circle id="circle17"></Circle>
+          <Circle id="circle18"></Circle>
+          <Circle id="circle19"></Circle>
+        </>
+      )}
       <Container
         id="container"
         onMouseMove={
@@ -169,22 +308,25 @@ const App = () => {
       >
         <ContentContainer>
           <Introduction>
-            Hey. I’m a full-stack developer passionate about creating digital
-            experiences on the web and using new technologies to build projects
-            that make life easier and more fun.
+            Hey. I’m a design-focussed full-stack developer passionate about
+            creating digital experiences and using new technologies to build
+            projects that push boundaries and make life simpler.
           </Introduction>
           <Introduction>
-            I’m currently an undergraduate student at The University of Toronto
-            studying computer engineering. I also work at HXOUSE to build new
-            programming and curriculum along with working on technical projects.
+            I’m currently an undergrad student at The University of Toronto
+            studying computer engineering. I also work at{" "}
+            <ExpLink href="https://www.hxouse.com">HXOUSE</ExpLink> to further
+            develop Toronto’s creative and tech scene.
           </Introduction>
-          <PortfolioTilt id="tiltPortfolio">
-            <Portfolio></Portfolio>
-          </PortfolioTilt>
+          <NewLink to="/portfolio">
+            <PortfolioTilt id="tiltPortfolio">
+              <Portfolio />
+            </PortfolioTilt>
+          </NewLink>
           <Conclusion>
             <LinkContainer>
               <SLink
-                href="https://drive.google.com/file/d/15fZJkRORMSJAR7md7yjI_8b0Z6778wam/view?usp=sharing"
+                href="https://drive.google.com/file/d/1Y5MVbWvVe_IN2nTnxOTOcv0aGGiN8q3T/view?usp=sharing"
                 target="_blank"
                 id="link1"
                 onMouseEnter={() => {
