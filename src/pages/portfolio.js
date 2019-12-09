@@ -135,8 +135,8 @@ const App = () => {
   const { width, height } = useWindowSize()
 
   useEffect(() => {
-    TweenMax.to("#leftBar", 2, { autoAlpha: 1 })
-    TweenMax.to("#rightBar", 2, { autoAlpha: 1 })
+    TweenMax.to("#leftBar", 2, { opacity: 1 })
+    TweenMax.to("#rightBar", 2, { opacity: 1 })
   }, [])
 
   return (
