@@ -232,21 +232,40 @@ const Portfolio = () => {
   }, [])
 
   const hoverPortfolio = () => {
-    TweenMax.to("#faceFront", 0.5, { css: { border: "3px solid #828282" } })
-    TweenMax.to("#faceBack", 0.5, { css: { border: "3px solid #828282" } })
-    TweenMax.to("#faceTop", 0.5, { css: { border: "3px solid #828282" } })
-    TweenMax.to("#faceBottom", 0.5, { css: { border: "3px solid #828282" } })
-    TweenMax.to("#faceRight", 0.5, { css: { border: "3px solid #828282" } })
-    TweenMax.to("#faceLeft", 0.5, { css: { border: "3px solid #828282" } })
+    TweenMax.to("#prism", 0.5, { z: -75 })
+
+    // TweenMax.to("#faceFront", 0.5, { css: { border: "3px solid white" } })
+    // TweenMax.to("#faceBack", 0.5, { css: { border: "3px solid white" } })
+    // TweenMax.to("#faceTop", 0.5, { css: { border: "3px solid white" } })
+    // TweenMax.to("#faceBottom", 0.5, { css: { border: "3px solid white" } })
+    // TweenMax.to("#faceRight", 0.5, { css: { border: "3px solid white" } })
+    // TweenMax.to("#faceLeft", 0.5, { css: { border: "3px solid white" } })
+
+    // TweenMax.to("#faceRight", 0.5, { x: 562 })
+    // TweenMax.to("#faceLeft", 0.5, { x: -68 })
+
+    // TweenMax.to("#faceFront", 0.5, { z: 68 })
+    // TweenMax.to("#faceBack", 0.5, { z: -68 })
+
+    // TweenMax.to("#faceTop", 0.5, { y: -68 })
+    // TweenMax.to("#faceBottom", 0.5, { y: 68 })
   }
 
   const HoverPortfolioOut = () => {
-    TweenMax.to("#faceFront", 0.5, { css: { border: "3px solid black" } })
-    TweenMax.to("#faceBack", 0.5, { css: { border: "3px solid black" } })
-    TweenMax.to("#faceTop", 0.5, { css: { border: "3px solid black" } })
-    TweenMax.to("#faceBottom", 0.5, { css: { border: "3px solid black" } })
-    TweenMax.to("#faceRight", 0.5, { css: { border: "3px solid black" } })
-    TweenMax.to("#faceLeft", 0.5, { css: { border: "3px solid black" } })
+    TweenMax.to("#prism", 0.5, { z: -50 })
+
+    // TweenMax.to("#faceFront", 0.5, { css: { border: "3px solid black" } })
+    // TweenMax.to("#faceBack", 0.5, { css: { border: "3px solid black" } })
+    // TweenMax.to("#faceTop", 0.5, { css: { border: "3px solid black" } })
+    // TweenMax.to("#faceBottom", 0.5, { css: { border: "3px solid black" } })
+    // TweenMax.to("#faceRight", 0.5, { css: { border: "3px solid black" } })
+    // TweenMax.to("#faceLeft", 0.5, { css: { border: "3px solid black" } })
+    // TweenMax.to("#faceRight", 0.5, { x: 547 })
+    // TweenMax.to("#faceLeft", 0.5, { x: -53 })
+    // TweenMax.to("#faceFront", 0.5, { z: 53 })
+    // TweenMax.to("#faceBack", 0.5, { z: -53 })
+    // TweenMax.to("#faceTop", 0.5, { y: -53 })
+    // TweenMax.to("#faceBottom", 0.5, { y: 53 })
   }
 
   return (

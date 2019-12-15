@@ -5,7 +5,7 @@ import { TweenMax, TimelineMax } from "gsap"
 import { Helmet } from "react-helmet"
 import useWindowSize from "../hooks/useWindowSize"
 import Portfolio from "../components/Portfolio"
-import Logo from "../assets/logo.jpg"
+import Logo from "../assets/logo.png"
 import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
@@ -18,6 +18,7 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   opacity: 0;
+  perspective: 500px;
 `
 const ContentContainer = styled.div`
   width: 600px;
@@ -59,7 +60,6 @@ const NewLink = styled(Link)`
 `
 
 const PortfolioTilt = styled.div`
-  perspective: 500px;
   text-decoration: none;
 `
 
@@ -121,6 +121,7 @@ const Circle = styled.div`
   background: black;
   position: absolute;
   z-index: 10;
+  pointer-events: none;
   transform: translateX(100px) translateY(50px);
   @media (max-width: 800px) {
     display: none;
@@ -215,30 +216,54 @@ const App = () => {
   }
 
   const hoverLink = linkNum => {
+    // if (linkNum === 1) {
+    //   TweenMax.to("#link1", 0.5, { color: "#828282" })
+    // } else if (linkNum === 2) {
+    //   TweenMax.to("#link2", 0.5, { color: "#828282" })
+    // } else if (linkNum === 3) {
+    //   TweenMax.to("#link3", 0.5, { color: "#828282" })
+    // } else if (linkNum === 4) {
+    //   TweenMax.to("#link4", 0.5, { color: "#828282" })
+    // } else if (linkNum === 5) {
+    //   TweenMax.to("#link5", 0.5, { color: "#828282" })
+    // }
+
     if (linkNum === 1) {
-      TweenMax.to("#link1", 0.5, { color: "#828282" })
+      TweenMax.to("#link1", 0.5, { z: -10 })
     } else if (linkNum === 2) {
-      TweenMax.to("#link2", 0.5, { color: "#828282" })
+      TweenMax.to("#link2", 0.5, { z: -10 })
     } else if (linkNum === 3) {
-      TweenMax.to("#link3", 0.5, { color: "#828282" })
+      TweenMax.to("#link3", 0.5, { z: -10 })
     } else if (linkNum === 4) {
-      TweenMax.to("#link4", 0.5, { color: "#828282" })
+      TweenMax.to("#link4", 0.5, { z: -10 })
     } else if (linkNum === 5) {
-      TweenMax.to("#link5", 0.5, { color: "#828282" })
+      TweenMax.to("#link5", 0.5, { z: -10 })
     }
   }
 
   const hoverLinkBack = linkNum => {
+    // if (linkNum === 1) {
+    //   TweenMax.to("#link1", 0.5, { color: "black" })
+    // } else if (linkNum === 2) {
+    //   TweenMax.to("#link2", 0.5, { color: "black" })
+    // } else if (linkNum === 3) {
+    //   TweenMax.to("#link3", 0.5, { color: "black" })
+    // } else if (linkNum === 4) {
+    //   TweenMax.to("#link4", 0.5, { color: "black" })
+    // } else if (linkNum === 5) {
+    //   TweenMax.to("#link5", 0.5, { color: "black" })
+    // }
+
     if (linkNum === 1) {
-      TweenMax.to("#link1", 0.5, { color: "black" })
+      TweenMax.to("#link1", 0.5, { z: 0 })
     } else if (linkNum === 2) {
-      TweenMax.to("#link2", 0.5, { color: "black" })
+      TweenMax.to("#link2", 0.5, { z: 0 })
     } else if (linkNum === 3) {
-      TweenMax.to("#link3", 0.5, { color: "black" })
+      TweenMax.to("#link3", 0.5, { z: 0 })
     } else if (linkNum === 4) {
-      TweenMax.to("#link4", 0.5, { color: "black" })
+      TweenMax.to("#link4", 0.5, { z: 0 })
     } else if (linkNum === 5) {
-      TweenMax.to("#link5", 0.5, { color: "black" })
+      TweenMax.to("#link5", 0.5, { z: 0 })
     }
   }
 
@@ -315,7 +340,8 @@ const App = () => {
             I’m currently an undergrad student at The University of Toronto
             studying computer engineering. I also work at{" "}
             <ExpLink href="https://www.hxouse.com">HXOUSE</ExpLink> to further
-            develop Toronto’s creative and tech scene.
+            develop Toronto’s creative and tech scene. I am currently open for
+            freelance work.
           </Introduction>
           <NewLink to="/portfolio">
             <PortfolioTilt id="tiltPortfolio">

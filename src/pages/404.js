@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import Logo from "../assets/logo.jpg"
+import Logo from "../assets/logo.png"
 import { TweenMax, TimelineMax } from "gsap"
 import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
