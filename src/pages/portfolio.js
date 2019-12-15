@@ -299,7 +299,7 @@ const portfolio = () => {
       }
     } else {
       window.scrollTo(0, 0)
-      TweenMax.to("#mobileMenu", 1, { autoAlpha: 0 })
+      TweenMax.to("#mobileMenu", 1, { autoAlpha: 0, delay: 0.5 })
       setMobileMenuOpen(false)
       setProject(i)
     }
