@@ -216,18 +216,6 @@ const App = () => {
   }
 
   const hoverLink = linkNum => {
-    // if (linkNum === 1) {
-    //   TweenMax.to("#link1", 0.5, { color: "#828282" })
-    // } else if (linkNum === 2) {
-    //   TweenMax.to("#link2", 0.5, { color: "#828282" })
-    // } else if (linkNum === 3) {
-    //   TweenMax.to("#link3", 0.5, { color: "#828282" })
-    // } else if (linkNum === 4) {
-    //   TweenMax.to("#link4", 0.5, { color: "#828282" })
-    // } else if (linkNum === 5) {
-    //   TweenMax.to("#link5", 0.5, { color: "#828282" })
-    // }
-
     if (linkNum === 1) {
       TweenMax.to("#link1", 0.5, { z: -10 })
     } else if (linkNum === 2) {
@@ -242,18 +230,6 @@ const App = () => {
   }
 
   const hoverLinkBack = linkNum => {
-    // if (linkNum === 1) {
-    //   TweenMax.to("#link1", 0.5, { color: "black" })
-    // } else if (linkNum === 2) {
-    //   TweenMax.to("#link2", 0.5, { color: "black" })
-    // } else if (linkNum === 3) {
-    //   TweenMax.to("#link3", 0.5, { color: "black" })
-    // } else if (linkNum === 4) {
-    //   TweenMax.to("#link4", 0.5, { color: "black" })
-    // } else if (linkNum === 5) {
-    //   TweenMax.to("#link5", 0.5, { color: "black" })
-    // }
-
     if (linkNum === 1) {
       TweenMax.to("#link1", 0.5, { z: 0 })
     } else if (linkNum === 2) {

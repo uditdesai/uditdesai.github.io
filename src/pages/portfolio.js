@@ -2,13 +2,9 @@ import React, { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { TweenMax, TimelineMax, Power0 } from "gsap"
-import { Helmet } from "react-helmet"
 import useWindowSize from "../hooks/useWindowSize"
 import Logo from "../assets/logo.png"
 import Tilt from "react-tilt"
-import favicon16 from "../assets/favicon16.png"
-import favicon32 from "../assets/favicon32.png"
-import favicon64 from "../assets/favicon64.png"
 import Project from "../components/Project"
 
 const Slider = styled.div`
@@ -67,6 +63,8 @@ const LeftBar = styled.div`
   @media (max-width: 800px) {
     width: 100%;
     height: 50px;
+    top: 0;
+    left: 0;
     padding: 20px 0 0 20px;
     background: none;
   }
@@ -170,11 +168,11 @@ const RightBar = styled.div`
   @media (max-width: 800px) {
     width: 100%;
     height: 50px;
+    background: none;
     bottom: 0;
-    top: auto;
+    top: calc(100% - 50px);
     padding: 0 20px 20px 20px;
     justify-content: space-between;
-    background: none;
   }
 `
 const CreditLogo = styled.img`
@@ -329,8 +327,9 @@ const portfolio = () => {
       <Overlay id="startOverlay">
         <StartLogo id="startLogo" src={Logo} />
       </Overlay>
-      {width > 800 && <Slider id="pageSlider"></Slider>}
-      {width <= 800 && (
+      {width > 800 ? (
+        <Slider id="pageSlider"></Slider>
+      ) : (
         <MobileMenu id="mobileMenu">
           <PortfolioSectionTitle>DIGITAL</PortfolioSectionTitle>
           <PortfolioSection>
@@ -366,36 +365,6 @@ const portfolio = () => {
                 Alyx x HXOUSE Growing Family
               </PortfolioItemName>
             </PortfolioItem>
-            {/* <PortfolioItem
-            id="portItem3"
-            onMouseEnter={() => {
-              hoverPortItem(3)
-            }}
-            onMouseLeave={() => {
-              hoverPortItemLeave(3)
-            }}
-            onClick={() => {
-              projectHandler(3)
-            }}
-          >
-            <PortfolioItemNumber id="portItemNum3">3</PortfolioItemNumber>
-            <PortfolioItemName>HXOUSE shop</PortfolioItemName>
-          </PortfolioItem>
-          <PortfolioItem
-            id="portItem4"
-            onMouseEnter={() => {
-              hoverPortItem(4)
-            }}
-            onMouseLeave={() => {
-              hoverPortItemLeave(4)
-            }}
-            onClick={() => {
-              projectHandler(4)
-            }}
-          >
-            <PortfolioItemNumber id="portItemNum4">4</PortfolioItemNumber>
-            <PortfolioItemName>Deltawave</PortfolioItemName>
-          </PortfolioItem> */}
           </PortfolioSection>
           <PortfolioSectionTitle>PROJECTS</PortfolioSectionTitle>
           <PortfolioSection>
@@ -449,7 +418,7 @@ const portfolio = () => {
       )}
       <LeftBar id="leftBar">
         <HomeLink to="/">UDIT DESAI - TORONTO 2019</HomeLink>
-        {width > 800 && (
+        {width > 800 ? (
           <>
             <PortfolioSectionTitle>DIGITAL</PortfolioSectionTitle>
             <PortfolioSection>
@@ -485,36 +454,6 @@ const portfolio = () => {
                   Alyx x HXOUSE Growing Family
                 </PortfolioItemName>
               </PortfolioItem>
-              {/* <PortfolioItem
-            id="portItem3"
-            onMouseEnter={() => {
-              hoverPortItem(3)
-            }}
-            onMouseLeave={() => {
-              hoverPortItemLeave(3)
-            }}
-            onClick={() => {
-              projectHandler(3)
-            }}
-          >
-            <PortfolioItemNumber id="portItemNum3">3</PortfolioItemNumber>
-            <PortfolioItemName>HXOUSE shop</PortfolioItemName>
-          </PortfolioItem>
-          <PortfolioItem
-            id="portItem4"
-            onMouseEnter={() => {
-              hoverPortItem(4)
-            }}
-            onMouseLeave={() => {
-              hoverPortItemLeave(4)
-            }}
-            onClick={() => {
-              projectHandler(4)
-            }}
-          >
-            <PortfolioItemNumber id="portItemNum4">4</PortfolioItemNumber>
-            <PortfolioItemName>Deltawave</PortfolioItemName>
-          </PortfolioItem> */}
             </PortfolioSection>
             <PortfolioSectionTitle>PROJECTS</PortfolioSectionTitle>
             <PortfolioSection>
@@ -565,6 +504,8 @@ const portfolio = () => {
               </PortfolioItem>
             </PortfolioSection>
           </>
+        ) : (
+          <></>
         )}
       </LeftBar>
       <RightBar id="rightBar">

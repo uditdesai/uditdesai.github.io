@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import styled from "styled-components"
 import { TweenMax, TimelineMax, Power0 } from "gsap"
-import useWindowSize from "../hooks/useWindowSize"
 
 import HXOUSEBanner from "../assets/HXOUSE.png"
 import HXOUSEStory from "../assets/HXOUSE-story.png"
@@ -182,9 +181,6 @@ const ContentEnd = styled.div`
 `
 
 const Project = ({ project }) => {
-  // width and height of screen
-  const { width, height } = useWindowSize()
-
   return (
     <>
       <Container id="projectContainer">
