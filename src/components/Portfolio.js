@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { TweenMax, TimelineMax, Power0 } from "gsap"
-import useWindowSize from "../hooks/useWindowSize"
-import { withAssetPrefix } from "gatsby"
 
 //PARENT CONTAINER FOR WHOLE SITE
 const Container = styled.div`
@@ -155,10 +153,6 @@ const SectionTitle = styled.h1`
 `
 
 const Portfolio = () => {
-  // width and height of screen
-  const { width, height } = useWindowSize()
-  const [currRot, setCurrRot] = useState(10)
-
   useEffect(() => {
     const tl = new TimelineMax({ repeat: -1 })
     tl.to("#prism", 10, {

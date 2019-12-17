@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import { TweenMax, TimelineMax } from "gsap"
+import { TweenMax } from "gsap"
 import { Helmet } from "react-helmet"
 import useWindowSize from "../hooks/useWindowSize"
 import Portfolio from "../components/Portfolio"
@@ -130,7 +130,7 @@ const Circle = styled.div`
 
 const App = () => {
   // width and height of screen
-  const { width, height } = useWindowSize()
+  const { width } = useWindowSize()
 
   const updateMouse = e => {
     // let x = (e.clientX / width) * 2 - 1
@@ -275,7 +275,7 @@ const App = () => {
           },
         ]}
       >
-        <title>Udit Desai</title>
+        <title>UDIT DESAI</title>
       </Helmet>
       <Circle id="circle1"></Circle>
       <Circle id="circle2"></Circle>

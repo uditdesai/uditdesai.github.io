@@ -1,22 +1,8 @@
 @font-face {
-  font-family: "Hind";
-  font-style: normal;
-  src: local("Hind"), local("Hind"),
-    url("../fonts//Hind-Bold.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "Heebo-Bold";
   font-style: normal;
   src: local("Heebo-Bold"), local("Heebo-Bold"),
     url("../fonts/Heebo-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Heebo-Regular";
-  font-style: normal;
-  src: local("Heebo-Regular"), local("Heebo-Regular"),
-    url("../fonts/Heebo-Regular.ttf") format("truetype");
 }
 
 @font-face {

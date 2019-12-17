@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import Logo from "../assets/logo.png"
-import { TweenMax, TimelineMax } from "gsap"
+import { TweenMax } from "gsap"
 import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
@@ -56,7 +56,9 @@ const App = () => {
             href: `${favicon64}`,
           },
         ]}
-      ></Helmet>
+      >
+        <title>UDIT DESAI . 404</title>
+      </Helmet>
       <DiffContainer id="container404">
         <Link to="/">
           <CreditLogo src={Logo}></CreditLogo>

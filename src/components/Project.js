@@ -1,38 +1,6 @@
-import React, { useState, useEffect, useRef } from "react"
+import React from "react"
 import styled from "styled-components"
-import { TweenMax, TimelineMax, Power0 } from "gsap"
-
-import HXOUSEBanner from "../assets/HXOUSE.png"
-import HXOUSEStory from "../assets/HXOUSE-story.png"
-import HXOUSEPrograms from "../assets/HXOUSE-programs.png"
-import HXOUSEEvents from "../assets/HXOUSE-events.png"
-import HXOUSETenants from "../assets/HXOUSE-tenants.png"
-import HXOUSEContact from "../assets/HXOUSE-contact.png"
-import HXOUSEEventsDeep from "../assets/HXOUSE-events-deep.png"
-import HXOUSETenantsDeep from "../assets/HXOUSE-tenants-deep.png"
-
-import ALYXBanner from "../assets/ALYX.png"
-import ALYXTilted from "../assets/ALYX-tilted.png"
-import ALYXMobile1 from "../assets/ALYX-mobile-1.png"
-import ALYXMobile2 from "../assets/ALYX-mobile-2.png"
-
-import PIANOBanner from "../assets/PIANO-keys.png"
-import PIANOKeysImage from "../assets/PIANO-keys-image.png"
-import PIANORandom from "../assets/PIANO-random.png"
-import PIANORandomImage from "../assets/PIANO-random-image.png"
-import PIANONY from "../assets/PIANO-ny.png"
-import PIANONYImage from "../assets/PIANO-ny-image.png"
-import PIANOHands from "../assets/PIANO-hands.png"
-
-import HOUSEKEEPERBanner from "../assets/HOUSEKEEPER-banner.png"
-import HOUSEKEEPERLogin from "../assets/HOUSEKEEPER-login.png"
-import HOUSEKEEPERSignup from "../assets/HOUSEKEEPER-signup.png"
-import HOUSEKEEPERCreateTask from "../assets/HOUSEKEEPER-create-task.png"
-import HOUSEKEEPEREditTask from "../assets/HOUSEKEEPER-edit-task.png"
-
-import CUEBanner from "../assets/CUE-start.png"
-import CUEListen from "../assets/CUE-listen.png"
-import CUEReturn from "../assets/CUE-return.png"
+import Img from "gatsby-image"
 
 const Container = styled.div`
   width: calc(100% - 350px - 150px);
@@ -50,25 +18,25 @@ const Container = styled.div`
 
 const BannerContainer = styled.div`
   width: 80%;
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin: 0 0 50px 0;
 `
 
-const BannerImage = styled.img`
+const BannerImage = styled(Img)`
   width: 100%;
   margin-top: 40px;
   box-sizing: border-box;
-  padding: 5px;
-  border: 2px solid black;
+  border: 3px solid black;
 `
 const BannerDescContainer = styled.div`
   width: fit-content;
   margin: 20px 0 0 0;
   box-sizing: border-box;
   padding: 20px;
-  border: 2px solid black;
+  border: 3px solid black;
 
   @media (max-width: 800px) {
     width: 100%;
@@ -103,16 +71,10 @@ const BannerDescSemiTitle = styled.p`
 
 const ContentContainer = styled.div`
   width: 80%;
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-`
-
-const ContentTitle = styled.h1`
-  font-family: "Roboto-Bold";
-  color: black;
-  font-size: 32px;
-  margin: 50px 0 30px 0;
 `
 
 const ContentParagraph = styled.p`
@@ -123,12 +85,11 @@ const ContentParagraph = styled.p`
   line-height: 1.4;
 `
 
-const ContentLargeImage = styled.img`
+const ContentLargeImage = styled(Img)`
   width: 100%;
   margin-top: 70px;
   box-sizing: border-box;
-  padding: 5px;
-  border: 2px solid black;
+  border: 3px solid black;
 `
 
 const ContentImageDescContainer = styled.div`
@@ -136,7 +97,7 @@ const ContentImageDescContainer = styled.div`
   margin: 20px 0 0 0;
   box-sizing: border-box;
   padding: 20px;
-  border: 2px solid black;
+  border: 3px solid black;
 
   @media (max-width: 800px) {
     width: 100%;
@@ -163,11 +124,10 @@ const ContentImageGallery = styled.div`
   }
 `
 
-const ContentImageSmall = styled.img`
+const ContentImageSmall = styled(Img)`
   width: 47.5%;
   box-sizing: border-box;
-  padding: 5px;
-  border: 2px solid black;
+  border: 3px solid black;
 
   @media (max-width: 800px) {
     width: 100%;
@@ -180,14 +140,14 @@ const ContentEnd = styled.div`
   height: 120px;
 `
 
-const Project = ({ project }) => {
+const Project = ({ project, data }) => {
   return (
     <>
       <Container id="projectContainer">
         {project === 1 && (
           <>
             <BannerContainer>
-              <BannerImage src={HXOUSEBanner} />
+              <BannerImage fluid={data.hxousebanner.childImageSharp.fluid} />
               <BannerDescContainer>
                 <BannerDescTitle>HXOUSE Website, 2019</BannerDescTitle>
                 <BannerDescSubTitle>
@@ -214,7 +174,9 @@ const Project = ({ project }) => {
                 place that wasn't available to him when he was starting his
                 career.
               </ContentParagraph>
-              <ContentLargeImage src={HXOUSEStory} />
+              <ContentLargeImage
+                fluid={data.hxousestory.childImageSharp.fluid}
+              />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   A 3D scrolling experience through photographs describing
@@ -222,8 +184,12 @@ const Project = ({ project }) => {
                 </ContentImageDescText>
               </ContentImageDescContainer>
               <ContentImageGallery>
-                <ContentImageSmall src={HXOUSEPrograms} />
-                <ContentImageSmall src={HXOUSEEvents} />
+                <ContentImageSmall
+                  fluid={data.hxouseprograms.childImageSharp.fluid}
+                />
+                <ContentImageSmall
+                  fluid={data.hxouseevents.childImageSharp.fluid}
+                />
               </ContentImageGallery>
               <ContentImageDescContainer>
                 <ContentImageDescText>
@@ -231,7 +197,9 @@ const Project = ({ project }) => {
                   represent the structure of HXOUSE and create depth
                 </ContentImageDescText>
               </ContentImageDescContainer>
-              <ContentLargeImage src={HXOUSETenants} />
+              <ContentLargeImage
+                fluid={data.hxousetenants.childImageSharp.fluid}
+              />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   An example of a seperate 3D experience built solely for the
@@ -239,15 +207,21 @@ const Project = ({ project }) => {
                 </ContentImageDescText>
               </ContentImageDescContainer>
               <ContentImageGallery>
-                <ContentImageSmall src={HXOUSEEventsDeep} />
-                <ContentImageSmall src={HXOUSETenantsDeep} />
+                <ContentImageSmall
+                  fluid={data.hxouseeventsdeep.childImageSharp.fluid}
+                />
+                <ContentImageSmall
+                  fluid={data.hxousetenantsdeep.childImageSharp.fluid}
+                />
               </ContentImageGallery>
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   Content heavy sections of the new website
                 </ContentImageDescText>
               </ContentImageDescContainer>
-              <ContentLargeImage src={HXOUSEContact} />
+              <ContentLargeImage
+                fluid={data.hxousecontact.childImageSharp.fluid}
+              />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   Even the contact page was given a 3D environment making the
@@ -261,7 +235,7 @@ const Project = ({ project }) => {
         {project === 2 && (
           <>
             <BannerContainer>
-              <BannerImage src={ALYXBanner} />
+              <BannerImage fluid={data.alyxbanner.childImageSharp.fluid} />
               <BannerDescContainer>
                 <BannerDescTitle>
                   Alyx x HXOUSE Growing Family Website, 2019
@@ -292,7 +266,9 @@ const Project = ({ project }) => {
                 panels and workshops with industry leaders in fashion, film and
                 design such as Matthew Williams, Nick Knight, and OK-RM.
               </ContentParagraph>
-              <ContentLargeImage src={ALYXTilted} />
+              <ContentLargeImage
+                fluid={data.alyxtilted.childImageSharp.fluid}
+              />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   The tilt animation added onto the Alyx buckle image which
@@ -300,8 +276,12 @@ const Project = ({ project }) => {
                 </ContentImageDescText>
               </ContentImageDescContainer>
               <ContentImageGallery>
-                <ContentImageSmall src={ALYXMobile1} />
-                <ContentImageSmall src={ALYXMobile2} />
+                <ContentImageSmall
+                  fluid={data.alyxmobile1.childImageSharp.fluid}
+                />
+                <ContentImageSmall
+                  fluid={data.alyxmobile2.childImageSharp.fluid}
+                />
               </ContentImageGallery>
               <ContentImageDescContainer>
                 <ContentImageDescText>
@@ -315,7 +295,7 @@ const Project = ({ project }) => {
         {project === 3 && (
           <>
             <BannerContainer>
-              <BannerImage src={PIANOBanner} />
+              <BannerImage fluid={data.ppkeys.childImageSharp.fluid} />
               <BannerDescContainer>
                 <BannerDescTitle>Paper Piano, 2019</BannerDescTitle>
                 <BannerDescSubTitle>
@@ -347,7 +327,9 @@ const Project = ({ project }) => {
                 both solving some type of problem (expensive instruments) and
                 that was fun and incorporated music.
               </ContentParagraph>
-              <ContentLargeImage src={PIANOKeysImage} />
+              <ContentLargeImage
+                fluid={data.ppkeysimage.childImageSharp.fluid}
+              />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   Piano keys drawn on a paper -- what the laptop sees before
@@ -355,8 +337,12 @@ const Project = ({ project }) => {
                 </ContentImageDescText>
               </ContentImageDescContainer>
               <ContentImageGallery>
-                <ContentImageSmall src={PIANORandomImage} />
-                <ContentImageSmall src={PIANORandom} />
+                <ContentImageSmall
+                  fluid={data.pprandomimage.childImageSharp.fluid}
+                />
+                <ContentImageSmall
+                  fluid={data.pprandom.childImageSharp.fluid}
+                />
               </ContentImageGallery>
               <ContentImageDescContainer>
                 <ContentImageDescText>
@@ -364,7 +350,7 @@ const Project = ({ project }) => {
                   laptop webcam
                 </ContentImageDescText>
               </ContentImageDescContainer>
-              <ContentLargeImage src={PIANOHands} />
+              <ContentLargeImage fluid={data.pphands.childImageSharp.fluid} />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   User actually using the project to play a song using a piano
@@ -372,8 +358,10 @@ const Project = ({ project }) => {
                 </ContentImageDescText>
               </ContentImageDescContainer>
               <ContentImageGallery>
-                <ContentImageSmall src={PIANONYImage} />
-                <ContentImageSmall src={PIANONY} />
+                <ContentImageSmall
+                  fluid={data.ppnyimage.childImageSharp.fluid}
+                />
+                <ContentImageSmall fluid={data.ppny.childImageSharp.fluid} />
               </ContentImageGallery>
               <ContentImageDescContainer>
                 <ContentImageDescText>
@@ -388,7 +376,7 @@ const Project = ({ project }) => {
         {project === 4 && (
           <>
             <BannerContainer>
-              <BannerImage src={HOUSEKEEPERBanner} />
+              <BannerImage fluid={data.hkbanner.childImageSharp.fluid} />
               <BannerDescContainer>
                 <BannerDescTitle>Housekeeper, 2019</BannerDescTitle>
                 <BannerDescSubTitle>
@@ -413,8 +401,10 @@ const Project = ({ project }) => {
                 chores are left to be completed.
               </ContentParagraph>
               <ContentImageGallery>
-                <ContentImageSmall src={HOUSEKEEPERLogin} />
-                <ContentImageSmall src={HOUSEKEEPERSignup} />
+                <ContentImageSmall fluid={data.hklogin.childImageSharp.fluid} />
+                <ContentImageSmall
+                  fluid={data.hksignup.childImageSharp.fluid}
+                />
               </ContentImageGallery>
               <ContentImageDescContainer>
                 <ContentImageDescText>
@@ -423,8 +413,12 @@ const Project = ({ project }) => {
                 </ContentImageDescText>
               </ContentImageDescContainer>
               <ContentImageGallery>
-                <ContentImageSmall src={HOUSEKEEPERCreateTask} />
-                <ContentImageSmall src={HOUSEKEEPEREditTask} />
+                <ContentImageSmall
+                  fluid={data.hkcreatetask.childImageSharp.fluid}
+                />
+                <ContentImageSmall
+                  fluid={data.hkedittask.childImageSharp.fluid}
+                />
               </ContentImageGallery>
               <ContentImageDescContainer>
                 <ContentImageDescText>
@@ -440,7 +434,7 @@ const Project = ({ project }) => {
         {project === 5 && (
           <>
             <BannerContainer>
-              <BannerImage src={CUEBanner} />
+              <BannerImage fluid={data.cuestart.childImageSharp.fluid} />
               <BannerDescContainer>
                 <BannerDescTitle>Cue, 2019</BannerDescTitle>
                 <BannerDescSubTitle>
@@ -467,13 +461,13 @@ const Project = ({ project }) => {
               <ContentParagraph>
                 It was built for MHacks 2019 where the theme was social good.
               </ContentParagraph>
-              <ContentLargeImage src={CUEListen} />
+              <ContentLargeImage fluid={data.cuelisten.childImageSharp.fluid} />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   Cue screen when user speaks outloud
                 </ContentImageDescText>
               </ContentImageDescContainer>
-              <ContentLargeImage src={CUEReturn} />
+              <ContentLargeImage fluid={data.cuereturn.childImageSharp.fluid} />
               <ContentImageDescContainer>
                 <ContentImageDescText>
                   Transcribed speech onto the screen color-coded with visual

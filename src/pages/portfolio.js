@@ -1,11 +1,17 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { TweenMax, TimelineMax, Power0 } from "gsap"
+import { TweenMax, Power0 } from "gsap"
 import useWindowSize from "../hooks/useWindowSize"
 import Logo from "../assets/logo.png"
 import Tilt from "react-tilt"
 import Project from "../components/Project"
+import { graphql } from "gatsby"
+import { Helmet } from "react-helmet"
+
+import favicon16 from "../assets/favicon16.png"
+import favicon32 from "../assets/favicon32.png"
+import favicon64 from "../assets/favicon64.png"
 
 const Slider = styled.div`
   width: 100%;
@@ -219,7 +225,7 @@ const ComingSoon = styled.h1`
   }
 `
 
-const portfolio = () => {
+const App = ({ data }) => {
   // width and height of screen
   const { width, height } = useWindowSize()
 
@@ -273,24 +279,30 @@ const portfolio = () => {
     setProjectClick(i)
     if (width > 800) {
       if (isLeft) {
-        TweenMax.to("#pageSlider", 1, {
+        TweenMax.to("#pageSlider", 0.75, {
           x: 0,
           ease: Power0.easeNone,
           onComplete: () => {
             setIsLeft(false)
             setProject(i)
-            TweenMax.to("#pageSlider", 1, { x: width, ease: Power0.easeNone })
+            TweenMax.to("#pageSlider", 0.75, {
+              x: width,
+              ease: Power0.easeNone,
+            })
             window.scrollTo(0, 0)
           },
         })
       } else {
-        TweenMax.to("#pageSlider", 1, {
+        TweenMax.to("#pageSlider", 0.75, {
           x: 0,
           ease: Power0.easeNone,
           onComplete: () => {
             setIsLeft(true)
             setProject(i)
-            TweenMax.to("#pageSlider", 1, { x: -width, ease: Power0.easeNone })
+            TweenMax.to("#pageSlider", 0.75, {
+              x: -width,
+              ease: Power0.easeNone,
+            })
             window.scrollTo(0, 0)
           },
         })
@@ -324,6 +336,34 @@ const portfolio = () => {
 
   return (
     <>
+      <Helmet
+        meta={[
+          { name: "description", content: "Udit Desai - Developer" },
+          { name: "keywords", content: "developer" },
+        ]}
+        link={[
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "16x16",
+            href: `${favicon16}`,
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "32x32",
+            href: `${favicon32}`,
+          },
+          {
+            rel: "icon",
+            type: "image/png",
+            sizes: "64x64",
+            href: `${favicon64}`,
+          },
+        ]}
+      >
+        <title>UDIT DESAI . PORTFOLIO</title>
+      </Helmet>
       <Overlay id="startOverlay">
         <StartLogo id="startLogo" src={Logo} />
       </Overlay>
@@ -524,9 +564,218 @@ const portfolio = () => {
           </>
         )}
       </RightBar>
-      <Project project={project} />
+      <Project project={project} data={data} />
     </>
   )
 }
 
-export default portfolio
+export default App
+
+export const query = graphql`
+  query {
+    hxousebanner: file(relativePath: { eq: "hxouse/HXOUSE.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hxouseprograms: file(relativePath: { eq: "hxouse/HXOUSEprograms.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hxousestory: file(relativePath: { eq: "hxouse/HXOUSEstory.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hxousetenantsdeep: file(
+      relativePath: { eq: "hxouse/HXOUSEtenantsdeep.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hxousetenants: file(relativePath: { eq: "hxouse/HXOUSEtenants.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hxousecontact: file(relativePath: { eq: "hxouse/HXOUSEcontact.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hxouseeventsdeep: file(
+      relativePath: { eq: "hxouse/HXOUSEeventsdeep.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hxouseevents: file(relativePath: { eq: "hxouse/HXOUSEevents.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    alyxbanner: file(relativePath: { eq: "alyx/ALYX.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    alyxmobile1: file(relativePath: { eq: "alyx/ALYXmobile1.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    alyxmobile2: file(relativePath: { eq: "alyx/ALYXmobile2.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    alyxtilted: file(relativePath: { eq: "alyx/ALYXtilted.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pphands: file(relativePath: { eq: "pp/PIANOhands.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ppkeysimage: file(relativePath: { eq: "pp/PIANOkeysimage.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ppkeys: file(relativePath: { eq: "pp/PIANOkeys.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ppnyimage: file(relativePath: { eq: "pp/PIANOnyimage.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ppny: file(relativePath: { eq: "pp/PIANOny.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pprandomimage: file(relativePath: { eq: "pp/PIANOrandomimage.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    pprandom: file(relativePath: { eq: "pp/PIANOrandom.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    ppkeysimage: file(relativePath: { eq: "pp/PIANOkeysimage.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cuestart: file(relativePath: { eq: "cue/CUEstart.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cuelisten: file(relativePath: { eq: "cue/CUElisten.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cuereturn: file(relativePath: { eq: "cue/CUEreturn.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hklogin: file(relativePath: { eq: "housekeeper/HOUSEKEEPERlogin.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hksignup: file(relativePath: { eq: "housekeeper/HOUSEKEEPERsignup.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hkbanner: file(relativePath: { eq: "housekeeper/HOUSEKEEPERbanner.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hkcreatetask: file(
+      relativePath: { eq: "housekeeper/HOUSEKEEPERcreatetask.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    hkedittask: file(
+      relativePath: { eq: "housekeeper/HOUSEKEEPERedittask.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
