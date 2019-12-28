@@ -253,33 +253,33 @@ const App = () => {
   useEffect(() => {
     TweenMax.to("#mainContainer", 2, { opacity: 1 })
 
-    fetch(
-      "https://v2-api.sheety.co/efd2a35bf372a3cbe5976ef9c8e084d8/kathanGetsRich/guests"
-    )
-      .then(results => {
-        return results.json()
-      })
-      .then(data => {
-        console.log(data)
-      })
+    // fetch(
+    //   "https://v2-api.sheety.co/efd2a35bf372a3cbe5976ef9c8e084d8/kathanGetsRich/guests"
+    // )
+    //   .then(results => {
+    //     return results.json()
+    //   })
+    //   .then(data => {
+    //     console.log(data)
+    //   })
 
-    fetch(
-      "https://v2-api.sheety.co/efd2a35bf372a3cbe5976ef9c8e084d8/kathanGetsRich/guests",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    )
-      .then(response => response.json())
-      .then(data => {
-        console.log("Success:", data)
-      })
-      .catch(error => {
-        console.error(error)
-      })
+    // fetch(
+    //   "https://v2-api.sheety.co/efd2a35bf372a3cbe5976ef9c8e084d8/kathanGetsRich/guests",
+    //   {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    //   }
+    // )
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log("Success:", data)
+    //   })
+    //   .catch(error => {
+    //     console.error(error)
+    //   })
   }, [])
 
   return (
