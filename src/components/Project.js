@@ -295,6 +295,73 @@ const Project = ({ project, data }) => {
         {project === 3 && (
           <>
             <BannerContainer>
+              <BannerImage fluid={data.store.childImageSharp.fluid} />
+              <BannerDescContainer>
+                <BannerDescTitle>HXOUSE Online Store, 2019</BannerDescTitle>
+                <BannerDescSubTitle>Role: Development</BannerDescSubTitle>
+                <BannerDescLink href="https://shop.hxouse.com/" target="_blank">
+                  Link: shop.hxouse.com
+                </BannerDescLink>
+                <BannerDescSemiTitle>E-commerce store</BannerDescSemiTitle>
+              </BannerDescContainer>
+            </BannerContainer>
+            <ContentContainer>
+              <ContentParagraph>
+                To celebrate the completion of HXOUSE year 1 and the start of
+                HXOUSE year 2 programming, the online store was launched. It
+                features products ranging from t-shirts, jackets, and beanies.
+              </ContentParagraph>
+              <ContentParagraph>
+                I utilized Shopify and created a custon HXOUSE theme from
+                scratch for the online store. It keeps a similar design to the
+                HXOUSE site but focusses on the products.
+              </ContentParagraph>
+              <ContentLargeImage
+                fluid={data.storeproducts.childImageSharp.fluid}
+              />
+              <ContentImageDescContainer>
+                <ContentImageDescText>
+                  Homepage showcasing all the products
+                </ContentImageDescText>
+              </ContentImageDescContainer>
+              <ContentImageGallery>
+                <ContentImageSmall
+                  fluid={data.storemobileproductpage.childImageSharp.fluid}
+                />
+                <ContentImageSmall
+                  fluid={data.storemobilecheckout.childImageSharp.fluid}
+                />
+              </ContentImageGallery>
+              <ContentImageDescContainer>
+                <ContentImageDescText>
+                  Adapted mobile design for the store. Shown here is the product
+                  screen and checkout page
+                </ContentImageDescText>
+              </ContentImageDescContainer>
+              <ContentLargeImage
+                fluid={data.storeproductpage.childImageSharp.fluid}
+              />
+              <ContentImageDescContainer>
+                <ContentImageDescText>
+                  Product page for each project where user can scroll to see
+                  pictures
+                </ContentImageDescText>
+              </ContentImageDescContainer>
+              <ContentLargeImage
+                fluid={data.storecheckout.childImageSharp.fluid}
+              />
+              <ContentImageDescContainer>
+                <ContentImageDescText>
+                  Checkout page for the store
+                </ContentImageDescText>
+              </ContentImageDescContainer>
+              <ContentEnd></ContentEnd>
+            </ContentContainer>
+          </>
+        )}
+        {project === 4 && (
+          <>
+            <BannerContainer>
               <BannerImage fluid={data.ppkeys.childImageSharp.fluid} />
               <BannerDescContainer>
                 <BannerDescTitle>Paper Piano, 2019</BannerDescTitle>
@@ -373,7 +440,7 @@ const Project = ({ project, data }) => {
             </ContentContainer>
           </>
         )}
-        {project === 4 && (
+        {project === 5 && (
           <>
             <BannerContainer>
               <BannerImage fluid={data.hkbanner.childImageSharp.fluid} />
@@ -431,7 +498,7 @@ const Project = ({ project, data }) => {
             </ContentContainer>
           </>
         )}
-        {project === 5 && (
+        {project === 6 && (
           <>
             <BannerContainer>
               <BannerImage fluid={data.cuestart.childImageSharp.fluid} />

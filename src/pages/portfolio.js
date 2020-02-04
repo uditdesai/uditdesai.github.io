@@ -405,9 +405,6 @@ const App = ({ data }) => {
                 Alyx x HXOUSE Growing Family
               </PortfolioItemName>
             </PortfolioItem>
-          </PortfolioSection>
-          <PortfolioSectionTitle>PROJECTS</PortfolioSectionTitle>
-          <PortfolioSection>
             <PortfolioItem
               id="portItem3"
               onMouseEnter={() => {
@@ -421,8 +418,11 @@ const App = ({ data }) => {
               }}
             >
               <PortfolioItemNumber id="portItemNum3">3</PortfolioItemNumber>
-              <PortfolioItemName>Paper Piano</PortfolioItemName>
+              <PortfolioItemName>HXOUSE Store</PortfolioItemName>
             </PortfolioItem>
+          </PortfolioSection>
+          <PortfolioSectionTitle>PROJECTS</PortfolioSectionTitle>
+          <PortfolioSection>
             <PortfolioItem
               id="portItem4"
               onMouseEnter={() => {
@@ -436,7 +436,7 @@ const App = ({ data }) => {
               }}
             >
               <PortfolioItemNumber id="portItemNum4">4</PortfolioItemNumber>
-              <PortfolioItemName>Housekeeper</PortfolioItemName>
+              <PortfolioItemName>Paper Piano</PortfolioItemName>
             </PortfolioItem>
             <PortfolioItem
               id="portItem5"
@@ -451,6 +451,21 @@ const App = ({ data }) => {
               }}
             >
               <PortfolioItemNumber id="portItemNum5">5</PortfolioItemNumber>
+              <PortfolioItemName>Housekeeper</PortfolioItemName>
+            </PortfolioItem>
+            <PortfolioItem
+              id="portItem6"
+              onMouseEnter={() => {
+                hoverPortItem(6)
+              }}
+              onMouseLeave={() => {
+                hoverPortItemLeave(6)
+              }}
+              onClick={() => {
+                projectHandler(6)
+              }}
+            >
+              <PortfolioItemNumber id="portItemNum6">6</PortfolioItemNumber>
               <PortfolioItemName>Cue</PortfolioItemName>
             </PortfolioItem>
           </PortfolioSection>
@@ -494,9 +509,6 @@ const App = ({ data }) => {
                   Alyx x HXOUSE Growing Family
                 </PortfolioItemName>
               </PortfolioItem>
-            </PortfolioSection>
-            <PortfolioSectionTitle>PROJECTS</PortfolioSectionTitle>
-            <PortfolioSection>
               <PortfolioItem
                 id="portItem3"
                 onMouseEnter={() => {
@@ -510,8 +522,11 @@ const App = ({ data }) => {
                 }}
               >
                 <PortfolioItemNumber id="portItemNum3">3</PortfolioItemNumber>
-                <PortfolioItemName>Paper Piano</PortfolioItemName>
+                <PortfolioItemName>HXOUSE Store</PortfolioItemName>
               </PortfolioItem>
+            </PortfolioSection>
+            <PortfolioSectionTitle>PROJECTS</PortfolioSectionTitle>
+            <PortfolioSection>
               <PortfolioItem
                 id="portItem4"
                 onMouseEnter={() => {
@@ -525,7 +540,7 @@ const App = ({ data }) => {
                 }}
               >
                 <PortfolioItemNumber id="portItemNum4">4</PortfolioItemNumber>
-                <PortfolioItemName>Housekeeper</PortfolioItemName>
+                <PortfolioItemName>Paper Piano</PortfolioItemName>
               </PortfolioItem>
               <PortfolioItem
                 id="portItem5"
@@ -540,6 +555,21 @@ const App = ({ data }) => {
                 }}
               >
                 <PortfolioItemNumber id="portItemNum5">5</PortfolioItemNumber>
+                <PortfolioItemName>Housekeeper</PortfolioItemName>
+              </PortfolioItem>
+              <PortfolioItem
+                id="portItem6"
+                onMouseEnter={() => {
+                  hoverPortItem(6)
+                }}
+                onMouseLeave={() => {
+                  hoverPortItemLeave(6)
+                }}
+                onClick={() => {
+                  projectHandler(6)
+                }}
+              >
+                <PortfolioItemNumber id="portItemNum6">6</PortfolioItemNumber>
                 <PortfolioItemName>Cue</PortfolioItemName>
               </PortfolioItem>
             </PortfolioSection>
@@ -771,6 +801,52 @@ export const query = graphql`
     hkedittask: file(
       relativePath: { eq: "housekeeper/HOUSEKEEPERedittask.png" }
     ) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    store: file(relativePath: { eq: "store/STORE.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    storecheckout: file(relativePath: { eq: "store/STOREcheckout.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    storemobilecheckout: file(
+      relativePath: { eq: "store/STOREmobilecheckout.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    storemobileproductpage: file(
+      relativePath: { eq: "store/STOREmobileproductpage.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    storeproductpage: file(relativePath: { eq: "store/STOREproductpage.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1500) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    storeproducts: file(relativePath: { eq: "store/STOREproducts.png" }) {
       childImageSharp {
         fluid(maxWidth: 1500) {
           ...GatsbyImageSharpFluid
