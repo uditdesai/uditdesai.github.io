@@ -1,32 +1,13 @@
 import React, { useEffect } from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import Logo from "../assets/logo.png"
-import { TweenMax } from "gsap"
+import { navigate } from "gatsby"
 import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
 import { Helmet } from "react-helmet"
 
-//PARENT CONTAINER FOR WHOLE SITE
-const DiffContainer = styled.div`
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-`
-const CreditLogo = styled.img`
-  width: 100px;
-`
-
 const App = () => {
   useEffect(() => {
-    TweenMax.to("#container404", 2, { opacity: 1 })
+    navigate("/")
   }, [])
 
   return (
@@ -57,13 +38,8 @@ const App = () => {
           },
         ]}
       >
-        <title>UDIT DESAI . 404</title>
+        <title>UDIT DESAI</title>
       </Helmet>
-      <DiffContainer id="container404">
-        <Link to="/">
-          <CreditLogo src={Logo}></CreditLogo>
-        </Link>
-      </DiffContainer>
     </>
   )
 }

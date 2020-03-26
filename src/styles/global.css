@@ -1,29 +1,13 @@
 @font-face {
-  font-family: "Heebo-Bold";
+  font-family: "WorkSans-Regular";
   font-style: normal;
-  src: local("Heebo-Bold"), local("Heebo-Bold"),
-    url("../fonts/Heebo-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto-Bold";
-  font-style: normal;
-  src: local("Roboto-Bold"), local("Roboto-Bold"),
-    url("../fonts/Roboto-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Roboto-Regular";
-  font-style: normal;
-  src: local("Roboto-Regular"), local("Roboto-Regular"),
-    url("../fonts/Roboto-Regular.ttf") format("truetype");
+  src: local("WorkSans-Regular"), local("WorkSans-Regular"),
+    url("../fonts/WorkSans-Regular.ttf") format("truetype");
 }
 
 html,
 body {
   margin: 0;
   padding: 0;
-  min-width: 100%;
-  min-height: 100%;
   overflow-x: hidden;
 }
