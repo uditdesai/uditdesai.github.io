@@ -246,6 +246,12 @@ const App = ({ data }) => {
           link="https://shop.hxouse.com/"
         />
         <Project
+          title="Jiazhangfilms.com"
+          desc="Design + development"
+          img={data.jiaZhang.childImageSharp.fluid}
+          link="https://jiazhangfilms.com/"
+        />
+        <Project
           title="Alyx x HXOUSE Growing Family Website"
           desc="Development"
           img={data.alyx.childImageSharp.fluid}
@@ -321,6 +327,13 @@ export const query = graphql`
       }
     }
     cue: file(relativePath: { eq: "cue.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    jiaZhang: file(relativePath: { eq: "jiaZhang.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
