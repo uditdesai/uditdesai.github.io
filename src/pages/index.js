@@ -189,8 +189,9 @@ const App = ({ data }) => {
           <InfoText>
             Full-stack developer and designer based in Toronto, Canada. He
             currently studies computer engineering at the University of Toronto
-            and is available for freelance web-development and design. He has
-            previously interned as a developer at HXOUSE.
+            and is available for freelance web-development and design. This
+            summer, he's working as a UX Developer at Shopify. He has previously
+            interned as a developer at HXOUSE.
           </InfoText>
         ) : info === "contact" ? (
           <ContactWrapper>
@@ -228,31 +229,31 @@ const App = ({ data }) => {
       </InfoContainer>
       <ProjectGrid>
         <Project
-          title="HXOUSE Website"
+          title="HXOUSE Website — HXOUSE"
           desc="Design + development"
           img={data.hxouse.childImageSharp.fluid}
           link="https://www.hxouse.com/"
         />
         <Project
-          title="Andras Website"
+          title="Andras Website — freelance"
           desc="Design + development"
           img={data.andras.childImageSharp.fluid}
           link="https://www.andrasii.com/"
         />
         <Project
-          title="HXOUSE E-commerce Store"
+          title="HXOUSE E-commerce Store — HXOUSE"
           desc="Design + development"
           img={data.hxouseStore.childImageSharp.fluid}
           link="https://shop.hxouse.com/"
         />
         <Project
-          title="Jiazhangfilms.com"
+          title="Jiazhangfilms.com — freelance"
           desc="Design + development"
           img={data.jiaZhang.childImageSharp.fluid}
           link="https://jiazhangfilms.com/"
         />
         <Project
-          title="Alyx x HXOUSE Growing Family Website"
+          title="Alyx x HXOUSE Growing Family Website — HXOUSE"
           desc="Development"
           img={data.alyx.childImageSharp.fluid}
           link="https://alyx.hxouse.com/"
@@ -264,13 +265,13 @@ const App = ({ data }) => {
           link="https://github.com/uditdesai/housekeeper"
         />
         <Project
-          title="Paper Piano — personal project"
+          title="Paper Piano — hackathon project"
           desc="Development"
           img={data.pp.childImageSharp.fluid}
           link="https://devpost.com/software/paper-piano-8yzaw9"
         />
         <Project
-          title="Cue — personal project"
+          title="Cue — hackathon project"
           desc="Design + development"
           img={data.cue.childImageSharp.fluid}
           link="https://devpost.com/software/cue-doisjy"
