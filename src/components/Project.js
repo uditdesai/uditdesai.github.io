@@ -2,8 +2,22 @@ import React from "react"
 import styled from "styled-components"
 import Img from "gatsby-image"
 
-const LinkContainer = styled.a`
+const LinkContainer = styled.div`
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+`
+
+const BottomContainer = styled.div`
+  width: 100%;
+  height: ${props => (props.moreInfo === true ? "fit-content" : "0px")};
+  border: ${props => (props.moreInfo === true ? "1px solid black" : "none")};
+  border-top: none;
+  box-sizing: border-box;
+  padding: ${props => (props.moreInfo === true ? "20px" : "0px")};
+  display: flex;
+  flex-direction: column;
+  background: white;
 `
 
 const Container = styled.div`
@@ -16,6 +30,8 @@ const Container = styled.div`
   padding: 20px;
   border: 1px solid black;
   position: relative;
+  cursor: pointer;
+  background: white;
   @media (max-width: 800px) and (min-width: 600px) {
     height: 300px;
   }
@@ -54,6 +70,13 @@ const ProjectImg = styled(Img)`
   }
 `
 
+const ProjectDescWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 const ProjectDesc = styled.p`
   font-family: "WorkSans-Regular";
   font-size: 18px;
@@ -64,14 +87,68 @@ const ProjectDesc = styled.p`
   }
 `
 
-const Project = ({ title, desc, img, link }) => {
+const ProjectAdd = styled.p`
+  font-family: "WorkSans-Regular";
+  font-size: 28px;
+  margin: 0;
+  color: black;
+  @media (max-width: 600px) {
+    font-size: 24px;
+  }
+`
+
+const BottomDesc = styled.p`
+  font-family: "WorkSans-Regular";
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  color: black;
+  display: ${props => (props.moreInfo === true ? "block" : "none")};
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+`
+
+const BottomLink = styled.a`
+  font-family: "WorkSans-Regular";
+  font-size: 16px;
+  margin: 0;
+  color: black;
+  text-decoration: underline;
+  display: ${props => (props.moreInfo === true ? "block" : "none")};
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+`
+
+const Project = ({
+  title,
+  desc,
+  img,
+  link,
+  moreInfo,
+  changeMoreInfoNo,
+  projectNo,
+  bottomDesc,
+}) => {
+  const clickHandler = () => {
+    changeMoreInfoNo(projectNo)
+  }
   return (
-    <LinkContainer target="_blank" href={link}>
-      <Container>
+    <LinkContainer>
+      <Container onClick={clickHandler}>
         <ProjectTitle>{title}</ProjectTitle>
         <ProjectImg fluid={img} />
-        <ProjectDesc>{desc}</ProjectDesc>
+        <ProjectDescWrapper>
+          <ProjectDesc>{desc}</ProjectDesc>
+          <ProjectAdd>{moreInfo === true ? "-" : "+"}</ProjectAdd>
+        </ProjectDescWrapper>
       </Container>
+      <BottomContainer moreInfo={moreInfo}>
+        <BottomDesc moreInfo={moreInfo}>{bottomDesc}</BottomDesc>
+        <BottomLink href={link} moreInfo={moreInfo}>
+          View Project
+        </BottomLink>
+      </BottomContainer>
     </LinkContainer>
   )
 }

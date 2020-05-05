@@ -5,6 +5,20 @@
     url("../fonts/WorkSans-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "WorkSans-Bold";
+  font-style: normal;
+  src: local("WorkSans-Bold"), local("WorkSans-Bold"),
+    url("../fonts/WorkSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "WorkSans-Black";
+  font-style: normal;
+  src: local("WorkSans-Black"), local("WorkSans-Black"),
+    url("../fonts/WorkSans-Black.ttf") format("truetype");
+}
+
 html,
 body {
   margin: 0;
