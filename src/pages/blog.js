@@ -248,6 +248,7 @@ const Blog = ({ data }) => {
         meta={[
           { name: "description", content: "Udit Desai" },
           { name: "keywords", content: "developer, designer" },
+          { property: "og:image", content: "https://i.imgur.com/9dELn7k.png" },
         ]}
         link={[
           {
@@ -270,7 +271,7 @@ const Blog = ({ data }) => {
           },
         ]}
       >
-        <title>UDIT DESAI</title>
+        <title>UDIT DESAI | BLOG</title>
       </Helmet>
       <BackgroundTextContainer>
         <BackgroundText>BLOG</BackgroundText>
@@ -330,7 +331,7 @@ const Blog = ({ data }) => {
             </ContactLink>
             <ContactLink
               target="_blank"
-              href="https://drive.google.com/file/d/1Y5MVbWvVe_IN2nTnxOTOcv0aGGiN8q3T/view?usp=sharing"
+              href="https://drive.google.com/file/d/1kGMe9NRln_ljcbcxHOAO5006hVWmNmEZ/view?usp=sharing"
             >
               Resume
             </ContactLink>

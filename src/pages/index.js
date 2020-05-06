@@ -218,6 +218,7 @@ const App = ({ data }) => {
         meta={[
           { name: "description", content: "Udit Desai" },
           { name: "keywords", content: "developer, designer" },
+          { property: "og:image", content: "https://i.imgur.com/9dELn7k.png" },
         ]}
         link={[
           {
@@ -308,7 +309,7 @@ const App = ({ data }) => {
             </ContactLink>
             <ContactLink
               target="_blank"
-              href="https://drive.google.com/file/d/1Y5MVbWvVe_IN2nTnxOTOcv0aGGiN8q3T/view?usp=sharing"
+              href="https://drive.google.com/file/d/1kGMe9NRln_ljcbcxHOAO5006hVWmNmEZ/view?usp=sharing"
             >
               Resume
             </ContactLink>
@@ -379,13 +380,23 @@ const App = ({ data }) => {
           bottomDesc="Kanban board web application built for student households to manage housekeeping. Built using React, GraphQL and MongoDB."
         />
         <Project
+          title="Wedding site — personal project"
+          desc="Design + development"
+          img={data.wedding.childImageSharp.fluid}
+          link="https://github.com/uditdesai/wedding"
+          changeMoreInfoNo={changeMoreInfoNo}
+          moreInfo={moreInfoNo === 7}
+          projectNo={7}
+          bottomDesc="Wedding website built to showcase wedding events, provide information to guests, and handle RSVPs. Built a custom Google Sheets based RSVP system to manage and track invitations and guestlist using Gatsby and GraphQL."
+        />
+        <Project
           title="Paper Piano — hackathon project"
           desc="Development"
           img={data.pp.childImageSharp.fluid}
           link="https://devpost.com/software/paper-piano-8yzaw9"
           changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 7}
-          projectNo={7}
+          moreInfo={moreInfoNo === 8}
+          projectNo={8}
           bottomDesc="Developed a computer vision program that detects shapes drawn on paper using a computer webcam and a user's finger tapping on the shapes to play a sound. The user can draw several shapes and assign different sounds to create any instrument. Built using OpenCV within a team of two within 36 hours."
         />
         <Project
@@ -394,8 +405,8 @@ const App = ({ data }) => {
           img={data.cue.childImageSharp.fluid}
           link="https://devpost.com/software/cue-doisjy"
           changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 8}
-          projectNo={8}
+          moreInfo={moreInfoNo === 9}
+          projectNo={9}
           bottomDesc="Built a web tool for learning different languages or for overcoming learning disabilities which works by annotating user-read sentences onto the screen with helpful visual cues so the user can understand what they read. leveraged Google's Speech-to-text API and developed tool within a team of four in 36 hours."
         />
       </ProjectGrid>
@@ -457,6 +468,13 @@ export const query = graphql`
       }
     }
     jiaZhang: file(relativePath: { eq: "images/jiaZhang.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    wedding: file(relativePath: { eq: "images/wedding.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
