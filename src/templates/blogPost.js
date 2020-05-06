@@ -29,10 +29,14 @@ const BackgroundText = styled.p`
   word-wrap: break-word;
 
   @media (max-width: 1000px) {
-    font-size: 320px;
+    font-size: 400px;
   }
 
   @media (max-width: 600px) {
+    font-size: 250px;
+  }
+
+  @media (max-width: 400px) {
     font-size: 200px;
   }
 `
@@ -119,18 +123,27 @@ const DescriptionLink = styled.a`
 const InfoContainer = styled.div`
   width: calc(100% - 80px);
   margin: 50px auto 0 auto;
-  height: 130px;
+  height: 150px;
   display: flex;
+
+  @media (max-width: 800px) and (min-height: 950px) {
+    height: 190px;
+    margin: 40px auto 0 auto;
+  }
 
   @media (max-width: 600px) {
     width: calc(100% - 40px);
-    height: 150px;
+    height: 155px;
     margin: 30px auto 0 auto;
+  }
+
+  @media (max-width: 330px) {
+    height: 160px;
   }
 `
 
 const InfoText = styled.p`
-  width: 70%;
+  width: 60%;
   font-family: "WorkSans-Regular";
   font-size: 18px;
   color: black;
@@ -139,6 +152,14 @@ const InfoText = styled.p`
   @media (max-width: 600px) {
     width: 100%;
     font-size: 14px;
+  }
+
+  @media (min-width: 1800px) {
+    width: 60%;
+  }
+
+  @media (min-width: 2000px) {
+    width: 50%;
   }
 `
 
@@ -215,6 +236,10 @@ const BlogParagraph = styled.p`
     width: 100%;
     font-size: 14px;
   }
+
+  @media (min-width: 2000px) {
+    width: 45%;
+  }
 `
 
 const BlogQuote = styled.blockquote`
@@ -230,6 +255,10 @@ const BlogQuote = styled.blockquote`
     font-size: 16px;
     padding: 0;
   }
+
+  @media (min-width: 2000px) {
+    width: 45%;
+  }
 `
 
 const BlogSubTitle = styled.h2`
@@ -242,6 +271,10 @@ const BlogSubTitle = styled.h2`
   @media (max-width: 600px) {
     width: 100%;
     font-size: 14px;
+  }
+
+  @media (min-width: 2000px) {
+    width: 45%;
   }
 `
 
@@ -256,6 +289,10 @@ const BlogList = styled.li`
   @media (max-width: 600px) {
     width: calc(100% - 20px);
     font-size: 14px;
+  }
+
+  @media (min-width: 2000px) {
+    width: 45%;
   }
 `
 

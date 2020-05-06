@@ -54,18 +54,22 @@ const ProjectImg = styled(Img)`
   width: 80%;
 
   @media (min-width: 1500px) {
-    width: 70%;
+    width: 65%;
   }
   @media (min-width: 1800px) {
     width: 60%;
   }
   @media (min-width: 2100px) {
-    width: 480px;
+    width: 425px;
   }
   @media (max-width: 475px) {
     width: 90%;
   }
   @media (max-width: 420px) {
+    width: 95%;
+  }
+
+  @media (max-width: 400px) {
     width: 100%;
   }
 `
