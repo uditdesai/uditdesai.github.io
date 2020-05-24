@@ -7,213 +7,73 @@ import favicon64 from "../assets/favicon64.png"
 import { Link } from "gatsby"
 
 import Project from "../components/Project.js"
+import Footer from "../components/footer.js"
+import Navbar from "../components/Navbar.js"
 
-const BackgroundTextContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  margin: 0;
-  display: flex;
-  align-items: center;
-`
+const Title = styled.h1`
+  font-family: "EBGaramond-Regular";
+  color: black;
+  width: 1000px;
+  margin: 0 auto 100px auto;
+  font-size: 120px;
+  font-weight: 400;
 
-const BackgroundText = styled.p`
-  width: 100%;
-  font-family: "WorkSans-Black";
-  font-size: 350px;
-  color: #f2f2f2;
-  pointer-events: none;
-  margin: 0;
-  word-wrap: break-word;
-
-  @media (max-width: 1000px) {
-    font-size: 250px;
+  &::selection {
+    background: #222222;
+    color: #f2f2f2;
   }
 
-  @media (max-width: 600px) {
-    font-size: 150px;
-  }
-
-  @media (max-width: 330px) {
+  @media (max-width: 1050px) {
+    width: 800px;
     font-size: 100px;
   }
 
-  @media (min-width: 2000px) {
-    font-size: 500px;
-  }
-
-  @media (min-width: 2300px) {
-    font-size: 600px;
-  }
-`
-
-const Topbar = styled.div`
-  width: calc(100% - 80px);
-  display: flex;
-  margin: 0 auto 0 auto;
-
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     width: calc(100% - 40px);
-    justify-content: space-between;
+    font-size: 100px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 48px;
   }
 `
 
-const TopBarLink = styled.p`
-  font-family: "WorkSans-Regular";
-  font-size: 18px;
-  margin: 40px 50px 0 0;
+const ProjectGridTitle = styled.h4`
+  font-family: "EBGaramond-Regular";
   color: black;
-  cursor: pointer;
-  text-decoration: underline;
+  width: 1000px;
+  margin: 0 auto 30px auto;
+  font-size: 24px;
+  font-weight: 400;
 
-  @media (max-width: 600px) {
-    margin: 30px 0 0 0;
-    font-size: 14px;
-  }
-`
-
-const TopBarLink1 = styled.p`
-  font-family: "WorkSans-Regular";
-  font-size: 18px;
-  margin: 40px 50px 0 0;
-  color: black;
-  cursor: pointer;
-  text-decoration: ${props => (props.info === "info" ? "underline" : "none")};
-  @media (max-width: 600px) {
-    margin: 30px 0 0 0;
-    font-size: 14px;
-  }
-`
-
-const TopBarLink2 = styled.p`
-  font-family: "WorkSans-Regular";
-  font-size: 18px;
-  margin: 40px 50px 0 0;
-  color: black;
-  cursor: pointer;
-  text-decoration: ${props =>
-    props.info === "contact" ? "underline" : "none"};
-
-  @media (max-width: 600px) {
-    margin: 30px 0 0 0;
-    font-size: 14px;
-  }
-`
-
-const BlogLink = styled(Link)`
-  font-family: "WorkSans-Regular";
-  font-size: 18px;
-  margin: 40px 50px 0 0;
-  color: black;
-  cursor: pointer;
-  text-decoration: ${props => (props.info === "blog" ? "underline" : "none")};
-
-  @media (max-width: 600px) {
-    margin: 30px 0 0 0;
-    font-size: 14px;
-  }
-`
-
-const DescriptionLink = styled.a`
-  text-decoration: none;
-  font-family: "WorkSans-Regular";
-  font-size: 18px;
-  color: black;
-  margin: 0;
-
-  @media (max-width: 600px) {
-    font-size: 14px;
-  }
-`
-
-const InfoContainer = styled.div`
-  width: calc(100% - 80px);
-  margin: 50px auto 0 auto;
-  height: 150px;
-  display: flex;
-
-  @media (max-width: 800px) and (min-height: 950px) {
-    height: 190px;
-    margin: 40px auto 0 auto;
+  &::selection {
+    background: #222222;
+    color: #f2f2f2;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1050px) {
+    width: 800px;
+  }
+
+  @media (max-width: 800px) {
     width: calc(100% - 40px);
-    height: 155px;
-    margin: 30px auto 0 auto;
-  }
-
-  @media (max-width: 330px) {
-    height: 160px;
-  }
-`
-
-const InfoText = styled.p`
-  width: 60%;
-  font-family: "WorkSans-Regular";
-  font-size: 18px;
-  color: black;
-  margin: 0;
-
-  @media (max-width: 600px) {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  @media (min-width: 1800px) {
-    width: 60%;
-  }
-
-  @media (min-width: 2000px) {
-    width: 50%;
-  }
-`
-
-const ContactWrapper = styled.div`
-  display: flex;
-  margin: 10px 0 0 0;
-
-  @media (max-width: 600px) {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 30px;
-    grid-gap: 10px 0;
-    margin: 20px 0 0 0;
-  }
-`
-
-const ContactLink = styled.a`
-  text-decoration: none;
-  font-family: "WorkSans-Regular";
-  font-size: 18px;
-  margin: 0 50px 0 0;
-  color: black;
-
-  @media (max-width: 600px) {
-    margin: 0;
-    font-size: 14px;
   }
 `
 
 const ProjectGrid = styled.div`
-  width: calc(100% - 80px);
+  width: calc(1000px);
   display: grid;
-  grid-template-columns: 45% 45%;
+  grid-template-columns: calc(50% - 20px) calc(50% - 20px);
   grid-gap: 40px 40px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 0 auto;
 
-  @media (max-width: 600px) {
-    width: calc(100% - 40px);
-    grid-template-columns: 100%;
-    grid-gap: 30px 0;
+  @media (max-width: 1050px) {
+    width: 800px;
   }
 
-  @media (min-width: 2000px) {
-    grid-template-columns: 35% 35%;
+  @media (max-width: 800px) {
+    width: calc(100% - 40px);
+    grid-template-columns: 100%;
   }
 `
 
@@ -276,81 +136,9 @@ const App = ({ data }) => {
       >
         <title>UDIT DESAI</title>
       </Helmet>
-      <BackgroundTextContainer>
-        <BackgroundText>PORTFOLIO</BackgroundText>
-      </BackgroundTextContainer>
-      <Topbar
-        onClick={() => {
-          setMoreInfoNo(0)
-        }}
-      >
-        <TopBarLink info={info} onClick={changeName}>
-          UDIT DESAI
-        </TopBarLink>
-        <TopBarLink1 info={info} onClick={changeInfo}>
-          INFO
-        </TopBarLink1>
-        <TopBarLink2 info={info} onClick={changeContact}>
-          CONTACT
-        </TopBarLink2>
-        <BlogLink to="/blog" info={info}>
-          BLOG
-        </BlogLink>
-      </Topbar>
-      <InfoContainer
-        onClick={() => {
-          setMoreInfoNo(0)
-        }}
-      >
-        {info === "info" ? (
-          <InfoText>
-            Full-stack developer and designer based in Toronto, Canada. He
-            currently studies computer engineering at the University of Toronto
-            and is available for freelance web-development and design. This
-            summer, he's working as a UX Developer at{" "}
-            <DescriptionLink target="_blank" href="https://www.shopify.ca/">
-              Shopify
-            </DescriptionLink>
-            . He has previously interned as a developer at{" "}
-            <DescriptionLink target="_blank" href="https://www.hxouse.com/">
-              HXOUSE
-            </DescriptionLink>
-            .
-          </InfoText>
-        ) : info === "contact" ? (
-          <ContactWrapper>
-            <ContactLink
-              target="_blank"
-              href="mailto:udit.desai3@gmail.com?subject=Hey Udit!"
-            >
-              Email
-            </ContactLink>
-            <ContactLink target="_blank" href="https://twitter.com/uydesai">
-              Twitter
-            </ContactLink>
-            <ContactLink
-              target="_blank"
-              href="https://www.instagram.com/uydesai/?hl=en"
-            >
-              Instagram
-            </ContactLink>
-            <ContactLink
-              target="_blank"
-              href="https://www.linkedin.com/in/uditdesai/"
-            >
-              Linkedin
-            </ContactLink>
-            <ContactLink
-              target="_blank"
-              href="https://drive.google.com/file/d/1kGMe9NRln_ljcbcxHOAO5006hVWmNmEZ/view?usp=sharing"
-            >
-              Resume
-            </ContactLink>
-          </ContactWrapper>
-        ) : (
-          <></>
-        )}
-      </InfoContainer>
+      <Navbar />
+      <Title>I’m a developer and designer living in Toronto.</Title>
+      <ProjectGridTitle>Selected Works</ProjectGridTitle>
       <ProjectGrid>
         <Project
           title="HXOUSE Website — HXOUSE"
@@ -393,7 +181,7 @@ const App = ({ data }) => {
           bottomDesc="Portfolio website for photographer Jia Zhang. Designed and built portfolio using Figma, Gatsby, and GraphQL for querying images."
         />
         <Project
-          title="Alyx x HXOUSE Growing Family Website — HXOUSE"
+          title="Alyx Growing Family Website — HXOUSE"
           desc="Development"
           img={data.alyx.childImageSharp.fluid}
           link="https://alyx.hxouse.com/"
@@ -403,13 +191,23 @@ const App = ({ data }) => {
           bottomDesc="Event website for HXOUSE x Alyx Growing Family conference. Built using Gatsby within a team of two. Designed by Ben Swantek. Developed centre tilt animation using GSAP."
         />
         <Project
+          title="Helpathon — hackathon project"
+          desc="Design + development"
+          img={data.helpathon.childImageSharp.fluid}
+          link="https://github.com/uditdesai/Helpathon"
+          changeMoreInfoNo={changeMoreInfoNo}
+          moreInfo={moreInfoNo === 6}
+          projectNo={6}
+          bottomDesc="Hackathon planning web app which allows hackathon organizers to create and manage application forms and applicants, budget, prizes, etc. As well, it allows students to search for hackathons and apply directly through the web app. Built and designed using Figma, React, and Firestore."
+        />
+        <Project
           title="Housekeeper — personal project"
           desc="Design + development"
           img={data.housekeeper.childImageSharp.fluid}
           link="https://github.com/uditdesai/housekeeper"
           changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 6}
-          projectNo={6}
+          moreInfo={moreInfoNo === 7}
+          projectNo={7}
           bottomDesc="Kanban board web application built for student households to manage housekeeping. Built using React, GraphQL and MongoDB."
         />
         <Project
@@ -418,8 +216,8 @@ const App = ({ data }) => {
           img={data.wedding.childImageSharp.fluid}
           link="https://github.com/uditdesai/wedding"
           changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 7}
-          projectNo={7}
+          moreInfo={moreInfoNo === 8}
+          projectNo={8}
           bottomDesc="Wedding website built to showcase wedding events, provide information to guests, and handle RSVPs. Built a custom Google Sheets based RSVP system to manage and track invitations and guestlist using Gatsby and GraphQL."
         />
         <Project
@@ -428,8 +226,8 @@ const App = ({ data }) => {
           img={data.pp.childImageSharp.fluid}
           link="https://devpost.com/software/paper-piano-8yzaw9"
           changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 8}
-          projectNo={8}
+          moreInfo={moreInfoNo === 9}
+          projectNo={9}
           bottomDesc="Developed a computer vision program that detects shapes drawn on paper using a computer webcam and a user's finger tapping on the shapes to play a sound. The user can draw several shapes and assign different sounds to create any instrument. Built using OpenCV within a team of two within 36 hours."
         />
         <Project
@@ -438,11 +236,12 @@ const App = ({ data }) => {
           img={data.cue.childImageSharp.fluid}
           link="https://devpost.com/software/cue-doisjy"
           changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 9}
-          projectNo={9}
+          moreInfo={moreInfoNo === 10}
+          projectNo={10}
           bottomDesc="Built a web tool for learning different languages or for overcoming learning disabilities which works by annotating user-read sentences onto the screen with helpful visual cues so the user can understand what they read. leveraged Google's Speech-to-text API and developed tool within a team of four in 36 hours."
         />
       </ProjectGrid>
+      <Footer />
     </>
   )
 }
@@ -508,6 +307,13 @@ export const query = graphql`
       }
     }
     wedding: file(relativePath: { eq: "images/wedding.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    helpathon: file(relativePath: { eq: "images/helpathon.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
