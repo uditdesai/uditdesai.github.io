@@ -64,25 +64,6 @@ const BlogTitle = styled(Link)`
 `
 
 const Blog = ({ data }) => {
-  const [info, setInfo] = useState("blog")
-  const changeInfo = () => {
-    if (info !== "info") {
-      setInfo("info")
-    } else {
-      setInfo("")
-    }
-  }
-  const changeContact = () => {
-    if (info !== "contact") {
-      setInfo("contact")
-    } else {
-      setInfo("")
-    }
-  }
-  const changeBlog = () => {
-    setInfo("blog")
-  }
-
   const blogEntries = data.allMarkdownRemark.edges.map(({ node }) => {
     return (
       <>

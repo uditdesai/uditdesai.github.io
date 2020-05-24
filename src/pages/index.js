@@ -78,27 +78,9 @@ const ProjectGrid = styled.div`
 `
 
 const App = ({ data }) => {
-  const [info, setInfo] = useState("")
   const [moreInfoNo, setMoreInfoNo] = useState(0)
-  const changeInfo = () => {
-    if (info !== "info") {
-      setInfo("info")
-    } else {
-      setInfo("")
-    }
-  }
-  const changeContact = () => {
-    if (info !== "contact") {
-      setInfo("contact")
-    } else {
-      setInfo("")
-    }
-  }
-  const changeName = () => {
-    setInfo("")
-  }
+
   const changeMoreInfoNo = num => {
-    console.log("hello")
     if (moreInfoNo === num) {
       setMoreInfoNo(0)
     } else {
