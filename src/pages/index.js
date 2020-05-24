@@ -7,7 +7,7 @@ import favicon64 from "../assets/favicon64.png"
 import { Link } from "gatsby"
 
 import Project from "../components/Project.js"
-import Footer from "../components/footer.js"
+import Footer from "../components/Footer.js"
 import Navbar from "../components/Navbar.js"
 
 const Title = styled.h1`
