@@ -19,9 +19,17 @@
     url("../fonts/WorkSans-Black.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "EBGaramond-Regular";
+  font-style: normal;
+  src: local("EBGaramond-Regular"), local("EBGaramond-Regular"),
+    url("../fonts/EBGaramond-Regular.ttf") format("truetype");
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }

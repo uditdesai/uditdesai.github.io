@@ -22,7 +22,7 @@ const BottomContainer = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  height: 400px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -32,12 +32,6 @@ const Container = styled.div`
   position: relative;
   cursor: pointer;
   background: white;
-  @media (max-width: 800px) and (min-width: 600px) {
-    height: 300px;
-  }
-  @media (max-width: 475px) {
-    height: 300px;
-  }
 `
 
 const ProjectTitle = styled.p`
@@ -45,33 +39,16 @@ const ProjectTitle = styled.p`
   font-size: 18px;
   margin: 0;
   color: black;
-  @media (max-width: 600px) {
-    font-size: 16px;
+
+  &::selection {
+    background: #222222;
+    color: #f2f2f2;
   }
 `
 
 const ProjectImg = styled(Img)`
-  width: 80%;
-
-  @media (min-width: 1500px) {
-    width: 65%;
-  }
-  @media (min-width: 1800px) {
-    width: 60%;
-  }
-  @media (min-width: 2100px) {
-    width: 425px;
-  }
-  @media (max-width: 475px) {
-    width: 90%;
-  }
-  @media (max-width: 420px) {
-    width: 95%;
-  }
-
-  @media (max-width: 400px) {
-    width: 100%;
-  }
+  width: 100%;
+  margin: 20px 0 20px 0;
 `
 
 const ProjectDescWrapper = styled.div`
@@ -79,6 +56,11 @@ const ProjectDescWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &::selection {
+    background: #222222;
+    color: #f2f2f2;
+  }
 `
 
 const ProjectDesc = styled.p`
@@ -86,41 +68,44 @@ const ProjectDesc = styled.p`
   font-size: 18px;
   margin: 0;
   color: black;
-  @media (max-width: 600px) {
-    font-size: 16px;
+
+  &::selection {
+    background: #222222;
+    color: #f2f2f2;
   }
 `
 
 const ProjectAdd = styled.p`
   font-family: "WorkSans-Regular";
-  font-size: 28px;
+  font-size: 18px;
   margin: 0;
   color: black;
-  @media (max-width: 600px) {
-    font-size: 24px;
-  }
 `
 
 const BottomDesc = styled.p`
   font-family: "WorkSans-Regular";
-  font-size: 16px;
+  font-size: 14px;
   margin: 0 0 20px 0;
   color: black;
   display: ${props => (props.moreInfo === true ? "block" : "none")};
-  @media (max-width: 600px) {
-    font-size: 14px;
+
+  &::selection {
+    background: #222222;
+    color: #f2f2f2;
   }
 `
 
 const BottomLink = styled.a`
   font-family: "WorkSans-Regular";
-  font-size: 16px;
+  font-size: 14px;
   margin: 0;
   color: black;
   text-decoration: underline;
   display: ${props => (props.moreInfo === true ? "block" : "none")};
-  @media (max-width: 600px) {
-    font-size: 14px;
+
+  &::selection {
+    background: #222222;
+    color: #f2f2f2;
   }
 `
 
