@@ -1,92 +1,164 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { Helmet } from "react-helmet"
 import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
-import { Link } from "gatsby"
+import Img from "gatsby-image"
 
-import Project from "../components/Project.js"
-import Footer from "../components/Footer.js"
-import Navbar from "../components/Navbar.js"
+const Header = styled.header`
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 0 0 50px;
+  background: linear-gradient(180deg, #eb5757 0%, rgba(235, 87, 87, 0) 70%);
 
-const Title = styled.h1`
-  font-family: "EBGaramond-Regular";
-  color: black;
-  width: 1000px;
-  margin: 0 auto 100px auto;
-  font-size: 120px;
-  font-weight: 400;
-
-  &::selection {
-    background: #222222;
-    color: #f2f2f2;
-  }
-
-  @media (max-width: 1050px) {
-    width: 800px;
-    font-size: 100px;
-  }
-
-  @media (max-width: 800px) {
-    width: calc(100% - 40px);
-    font-size: 100px;
-  }
-
-  @media (max-width: 600px) {
-    font-size: 48px;
+  @media (max-width: 500px) {
+    padding: 30px 0 0 20px;
   }
 `
 
-const ProjectGridTitle = styled.h4`
-  font-family: "EBGaramond-Regular";
+const Name = styled.h1`
   color: black;
-  width: 1000px;
-  margin: 0 auto 30px auto;
-  font-size: 24px;
-  font-weight: 400;
+  font-family: "VioletSans-Regular", sans-serif;
+  font-size: 64px;
+  margin: 0;
+  letter-spacing: 3px;
 
-  &::selection {
-    background: #222222;
-    color: #f2f2f2;
-  }
-
-  @media (max-width: 1050px) {
-    width: 800px;
-  }
-
-  @media (max-width: 800px) {
-    width: calc(100% - 40px);
+  @media (max-width: 500px) {
+    font-size: 32px;
+    letter-spacing: 1px;
   }
 `
 
-const ProjectGrid = styled.div`
-  width: calc(1000px);
-  display: grid;
-  grid-template-columns: calc(50% - 20px) calc(50% - 20px);
-  grid-gap: 40px 40px;
-  margin: 0 auto 0 auto;
+const Main = styled.main`
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  padding: 0 50px 0 50px;
 
-  @media (max-width: 1050px) {
-    width: 800px;
+  @media (min-width: 1800px) {
+    width: 50%;
   }
 
-  @media (max-width: 800px) {
-    width: calc(100% - 40px);
-    grid-template-columns: 100%;
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    padding: 0 20px 0 20px;
+  }
+`
+
+const Content = styled.p`
+  color: black;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 28px;
+  margin: 0 0 35px 0;
+  width: 100%;
+
+  @media (min-width: 1800px) {
+    font-size: 32px;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 24px;
+  }
+`
+
+const Region = styled.div`
+  box-sizing: border-box;
+  padding: 0 50px 0 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 500px) {
+    padding: 0 20px 0 20px;
+  }
+`
+
+const RegionTitle = styled.h3`
+  color: black;
+  font-family: "VioletSans-Regular", sans-serif;
+  font-size: 20px;
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+
+  @media (max-width: 500px) {
+    font-size: 18px;
+  }
+`
+
+const ContactLink = styled.a`
+  color: #eb5757;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 18px;
+  margin: 0 0 14px 0;
+  text-decoration: underline;
+
+  &:last-of-type {
+    margin: 0;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
+`
+
+const ProjectContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 70px;
+`
+
+const ProjectImg = styled(Img)`
+  width: 80%;
+  max-width: 1500px;
+  margin-bottom: 15px;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+`
+
+const ProjectTextContainer = styled.div`
+  width: 80%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 700px) {
+    width: 100%;
+  }
+`
+
+const ProjectTitle = styled.h4`
+  color: black;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 20px;
+  margin: 0;
+
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
+`
+
+const ProjectLink = styled.a`
+  color: #eb5757;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 20px;
+  text-decoration: underline;
+
+  @media (max-width: 500px) {
+    font-size: 16px;
   }
 `
 
 const App = ({ data }) => {
-  const [moreInfoNo, setMoreInfoNo] = useState(0)
-
-  const changeMoreInfoNo = num => {
-    if (moreInfoNo === num) {
-      setMoreInfoNo(0)
-    } else {
-      setMoreInfoNo(num)
-    }
-  }
   return (
     <>
       <Helmet
@@ -116,114 +188,106 @@ const App = ({ data }) => {
           },
         ]}
       >
-        <title>UDIT DESAI</title>
+        <title>Udit Desai</title>
       </Helmet>
-      <Navbar />
-      <Title>I’m a developer and designer living in Toronto.</Title>
-      <ProjectGridTitle>Selected Works</ProjectGridTitle>
-      <ProjectGrid>
-        <Project
-          title="HXOUSE Website — HXOUSE"
-          desc="Design + development"
-          img={data.hxouse.childImageSharp.fluid}
-          link="https://www.hxouse.com/"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 1}
-          projectNo={1}
-          bottomDesc="Immersive web experience for HXOUSE to represent the organization and gather interest for programs and events. Website designed in collaboration with XO records designers Ben Swantek and Drop. Developed using Gatsby, GSAP and three.js within a team of four."
-        />
-        <Project
-          title="Andras Website — freelance"
-          desc="Design + development"
-          img={data.andras.childImageSharp.fluid}
-          link="https://www.andrasii.com/"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 2}
-          projectNo={2}
-          bottomDesc="Portfolio website for Andras, a film and design studio in Toronto. Designed and built landing animations, page transitions, and layout using Figma, Gatsby, GSAP, and three.js within a team of three."
-        />
-        <Project
-          title="HXOUSE E-commerce Store — HXOUSE"
-          desc="Design + development"
-          img={data.hxouseStore.childImageSharp.fluid}
-          link="https://shop.hxouse.com/"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 3}
-          projectNo={3}
-          bottomDesc="E-commerce store for HXOUSE. Designed and developed custom Shopify theme and store from scratch using Figma, and Liquid."
-        />
-        <Project
-          title="Jiazhangfilms.com — freelance"
-          desc="Design + development"
-          img={data.jiaZhang.childImageSharp.fluid}
-          link="https://jiazhangfilms.com/"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 4}
-          projectNo={4}
-          bottomDesc="Portfolio website for photographer Jia Zhang. Designed and built portfolio using Figma, Gatsby, and GraphQL for querying images."
-        />
-        <Project
-          title="Alyx Growing Family Website — HXOUSE"
-          desc="Development"
-          img={data.alyx.childImageSharp.fluid}
-          link="https://alyx.hxouse.com/"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 5}
-          projectNo={5}
-          bottomDesc="Event website for HXOUSE x Alyx Growing Family conference. Built using Gatsby within a team of two. Designed by Ben Swantek. Developed centre tilt animation using GSAP."
-        />
-        <Project
-          title="Helpathon — hackathon project"
-          desc="Design + development"
-          img={data.helpathon.childImageSharp.fluid}
-          link="https://github.com/uditdesai/Helpathon"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 6}
-          projectNo={6}
-          bottomDesc="Hackathon planning web app which allows hackathon organizers to create and manage application forms and applicants, budget, prizes, etc. As well, it allows students to search for hackathons and apply directly through the web app. Built and designed using Figma, React, and Firestore."
-        />
-        <Project
-          title="Housekeeper — personal project"
-          desc="Design + development"
-          img={data.housekeeper.childImageSharp.fluid}
-          link="https://github.com/uditdesai/housekeeper"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 7}
-          projectNo={7}
-          bottomDesc="Kanban board web application built for student households to manage housekeeping. Built using React, GraphQL and MongoDB."
-        />
-        <Project
-          title="Wedding site — personal project"
-          desc="Design + development"
-          img={data.wedding.childImageSharp.fluid}
-          link="https://github.com/uditdesai/wedding"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 8}
-          projectNo={8}
-          bottomDesc="Wedding website built to showcase wedding events, provide information to guests, and handle RSVPs. Built a custom Google Sheets based RSVP system to manage and track invitations and guestlist using Gatsby and GraphQL."
-        />
-        <Project
-          title="Paper Piano — hackathon project"
-          desc="Development"
-          img={data.pp.childImageSharp.fluid}
-          link="https://devpost.com/software/paper-piano-8yzaw9"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 9}
-          projectNo={9}
-          bottomDesc="Developed a computer vision program that detects shapes drawn on paper using a computer webcam and a user's finger tapping on the shapes to play a sound. The user can draw several shapes and assign different sounds to create any instrument. Built using OpenCV within a team of two within 36 hours."
-        />
-        <Project
-          title="Cue — hackathon project"
-          desc="Design + development"
-          img={data.cue.childImageSharp.fluid}
-          link="https://devpost.com/software/cue-doisjy"
-          changeMoreInfoNo={changeMoreInfoNo}
-          moreInfo={moreInfoNo === 10}
-          projectNo={10}
-          bottomDesc="Built a web tool for learning different languages or for overcoming learning disabilities which works by annotating user-read sentences onto the screen with helpful visual cues so the user can understand what they read. leveraged Google's Speech-to-text API and developed tool within a team of four in 36 hours."
-        />
-      </ProjectGrid>
-      <Footer />
+      <Header>
+        <Name>UDIT DESAI</Name>
+      </Header>
+      <Main>
+        <Content>
+          Developer specializing in user experience and web. I’m currently
+          improving the pre-purchase experience of online stores at Shopify as a
+          UX developer and studying engineering at the University of Toronto.
+        </Content>
+        <Content>
+          I also take on select projects in the shape of digital experiences,
+          ecommerce, and portfolios.
+        </Content>
+      </Main>
+      <Region>
+        <RegionTitle>CONTACT</RegionTitle>
+        <ContactLink href="mailto:udit.desai3@gmail.com" target="_blank">
+          udit.desai3@gmail.com
+        </ContactLink>
+        <ContactLink href="https://twitter.com/uydesai" target="_blank">
+          Twitter: @uydesai
+        </ContactLink>
+        <ContactLink
+          href="https://www.instagram.com/uydesai/?hl=en"
+          target="_blank"
+        >
+          Instagram: @uydesai
+        </ContactLink>
+        <ContactLink
+          href="https://drive.google.com/file/d/1V8dmCaJWy-CBL0yOEC58a0MCYmozSqRx/view?usp=sharing"
+          target="_blank"
+        >
+          Resume
+        </ContactLink>
+      </Region>
+      <Region>
+        <RegionTitle>SELECT WORK</RegionTitle>
+        <ProjectContainer>
+          <ProjectImg
+            alt="HXOUSE website landing"
+            fluid={data.hxouse.childImageSharp.fluid}
+          />
+          <ProjectTextContainer>
+            <ProjectTitle>HXOUSE Website</ProjectTitle>
+            <ProjectLink href="https://www.hxouse.com/" target="_blank">
+              Visit site
+            </ProjectLink>
+          </ProjectTextContainer>
+        </ProjectContainer>
+        <ProjectContainer>
+          <ProjectImg
+            alt="Pierre Bassene World product page"
+            fluid={data.pierreBassene.childImageSharp.fluid}
+          />
+          <ProjectTextContainer>
+            <ProjectTitle>Pierre Bassene World Store</ProjectTitle>
+            <ProjectLink href="https://pierrebassene.world/" target="_blank">
+              Visit site
+            </ProjectLink>
+          </ProjectTextContainer>
+        </ProjectContainer>
+        <ProjectContainer>
+          <ProjectImg
+            alt="Andras website landing"
+            fluid={data.andras.childImageSharp.fluid}
+          />
+          <ProjectTextContainer>
+            <ProjectTitle>Andras Website</ProjectTitle>
+            <ProjectLink href="https://www.andrasii.com/" target="_blank">
+              Visit site
+            </ProjectLink>
+          </ProjectTextContainer>
+        </ProjectContainer>
+        <ProjectContainer>
+          <ProjectImg
+            alt="Alyx Growing Family"
+            fluid={data.alyx.childImageSharp.fluid}
+          />
+          <ProjectTextContainer>
+            <ProjectTitle>Alyx Growing Family Website</ProjectTitle>
+            <ProjectLink href="https://alyx.hxouse.com/" target="_blank">
+              Visit site
+            </ProjectLink>
+          </ProjectTextContainer>
+        </ProjectContainer>
+        <ProjectContainer>
+          <ProjectImg
+            alt="HXOUSE store landing"
+            fluid={data.hxouseStore.childImageSharp.fluid}
+          />
+          <ProjectTextContainer>
+            <ProjectTitle>HXOUSE Store</ProjectTitle>
+            <ProjectLink href="https://shop.hxouse.com/" target="_blank">
+              Visit site
+            </ProjectLink>
+          </ProjectTextContainer>
+        </ProjectContainer>
+      </Region>
     </>
   )
 }
@@ -260,42 +324,7 @@ export const query = graphql`
         }
       }
     }
-    housekeeper: file(relativePath: { eq: "images/housekeeper.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    pp: file(relativePath: { eq: "images/pp.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    cue: file(relativePath: { eq: "images/cue.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    jiaZhang: file(relativePath: { eq: "images/jiaZhang.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    wedding: file(relativePath: { eq: "images/wedding.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    helpathon: file(relativePath: { eq: "images/helpathon.png" }) {
+    pierreBassene: file(relativePath: { eq: "images/pierrebassene.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

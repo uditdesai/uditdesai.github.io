@@ -6,24 +6,10 @@
 }
 
 @font-face {
-  font-family: "WorkSans-Bold";
+  font-family: "VioletSans-Regular";
   font-style: normal;
-  src: local("WorkSans-Bold"), local("WorkSans-Bold"),
-    url("../fonts/WorkSans-Bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "WorkSans-Black";
-  font-style: normal;
-  src: local("WorkSans-Black"), local("WorkSans-Black"),
-    url("../fonts/WorkSans-Black.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "EBGaramond-Regular";
-  font-style: normal;
-  src: local("EBGaramond-Regular"), local("EBGaramond-Regular"),
-    url("../fonts/EBGaramond-Regular.ttf") format("truetype");
+  src: local("VioletSans-Regular"), local("VioletSans-Regular"),
+    url("../fonts/VioletSans-Regular.ttf") format("truetype");
 }
 
 html,
