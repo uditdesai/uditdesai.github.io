@@ -1,15 +1,19 @@
 @font-face {
   font-family: "WorkSans-Regular";
   font-style: normal;
+  font-weight: 400;
   src: local("WorkSans-Regular"), local("WorkSans-Regular"),
     url("../fonts/WorkSans-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "VioletSans-Regular";
   font-style: normal;
+  font-weight: 400;
   src: local("VioletSans-Regular"), local("VioletSans-Regular"),
     url("../fonts/VioletSans-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 html,

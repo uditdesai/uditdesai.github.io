@@ -5,6 +5,8 @@ import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
 import Img from "gatsby-image"
+import Font1URL from "../fonts/WorkSans-Regular.ttf"
+import Font2URL from "../fonts/VioletSans-Regular.ttf"
 
 const Header = styled.header`
   width: 100%;
@@ -189,6 +191,8 @@ const App = ({ data }) => {
         ]}
       >
         <title>Udit Desai</title>
+        <link rel="preload" href={Font1URL} as="font" crossorigin="anonymous" />
+        <link rel="preload" href={Font2URL} as="font" crossorigin="anonymous" />
       </Helmet>
       <Header>
         <Name>UDIT DESAI</Name>
@@ -324,7 +328,7 @@ export const query = graphql`
         }
       }
     }
-    pierreBassene: file(relativePath: { eq: "images/pierrebassene.png" }) {
+    pierreBassene: file(relativePath: { eq: "images/pierreBassene.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
