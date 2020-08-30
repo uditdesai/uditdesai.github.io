@@ -200,7 +200,7 @@ const App = ({ data }) => {
       </Header>
       <Main>
         <Content>
-          Developer specializing in user experience and web. I’m currently
+          Developer specializing in user experience and the web. I’m currently
           improving the pre-purchase experience of online stores at Shopify as a
           UX developer and studying engineering at the University of Toronto.
         </Content>
