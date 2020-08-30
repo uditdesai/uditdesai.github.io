@@ -5,6 +5,7 @@ import favicon16 from "../assets/favicon16.png"
 import favicon32 from "../assets/favicon32.png"
 import favicon64 from "../assets/favicon64.png"
 import Img from "gatsby-image"
+import { graphql } from "gatsby"
 import Font1URL from "../fonts/WorkSans-Regular.ttf"
 import Font2URL from "../fonts/VioletSans-Regular.ttf"
 
@@ -307,6 +308,13 @@ export const query = graphql`
         }
       }
     }
+    pierreBassene: file(relativePath: { eq: "images/pierreBassene.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     andras: file(relativePath: { eq: "images/andras.png" }) {
       childImageSharp {
         fluid {
@@ -322,13 +330,6 @@ export const query = graphql`
       }
     }
     alyx: file(relativePath: { eq: "images/alyx.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    pierreBassene: file(relativePath: { eq: "images/pierreBassene.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
