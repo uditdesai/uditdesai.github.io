@@ -1,13 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { Helmet } from "react-helmet"
-import favicon16 from "../assets/favicon16.png"
-import favicon32 from "../assets/favicon32.png"
-import favicon64 from "../assets/favicon64.png"
+import Favicon16 from "../assets/favicon16.png"
+import Favicon32 from "../assets/favicon32.png"
 import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import Font1URL from "../fonts/WorkSans-Regular.ttf"
 import Font2URL from "../fonts/VioletSans-Regular.ttf"
+import SocialImage from "../images/social-image.png"
 
 const Header = styled.header`
   width: 100%;
@@ -168,32 +168,16 @@ const App = ({ data }) => {
         meta={[
           { name: "description", content: "Udit Desai" },
           { name: "keywords", content: "developer, designer" },
-          { property: "og:image", content: "https://i.imgur.com/9dELn7k.png" },
-        ]}
-        link={[
-          {
-            rel: "icon",
-            type: "image/png",
-            sizes: "16x16",
-            href: `${favicon16}`,
-          },
-          {
-            rel: "icon",
-            type: "image/png",
-            sizes: "32x32",
-            href: `${favicon32}`,
-          },
-          {
-            rel: "icon",
-            type: "image/png",
-            sizes: "64x64",
-            href: `${favicon64}`,
-          },
+          { property: "og:type", content: "website" },
+          { property: "og:title", content: "Udit Desai" },
+          { property: "og:image", content: `${SocialImage}` },
         ]}
       >
         <title>Udit Desai</title>
         <link rel="preload" href={Font1URL} as="font" crossorigin="anonymous" />
         <link rel="preload" href={Font2URL} as="font" crossorigin="anonymous" />
+        <link rel="icon" type="image/png" sizes="32x32" href={Favicon32} />
+        <link rel="icon" type="image/png" sizes="16x16" href={Favicon16} />
       </Helmet>
       <Header>
         <Name>UDIT DESAI</Name>
