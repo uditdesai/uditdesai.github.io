@@ -21,7 +21,7 @@ const App = () => {
             content: "Developer specializing in user experience and the web.",
           },
           { property: "og:title", content: "Udit Desai" },
-          { property: "og:image", content: "https://imgur.com/DrRHTQa" },
+          { property: "og:image", content: "https://i.imgur.com/DrRHTQa.png" },
         ]}
       >
         <title>Udit Desai</title>
