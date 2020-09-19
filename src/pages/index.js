@@ -168,6 +168,7 @@ const App = ({ data }) => {
           { name: "description", content: "Udit Desai" },
           { name: "keywords", content: "developer, designer" },
           { property: "og:type", content: "website" },
+          { property: "og:url", content: "https://uditdesai.com/" },
           {
             property: "og:description",
             content: "Developer specializing in user experience and the web.",
