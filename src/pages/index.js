@@ -7,7 +7,6 @@ import Img from "gatsby-image"
 import { graphql } from "gatsby"
 import Font1URL from "../fonts/WorkSans-Regular.ttf"
 import Font2URL from "../fonts/VioletSans-Regular.ttf"
-import SocialImage from "../images/social-image.png"
 
 const Header = styled.header`
   width: 100%;
@@ -169,8 +168,12 @@ const App = ({ data }) => {
           { name: "description", content: "Udit Desai" },
           { name: "keywords", content: "developer, designer" },
           { property: "og:type", content: "website" },
+          {
+            property: "og:description",
+            content: "Developer specializing in user experience and the web.",
+          },
           { property: "og:title", content: "Udit Desai" },
-          { property: "og:image", content: `${SocialImage}` },
+          { property: "og:image", content: "https://imgur.com/DrRHTQa" },
         ]}
       >
         <title>Udit Desai</title>

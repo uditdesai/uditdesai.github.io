@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import { navigate } from "gatsby"
 import Favicon16 from "../assets/favicon16.png"
 import Favicon32 from "../assets/favicon32.png"
-import SocialImage from "../images/social-image.png"
 import { Helmet } from "react-helmet"
 
 const App = () => {
@@ -17,8 +16,12 @@ const App = () => {
           { name: "description", content: "Udit Desai" },
           { name: "keywords", content: "developer, designer" },
           { property: "og:type", content: "website" },
+          {
+            property: "og:description",
+            content: "Developer specializing in user experience and the web.",
+          },
           { property: "og:title", content: "Udit Desai" },
-          { property: "og:image", content: `${SocialImage}` },
+          { property: "og:image", content: "https://imgur.com/DrRHTQa" },
         ]}
       >
         <title>Udit Desai</title>
