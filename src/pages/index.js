@@ -258,6 +258,18 @@ const App = ({ data }) => {
         </ProjectContainer>
         <ProjectContainer>
           <ProjectImg
+            alt="Cannon website landing"
+            fluid={data.cannon.childImageSharp.fluid}
+          />
+          <ProjectTextContainer>
+            <ProjectTitle>The Cannon Website</ProjectTitle>
+            <ProjectLink href="https://www.cannon.skule.ca/" target="_blank">
+              Visit site
+            </ProjectLink>
+          </ProjectTextContainer>
+        </ProjectContainer>
+        <ProjectContainer>
+          <ProjectImg
             alt="Alyx Growing Family"
             fluid={data.alyx.childImageSharp.fluid}
           />
@@ -318,6 +330,13 @@ export const query = graphql`
       }
     }
     alyx: file(relativePath: { eq: "images/alyx.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    cannon: file(relativePath: { eq: "images/cannon.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
