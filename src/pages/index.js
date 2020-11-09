@@ -212,7 +212,7 @@ const App = ({ data }) => {
           Instagram: @uydesai
         </ContactLink>
         <ContactLink
-          href="https://drive.google.com/file/d/1V8dmCaJWy-CBL0yOEC58a0MCYmozSqRx/view?usp=sharing"
+          href="https://drive.google.com/file/d/1pdLKgcaQby_SeEd0nUSW7OO4T0ChBYqT/view?usp=sharing"
           target="_blank"
         >
           Resume
