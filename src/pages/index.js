@@ -1,20 +1,19 @@
 import React from "react"
 import styled from "styled-components"
-import { Helmet } from "react-helmet"
-import Favicon16 from "../assets/favicon16.png"
-import Favicon32 from "../assets/favicon32.png"
 import Img from "gatsby-image"
-import { graphql } from "gatsby"
-import Font1URL from "../fonts/WorkSans-Regular.ttf"
-import Font2URL from "../fonts/VioletSans-Regular.ttf"
+import { graphql, Link } from "gatsby"
+
+import SEO from "../components/seo"
 
 const Header = styled.header`
   width: 100%;
+  height: 120px;
   box-sizing: border-box;
   padding: 50px 0 0 50px;
-  background: linear-gradient(180deg, #eb5757 0%, rgba(235, 87, 87, 0) 70%);
+  background: linear-gradient(180deg, #eb5757 0%, rgba(255, 255, 255, 50) 70%);
 
   @media (max-width: 500px) {
+    height: 60px;
     padding: 30px 0 0 20px;
   }
 `
@@ -112,28 +111,36 @@ const ContactLink = styled.a`
 
 const ProjectContainer = styled.div`
   display: flex;
-  flex-direction: column;
   width: 100%;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
+
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    margin-bottom: 45px;
+  }
 `
 
 const ProjectImg = styled(Img)`
-  width: 80%;
-  max-width: 1500px;
-  margin-bottom: 15px;
+  width: 60%;
+  max-width: 1200px;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     width: 100%;
   }
 `
 
 const ProjectTextContainer = styled.div`
-  width: 80%;
-  max-width: 1500px;
+  width: 40%;
+  box-sizing: border-box;
+  padding-left: 30px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: flex-end;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
+    padding-left: 0;
+    padding-top: 15px;
+    justify-content: flex-start;
     width: 100%;
   }
 `
@@ -141,11 +148,12 @@ const ProjectTextContainer = styled.div`
 const ProjectTitle = styled.h4`
   color: black;
   font-family: "WorkSans-Regular", sans-serif;
-  font-size: 20px;
-  margin: 0;
+  font-size: 24px;
+  margin: 0 0 15px 0;
 
-  @media (max-width: 500px) {
-    font-size: 16px;
+  @media (max-width: 700px) {
+    font-size: 18px;
+    margin: 0 0 10px 0;
   }
 `
 
@@ -155,7 +163,31 @@ const ProjectLink = styled.a`
   font-size: 20px;
   text-decoration: underline;
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
+    font-size: 18px;
+  }
+`
+
+const ProjectDate = styled.p`
+  color: black;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 16px;
+  margin: 0 0 30px 0;
+
+  @media (max-width: 700px) {
+    font-size: 12px;
+  }
+`
+
+const ProjectSummary = styled.p`
+  color: black;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 18px;
+  margin: 0 0 30px 0;
+  line-height: 1.3;
+  max-width: 700px;
+
+  @media (max-width: 700px) {
     font-size: 16px;
   }
 `
@@ -163,26 +195,7 @@ const ProjectLink = styled.a`
 const App = ({ data }) => {
   return (
     <>
-      <Helmet
-        meta={[
-          { name: "description", content: "Udit Desai" },
-          { name: "keywords", content: "developer, designer" },
-          { property: "og:type", content: "website" },
-          { property: "og:url", content: "https://uditdesai.com/" },
-          {
-            property: "og:description",
-            content: "Developer specializing in user experience and the web.",
-          },
-          { property: "og:title", content: "Udit Desai" },
-          { property: "og:image", content: "https://i.imgur.com/DrRHTQa.png" },
-        ]}
-      >
-        <title>Udit Desai</title>
-        <link rel="preload" href={Font1URL} as="font" crossorigin="anonymous" />
-        <link rel="preload" href={Font2URL} as="font" crossorigin="anonymous" />
-        <link rel="icon" type="image/png" sizes="32x32" href={Favicon32} />
-        <link rel="icon" type="image/png" sizes="16x16" href={Favicon16} />
-      </Helmet>
+      <SEO title="Home" />
       <Header>
         <Name>UDIT DESAI</Name>
       </Header>
@@ -211,10 +224,7 @@ const App = ({ data }) => {
         >
           Instagram: @uydesai
         </ContactLink>
-        <ContactLink
-          href="https://drive.google.com/file/d/1pdLKgcaQby_SeEd0nUSW7OO4T0ChBYqT/view?usp=sharing"
-          target="_blank"
-        >
+        <ContactLink href="https://uditdesai.com/resume.pdf" target="_blank">
           Resume
         </ContactLink>
       </Region>
@@ -227,7 +237,13 @@ const App = ({ data }) => {
           />
           <ProjectTextContainer>
             <ProjectTitle>HXOUSE Website</ProjectTitle>
-            <ProjectLink href="https://www.hxouse.com/" target="_blank">
+            <ProjectDate>October 2019</ProjectDate>
+            <ProjectSummary>
+              Collaborated with The Weeknd and XO's internal design team to
+              design and develop new website for HXOUSE filled with immersive
+              digital experiences on each page.
+            </ProjectSummary>
+            <ProjectLink href="https://hxouse.com/" target="_blank">
               Visit site
             </ProjectLink>
           </ProjectTextContainer>
@@ -239,6 +255,12 @@ const App = ({ data }) => {
           />
           <ProjectTextContainer>
             <ProjectTitle>Pierre Bassene World Store</ProjectTitle>
+            <ProjectDate>July 2020</ProjectDate>
+            <ProjectSummary>
+              Designed and developed Pierre Bassene World's new digital presence
+              through an updated ecommerce store with a heavy emphasis on
+              highlighting elements of the brand.
+            </ProjectSummary>
             <ProjectLink href="https://pierrebassene.world/" target="_blank">
               Visit site
             </ProjectLink>
@@ -251,6 +273,12 @@ const App = ({ data }) => {
           />
           <ProjectTextContainer>
             <ProjectTitle>Andras Website</ProjectTitle>
+            <ProjectDate>February 2020</ProjectDate>
+            <ProjectSummary>
+              Crafted a portfolio website showcasing all the studio's work
+              through large imagery and a unique landing page to help launch
+              Andras.
+            </ProjectSummary>
             <ProjectLink href="https://www.andrasii.com/" target="_blank">
               Visit site
             </ProjectLink>
@@ -263,6 +291,13 @@ const App = ({ data }) => {
           />
           <ProjectTextContainer>
             <ProjectTitle>The Cannon Website</ProjectTitle>
+            <ProjectDate>July 2020</ProjectDate>
+            <ProjectSummary>
+              Designed and engineered new website for UofT Engineering's
+              official newspaper with a focus on discovering new articles, a
+              better reading experience, and with a design that showcases The
+              Cannon's rich history.
+            </ProjectSummary>
             <ProjectLink href="https://www.cannon.skule.ca/" target="_blank">
               Visit site
             </ProjectLink>
@@ -275,6 +310,12 @@ const App = ({ data }) => {
           />
           <ProjectTextContainer>
             <ProjectTitle>Alyx Growing Family Website</ProjectTitle>
+            <ProjectDate>November 2019</ProjectDate>
+            <ProjectSummary>
+              Developed a beautiful landing page for the Alyx and HXOUSE Growing
+              Family event in Toronto with links to all the events and a cute
+              cursor animation using Alyx's signatue buckle.
+            </ProjectSummary>
             <ProjectLink href="https://alyx.hxouse.com/" target="_blank">
               Visit site
             </ProjectLink>
@@ -287,6 +328,11 @@ const App = ({ data }) => {
           />
           <ProjectTextContainer>
             <ProjectTitle>HXOUSE Store</ProjectTitle>
+            <ProjectDate>December 2020</ProjectDate>
+            <ProjectSummary>
+              Worked with the XO + HXOUSE design team to create an ecommerce
+              store for HXOUSE merchandise.
+            </ProjectSummary>
             <ProjectLink href="https://shop.hxouse.com/" target="_blank">
               Visit site
             </ProjectLink>
