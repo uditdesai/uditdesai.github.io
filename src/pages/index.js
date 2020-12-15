@@ -174,6 +174,10 @@ const ProjectDate = styled.p`
   font-size: 16px;
   margin: 0 0 30px 0;
 
+  @media (max-width: 1000px) {
+    margin: 0 0 20px 0;
+  }
+
   @media (max-width: 700px) {
     font-size: 12px;
   }
@@ -195,7 +199,7 @@ const ProjectSummary = styled.p`
 const App = ({ data }) => {
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Udit Desai | @uydesai" />
       <Header>
         <Name>UDIT DESAI</Name>
       </Header>
@@ -206,25 +210,52 @@ const App = ({ data }) => {
           UX developer and studying engineering at the University of Toronto.
         </Content>
         <Content>
-          I also take on select projects in the shape of digital experiences,
-          ecommerce, and portfolios.
+          I also take on select development and design projects in the shape of
+          digital experiences, ecommerce sites, and portfolios.
         </Content>
       </Main>
       <Region>
         <RegionTitle>CONTACT</RegionTitle>
-        <ContactLink href="mailto:udit.desai3@gmail.com" target="_blank">
+        <ContactLink
+          href="mailto:udit.desai3@gmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
           udit.desai3@gmail.com
         </ContactLink>
-        <ContactLink href="https://twitter.com/uydesai" target="_blank">
+        <ContactLink
+          href="https://twitter.com/uydesai"
+          target="_blank"
+          rel="noreferrer"
+        >
           Twitter: @uydesai
         </ContactLink>
         <ContactLink
           href="https://www.instagram.com/uydesai/?hl=en"
           target="_blank"
+          rel="noreferrer"
         >
           Instagram: @uydesai
         </ContactLink>
-        <ContactLink href="https://uditdesai.com/resume.pdf" target="_blank">
+        <ContactLink
+          href="https://www.linkedin.com/in/uditdesai/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Linkedin
+        </ContactLink>
+        <ContactLink
+          href="https://github.com/uditdesai"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </ContactLink>
+        <ContactLink
+          href="https://uditdesai.com/resume.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
           Resume
         </ContactLink>
       </Region>

@@ -23,7 +23,7 @@ function SEO({ description, lang, meta, title }) {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = site.siteMetadata?.description
   const defaultTitle = site.siteMetadata?.title
 
   return (
@@ -32,7 +32,6 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s — ${defaultTitle}` : null}
       meta={[
         {
           name: `description`,
@@ -71,6 +70,10 @@ function SEO({ description, lang, meta, title }) {
       <meta
         name="image"
         content={`https://uditdesai.com${FacebookThumbnail}`}
+      />
+      <meta
+        name="description"
+        content="I'm a developer specializing in user experience and the web."
       />
       <meta
         property="og:image"
