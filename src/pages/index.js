@@ -81,7 +81,7 @@ const Region = styled.div`
   }
 `
 
-const RegionTitle = styled.h3`
+const RegionTitle = styled.h2`
   color: black;
   font-family: "VioletSans-Regular", sans-serif;
   font-size: 20px;
@@ -145,7 +145,7 @@ const ProjectTextContainer = styled.div`
   }
 `
 
-const ProjectTitle = styled.h4`
+const ProjectTitle = styled.h3`
   color: black;
   font-family: "WorkSans-Regular", sans-serif;
   font-size: 24px;
@@ -274,7 +274,11 @@ const App = ({ data }) => {
               design and develop new website for HXOUSE filled with immersive
               digital experiences on each page.
             </ProjectSummary>
-            <ProjectLink href="https://hxouse.com/" target="_blank">
+            <ProjectLink
+              href="https://hxouse.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Visit site
             </ProjectLink>
           </ProjectTextContainer>
@@ -292,7 +296,11 @@ const App = ({ data }) => {
               through an updated ecommerce store with a heavy emphasis on
               highlighting elements of the brand.
             </ProjectSummary>
-            <ProjectLink href="https://pierrebassene.world/" target="_blank">
+            <ProjectLink
+              href="https://pierrebassene.world/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Visit site
             </ProjectLink>
           </ProjectTextContainer>
@@ -310,7 +318,11 @@ const App = ({ data }) => {
               through large imagery and a unique landing page to help launch
               Andras.
             </ProjectSummary>
-            <ProjectLink href="https://www.andrasii.com/" target="_blank">
+            <ProjectLink
+              href="https://www.andrasii.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Visit site
             </ProjectLink>
           </ProjectTextContainer>
@@ -329,7 +341,11 @@ const App = ({ data }) => {
               better reading experience, and with a design that showcases The
               Cannon's rich history.
             </ProjectSummary>
-            <ProjectLink href="https://www.cannon.skule.ca/" target="_blank">
+            <ProjectLink
+              href="https://www.cannon.skule.ca/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Visit site
             </ProjectLink>
           </ProjectTextContainer>
@@ -347,7 +363,11 @@ const App = ({ data }) => {
               Family event in Toronto with links to all the events and a cute
               cursor animation using Alyx's signatue buckle.
             </ProjectSummary>
-            <ProjectLink href="https://alyx.hxouse.com/" target="_blank">
+            <ProjectLink
+              href="https://alyx.hxouse.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Visit site
             </ProjectLink>
           </ProjectTextContainer>
@@ -364,7 +384,11 @@ const App = ({ data }) => {
               Worked with the XO + HXOUSE design team to create an ecommerce
               store for HXOUSE merchandise.
             </ProjectSummary>
-            <ProjectLink href="https://shop.hxouse.com/" target="_blank">
+            <ProjectLink
+              href="https://shop.hxouse.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
               Visit site
             </ProjectLink>
           </ProjectTextContainer>
