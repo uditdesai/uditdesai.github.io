@@ -10,7 +10,7 @@ const Header = styled.header`
   height: fit-content;
   box-sizing: border-box;
   padding: 50px 0 0 50px;
-  background: linear-gradient(180deg, #eb5757 0%, rgba(255, 255, 255, 50) 70%);
+  background: linear-gradient(180deg, #eb5757 0%, rgba(250, 250, 250, 50) 70%);
 
   @media (max-width: 500px) {
     height: fit-content;
@@ -247,7 +247,7 @@ const App = ({ data }) => {
         </Content>
         <Content>
           In the past, I've worked at small to large non-profits and companies.
-          Most recently I interned at Shopify, building the subscriptions
+          Most recently, I interned at Shopify and help built the subscriptions
           experience and functionality for online stores.
         </Content>
         <Content>

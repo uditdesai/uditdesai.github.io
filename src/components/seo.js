@@ -44,9 +44,12 @@ function SEO({ description, lang, meta, title }) {
         property="og:description"
         content="Developer and designer specializing in user experience and the web. I'm currently studying computer engineering at the University of Toronto and working on select technology projects for clients."
       />
-      <meta property="og:image" content={`https:/uditdesai.com${ShareImage}`} />
+      <meta
+        property="og:image"
+        content={`https://uditdesai.com${ShareImage}`}
+      />
       <meta name="twitter:title" content="Udit Desai" />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:creator" content="@uydesai" />
       <meta
         name="twitter:description"
