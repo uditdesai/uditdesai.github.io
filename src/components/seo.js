@@ -5,8 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Font1URL from "../fonts/WorkSans-Regular.ttf"
 import Font2URL from "../fonts/VioletSans-Regular.ttf"
 
-import FacebookThumbnail from "../images/thumbnail-facebook.jpg"
-import TwitterThumbnail from "../images/thumbnail-twitter.jpg"
+import ShareImage from "../images/share-image.jpg"
 
 function SEO({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -32,62 +31,30 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
     >
-      <meta
-        name="image"
-        content={`https://uditdesai.com${FacebookThumbnail}`}
-      />
+      <meta name="image" content={`https://uditdesai.com${ShareImage}`} />
       <meta
         name="description"
-        content="I'm a developer specializing in user experience and the web."
+        content="Developer and designer specializing in user experience and the web. I'm currently studying computer engineering at the University of Toronto and working on select technology projects for clients."
       />
+      <meta property="og:url" content="https://uditdesai.com/" />
+      <meta property="og:title" content="Udit Desai" />
+      <meta property="og:type" content="website" />
       <meta
-        property="og:image"
-        content={`https:/uditdesai.com${FacebookThumbnail}`}
+        property="og:description"
+        content="Developer and designer specializing in user experience and the web. I'm currently studying computer engineering at the University of Toronto and working on select technology projects for clients."
       />
+      <meta property="og:image" content={`https:/uditdesai.com${ShareImage}`} />
       <meta name="twitter:title" content="Udit Desai" />
       <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content="@uydesai" />
       <meta
         name="twitter:description"
-        content="I'm a developer specializing in user experience and the web."
+        content="Developer and designer specializing in user experience and the web. I'm currently studying computer engineering at the University of Toronto and working on select technology projects for clients."
       />
       <meta
         name="twitter:image"
-        content={`https://uditdesai.com${TwitterThumbnail}`}
+        content={`https://uditdesai.com${ShareImage}`}
       />
       <link
         rel="apple-touch-icon"
