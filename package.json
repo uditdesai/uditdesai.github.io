@@ -28,7 +28,7 @@
     "gatsby-transformer-remark": "^2.8.31",
     "gatsby-transformer-sharp": "^2.5.13",
     "graphql-playground-html": "^1.6.25",
-    "gsap": "^2.1.3",
+    "gsap": "^3.6.0",
     "postcss-import": "^12.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
