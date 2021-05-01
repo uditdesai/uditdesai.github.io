@@ -9,12 +9,12 @@ const Header = styled.header`
   width: 100%;
   height: fit-content;
   box-sizing: border-box;
-  padding: 50px 0 0 50px;
+  padding: 50px 0 0 30px;
   background: linear-gradient(180deg, #eb5757 0%, rgba(250, 250, 250, 50) 70%);
 
   @media (max-width: 500px) {
     height: fit-content;
-    padding: 30px 0 0 20px;
+    padding: 20px 0 0 15px;
   }
 `
 
@@ -26,7 +26,7 @@ const Name = styled.h1`
   letter-spacing: 2px;
 
   @media (max-width: 500px) {
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: 1px;
   }
 `
@@ -39,14 +39,14 @@ const Main = styled.main`
   margin-top: 50px;
   margin-bottom: 50px;
   box-sizing: border-box;
-  padding: 0 50px 0 50px;
+  padding: 0 30px 0 30px;
 
   @media (max-width: 700px) {
     max-width: 100%;
   }
 
   @media (max-width: 500px) {
-    padding: 0 20px 0 20px;
+    padding: 0 15px 0 15px;
     margin-top: 30px;
     margin-bottom: 40px;
   }
@@ -76,13 +76,13 @@ const Content = styled.p`
 
 const Region = styled.div`
   box-sizing: border-box;
-  padding: 0 50px 0 50px;
+  padding: 0 30px 0 30px;
   margin-bottom: 50px;
   display: flex;
   flex-direction: column;
 
   @media (max-width: 500px) {
-    padding: 0 20px 0 20px;
+    padding: 0 15px 0 15px;
     margin-bottom: 40px;
   }
 `
@@ -142,7 +142,11 @@ const ProjectContainer = styled.div`
   display: flex;
   width: 100%;
   height: fit-content;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   @media (max-width: 1000px) {
     flex-direction: column;
@@ -263,8 +267,8 @@ const App = ({ data }) => {
           Developer and designer specializing in user experience and the web.
           I'm currently studying computer engineering at the University of
           Toronto and completing an internship at Sanctuary Computer, a
-          development studio in New York. On the side, I also work on select
-          freelance technology projects with friends :)
+          development studio in New York City. On the side, I also work on
+          select freelance technology projects with friends :)
         </Content>
         <Content>
           In the past, I've worked at small to large non-profits and companies.
@@ -273,7 +277,7 @@ const App = ({ data }) => {
         </Content>
         <Content>
           I'm interested in fashion, health and fitness, design, and recently
-          making juice.
+          making juice and reading.
         </Content>
       </Main>
       <Region>
@@ -300,6 +304,13 @@ const App = ({ data }) => {
               rel="noreferrer"
             >
               Instagram
+            </ContactLink>
+            <ContactLink
+              href="https://www.notion.so/Books-TV-235b5b90026d4a86a403022f4ccb997d"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Recommendations
             </ContactLink>
           </ContactWrapper>
           <ContactWrapper>
