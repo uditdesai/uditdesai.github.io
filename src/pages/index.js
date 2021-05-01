@@ -32,8 +32,8 @@ const Name = styled.h1`
 `
 
 const Main = styled.main`
-  width: 60%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   margin-top: 50px;
@@ -41,17 +41,13 @@ const Main = styled.main`
   box-sizing: border-box;
   padding: 0 50px 0 50px;
 
-  @media (max-width: 1000px) {
-    width: 80%;
-  }
-
   @media (max-width: 700px) {
-    width: 100%;
+    max-width: 100%;
   }
 
   @media (max-width: 500px) {
     padding: 0 20px 0 20px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 40px;
   }
 `
@@ -145,15 +141,17 @@ const ContactLink = styled.a`
 const ProjectContainer = styled.div`
   display: flex;
   width: 100%;
-  margin-bottom: 30px;
+  height: fit-content;
+  margin-bottom: 40px;
 
   @media (max-width: 1000px) {
     flex-direction: column;
-    margin-bottom: 40px;
   }
 `
 
-const ProjectImg = styled(Img)`
+const ProjectImgContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 60%;
   max-width: 1200px;
 
@@ -162,14 +160,26 @@ const ProjectImg = styled(Img)`
   }
 `
 
+const ProjectImg = styled(Img)`
+  width: 100%;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin: 0;
+  }
+`
+
 const ProjectTextContainer = styled.div`
   width: 40%;
   max-width: 600px;
+  height: fit-content;
   box-sizing: border-box;
   padding-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: sticky;
+  top: 30px;
 
   @media (max-width: 1000px) {
     padding-left: 0;
@@ -199,6 +209,11 @@ const ProjectLink = styled.a`
   font-family: "WorkSans-Regular", sans-serif;
   font-size: 16px;
   text-decoration: underline;
+  margin-bottom: 10px;
+
+  &:last-of-type {
+    margin: 0;
+  }
 
   @media (min-width: 1800px) {
     font-size: 18px;
@@ -220,8 +235,12 @@ const ProjectSummary = styled.p`
   color: black;
   font-family: "WorkSans-Regular", sans-serif;
   font-size: 18px;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   line-height: 1.25;
+
+  &:last-of-type {
+    margin: 0 0 20px 0;
+  }
 
   @media (min-width: 1800px) {
     font-size: 20px;
@@ -243,19 +262,22 @@ const App = ({ data }) => {
         <Content>
           Developer and designer specializing in user experience and the web.
           I'm currently studying computer engineering at the University of
-          Toronto and working on select technology projects for clients.
+          Toronto and completing an internship at Sanctuary Computer, a
+          development studio in New York. On the side, I also work on select
+          freelance technology projects with friends :)
         </Content>
         <Content>
           In the past, I've worked at small to large non-profits and companies.
-          Most recently, I interned at Shopify and help built the subscriptions
+          Last year, I interned at Shopify and help built the subscriptions
           experience and functionality for online stores.
         </Content>
         <Content>
-          I'm interested in fashion, health and fitness, design, and reading.
+          I'm interested in fashion, health and fitness, design, and recently
+          making juice.
         </Content>
       </Main>
       <Region>
-        <RegionTitle>CONTACT</RegionTitle>
+        <RegionTitle>LINKS</RegionTitle>
         <ContactContainer>
           <ContactWrapper>
             <ContactLink
@@ -308,13 +330,19 @@ const App = ({ data }) => {
       <Region>
         <RegionTitle>SELECT WORK</RegionTitle>
         <ProjectContainer>
-          <ProjectImg
-            alt="Shopify subscriptions launch website"
-            fluid={data.shopify.childImageSharp.fluid}
-          />
+          <ProjectImgContainer>
+            <ProjectImg
+              alt="Shopify subscriptions launch website"
+              fluid={data.shopify.childImageSharp.fluid}
+            />
+            <ProjectImg
+              alt="Shopify subscriptions UX guidelines"
+              fluid={data.shopifyUX.childImageSharp.fluid}
+            />
+          </ProjectImgContainer>
           <ProjectTextContainer>
             <ProjectTitle>Shopify Subscriptions</ProjectTitle>
-            <ProjectDate>October 2020</ProjectDate>
+            <ProjectDate>May to December 2020</ProjectDate>
             <ProjectSummary>
               Worked with a super talented team to develop new Liquid selling
               plan APIs and the buyer-facing user experience principles for the
@@ -326,62 +354,105 @@ const App = ({ data }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Visit site
+              Visit Subscriptions Marketing site
+            </ProjectLink>
+            <ProjectLink
+              href="https://shopify.dev/tutorials/storefront-ux-guidelines-for-subscriptions"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit Subscriptions Storefront UX Guidelines
+            </ProjectLink>
+            <ProjectLink
+              href="https://shopify.dev/docs/themes/liquid/reference/objects/selling-plan"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit sellin plan liquid API docs
             </ProjectLink>
           </ProjectTextContainer>
         </ProjectContainer>
         <ProjectContainer>
-          <ProjectImg
-            alt="HXOUSE website landing"
-            fluid={data.hxouse.childImageSharp.fluid}
-          />
+          <ProjectImgContainer>
+            <ProjectImg
+              alt="HXOUSE website landing"
+              fluid={data.hxouse.childImageSharp.fluid}
+            />
+            <ProjectImg
+              alt="HXOUSE and Alyx Conference site"
+              fluid={data.alyx.childImageSharp.fluid}
+            />
+          </ProjectImgContainer>
           <ProjectTextContainer>
-            <ProjectTitle>HXOUSE Website</ProjectTitle>
-            <ProjectDate>October 2019</ProjectDate>
+            <ProjectTitle>HXOUSE</ProjectTitle>
+            <ProjectDate>May to December 2019</ProjectDate>
             <ProjectSummary>
               Collaborated with The Weeknd and XO's internal design team to
               design and develop new website for HXOUSE filled with immersive
               digital experiences on each page.
+            </ProjectSummary>
+            <ProjectSummary>
+              Also worked on microsites for different events and an online store
+              for HXOUSE merch. Note the HXOUSE store is no longer live.
             </ProjectSummary>
             <ProjectLink
               href="https://hxouse.com/"
               target="_blank"
               rel="noreferrer"
             >
-              Visit site
+              Visit HXOUSE site
             </ProjectLink>
-          </ProjectTextContainer>
-        </ProjectContainer>
-        <ProjectContainer>
-          <ProjectImg
-            alt="Pierre Bassene World product page"
-            fluid={data.pierreBassene.childImageSharp.fluid}
-          />
-          <ProjectTextContainer>
-            <ProjectTitle>Pierre Bassene World Store</ProjectTitle>
-            <ProjectDate>July 2020</ProjectDate>
-            <ProjectSummary>
-              Designed and developed Pierre Bassene World's new digital presence
-              through an updated ecommerce store with a heavy emphasis on
-              highlighting elements of the brand.
-            </ProjectSummary>
             <ProjectLink
-              href="https://pierrebassene.world/"
+              href="https://alyx.hxouse.com/"
               target="_blank"
               rel="noreferrer"
             >
-              Visit site
+              Visit HXOUSE x Alyx site
             </ProjectLink>
           </ProjectTextContainer>
         </ProjectContainer>
         <ProjectContainer>
-          <ProjectImg
-            alt="Andras website landing"
-            fluid={data.andras.childImageSharp.fluid}
-          />
+          <ProjectImgContainer>
+            <ProjectImg
+              alt="Seekings webstore collection page"
+              fluid={data.seekings.childImageSharp.fluid}
+            />
+            <ProjectImg
+              alt="Seekings webstore product page"
+              fluid={data.seekingsProduct.childImageSharp.fluid}
+            />
+          </ProjectImgContainer>
           <ProjectTextContainer>
-            <ProjectTitle>Andras Website</ProjectTitle>
-            <ProjectDate>February 2020</ProjectDate>
+            <ProjectTitle>Seekings</ProjectTitle>
+            <ProjectDate>April 2021</ProjectDate>
+            <ProjectSummary>
+              Designed and developed webstore for Yeezy Alum Mark Seekings' new
+              self-titled brand Seekings. The Website was built to have a super
+              clean visual identity and user experience.
+            </ProjectSummary>
+            <ProjectLink
+              href="https://seekings.co/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit Seekings
+            </ProjectLink>
+          </ProjectTextContainer>
+        </ProjectContainer>
+        <ProjectContainer>
+          <ProjectImgContainer>
+            <ProjectImg
+              alt="Andras website landing"
+              fluid={data.andras.childImageSharp.fluid}
+            />
+            <ProjectImg
+              alt="Andras website project page"
+              fluid={data.andrasProject.childImageSharp.fluid}
+            />
+          </ProjectImgContainer>
+          <ProjectTextContainer>
+            <ProjectTitle>Andras</ProjectTitle>
+            <ProjectDate>March 2021</ProjectDate>
             <ProjectSummary>
               Crafted a portfolio website showcasing all the studio's work
               through large imagery and a unique landing page to help launch
@@ -392,30 +463,7 @@ const App = ({ data }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Visit site
-            </ProjectLink>
-          </ProjectTextContainer>
-        </ProjectContainer>
-        <ProjectContainer>
-          <ProjectImg
-            alt="Cannon website landing"
-            fluid={data.cannon.childImageSharp.fluid}
-          />
-          <ProjectTextContainer>
-            <ProjectTitle>The Cannon Website</ProjectTitle>
-            <ProjectDate>July 2020</ProjectDate>
-            <ProjectSummary>
-              Designed and engineered new website for UofT Engineering's
-              official newspaper with a focus on discovering new articles, a
-              better reading experience, and with a design that showcases The
-              Cannon's rich history.
-            </ProjectSummary>
-            <ProjectLink
-              href="https://www.cannon.skule.ca/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Visit site
+              Visit Andras
             </ProjectLink>
           </ProjectTextContainer>
         </ProjectContainer>
@@ -435,21 +483,28 @@ export const query = graphql`
         }
       }
     }
-    pierreBassene: file(relativePath: { eq: "images/pierreBassene.png" }) {
+    hxouseStore: file(relativePath: { eq: "images/hxouse-store.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    andras: file(relativePath: { eq: "images/andras.png" }) {
+    alyx: file(relativePath: { eq: "images/alyx.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    cannon: file(relativePath: { eq: "images/cannon.png" }) {
+    andras: file(relativePath: { eq: "images/andras.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    andrasProject: file(relativePath: { eq: "images/andras-project.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid
@@ -457,6 +512,27 @@ export const query = graphql`
       }
     }
     shopify: file(relativePath: { eq: "images/shopify.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    shopifyUX: file(relativePath: { eq: "images/shopify-ux.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    seekings: file(relativePath: { eq: "images/seekings.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1200) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    seekingsProduct: file(relativePath: { eq: "images/seekings-product.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1200) {
           ...GatsbyImageSharpFluid
