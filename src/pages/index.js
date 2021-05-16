@@ -41,6 +41,10 @@ const Main = styled.main`
   box-sizing: border-box;
   padding: 0 30px 0 30px;
 
+  @media (min-width: 1800px) {
+    max-width: 950px;
+  }
+
   @media (max-width: 700px) {
     max-width: 100%;
   }
@@ -50,6 +54,12 @@ const Main = styled.main`
     margin-top: 30px;
     margin-bottom: 40px;
   }
+`
+
+const JobLink = styled.a`
+  color: ${props => props.color};
+  text-decoration: underline;
+  cursor: pointer;
 `
 
 const Content = styled.p`
@@ -264,20 +274,35 @@ const App = ({ data }) => {
       </Header>
       <Main>
         <Content>
-          Developer and designer specializing in user experience and the web.
-          I'm currently studying computer engineering at the University of
-          Toronto and completing an internship at Sanctuary Computer, a
-          development studio in New York City. On the side, I also work on
-          select freelance technology projects with friends :)
+          Design-oriented developer specializing in user experience and web
+          development. I'm currently studying computer engineering at the
+          University of Toronto and completing an internship at{" "}
+          <JobLink
+            href="https://www.sanctuary.computer/"
+            target="_blank"
+            color="#0a3458"
+          >
+            Sanctuary Computer
+          </JobLink>
+          , a development studio in NYC. On the side, I also work on select
+          freelance technology projects with friends :)
         </Content>
         <Content>
           In the past, I've worked at small to large non-profits and companies.
-          Last year, I interned at Shopify and help built the subscriptions
-          experience and functionality for online stores.
+          Last year, I interned at{" "}
+          <JobLink
+            href="https://www.shopify.ca/"
+            target="_blank"
+            color="#5f8e3e"
+          >
+            Shopify
+          </JobLink>{" "}
+          and help built the subscriptions experience and functionality for
+          online stores.
         </Content>
         <Content>
-          I'm interested in fashion, health and fitness, design, and recently
-          making juice and reading.
+          I'm interested in fashion, health and fitness, design, reading, and
+          recently making juice.
         </Content>
       </Main>
       <Region>
@@ -355,31 +380,30 @@ const App = ({ data }) => {
             <ProjectTitle>Shopify Subscriptions</ProjectTitle>
             <ProjectDate>May to December 2020</ProjectDate>
             <ProjectSummary>
-              Worked with a super talented team to develop new Liquid selling
-              plan APIs and the buyer-facing user experience principles for the
-              highly-anticipated subscriptions feature as a part of my
-              internship.
+              Developed new Liquid selling plan APIs and the buyer-facing user
+              experience principles for the highly-anticipated subscriptions
+              feature as a part of my internship.
             </ProjectSummary>
             <ProjectLink
               href="https://www.shopify.ca/subscriptions"
               target="_blank"
               rel="noreferrer"
             >
-              Visit Subscriptions Marketing site
+              Visit subscriptions marketing site
             </ProjectLink>
             <ProjectLink
               href="https://shopify.dev/tutorials/storefront-ux-guidelines-for-subscriptions"
               target="_blank"
               rel="noreferrer"
             >
-              Visit Subscriptions Storefront UX Guidelines
+              Visit subscriptions storefront UX guidelines
             </ProjectLink>
             <ProjectLink
               href="https://shopify.dev/docs/themes/liquid/reference/objects/selling-plan"
               target="_blank"
               rel="noreferrer"
             >
-              Visit sellin plan liquid API docs
+              Visit selling plan liquid API docs
             </ProjectLink>
           </ProjectTextContainer>
         </ProjectContainer>
