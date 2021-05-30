@@ -148,6 +148,22 @@ const ContactLink = styled.a`
   }
 `
 
+const InlineContactLink = styled(Link)`
+  color: #b71c1c;
+  font-family: "WorkSans-Regular", sans-serif;
+  font-size: 16px;
+  margin: 0 0 10px 0;
+  text-decoration: underline;
+
+  &:last-of-type {
+    margin: 0;
+  }
+
+  @media (min-width: 1800px) {
+    font-size: 18px;
+  }
+`
+
 const ProjectContainer = styled.div`
   display: flex;
   width: 100%;
@@ -302,7 +318,7 @@ const App = ({ data }) => {
         </Content>
         <Content>
           I'm interested in fashion, health and fitness, design, reading, and
-          recently making juice.
+          recently making smoothies.
         </Content>
       </Main>
       <Region>
@@ -330,13 +346,7 @@ const App = ({ data }) => {
             >
               Instagram
             </ContactLink>
-            <ContactLink
-              href="https://www.notion.so/Books-TV-235b5b90026d4a86a403022f4ccb997d"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Recommendations
-            </ContactLink>
+            <InlineContactLink to="/books">Good books</InlineContactLink>
           </ContactWrapper>
           <ContactWrapper>
             <ContactLink
